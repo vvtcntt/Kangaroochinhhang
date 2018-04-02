@@ -1,0 +1,36 @@
+﻿@charset "utf-8";@media screen and (max-width:768px){#Head_Top{width:97%;}
+#Content_Baogia{width:97%}
+#Head_Top #Left_Head{background-size:100%}
+.Printer{display:none}
+}
+@media screen and (max-width:488px){
+    #Head_Top{height:auto }
+#Table .Ord{width:5%;text-align:center; display:none}
+#Table .Name{width:71%;text-align:center}
+#Table .Code{width:19% !important;text-align:center; display:none}
+#Table .Wan{width:19%;text-align:center}
+#Table .Wans a{display:block}
+#Table .Wans img{max-width:100%  !important; height:auto; float:left; margin:5px 0px}
+#Table .Price{width:10%;text-align:center}
+#Table .Quality{display:none}
+#Table .SumPrice{display:none}
+#Table .Image{width:12%;text-align:center;display:none}
+#Table .Head_tb{height:25px;text-transform:uppercase;font-weight:bold}
+#Table td{text-indent:5px}
+#Table tr{line-height:normal !important}
+#Table .Names a{font-weight:bold;margin:3px 5px;color:#424242}
+#Table .Names .n2{font-weight:normal;margin:3px 5px;display:block;font-style:italic}
+#Table .Codes{font-weight:bold;text-align:center; display:none}
+#Table .Codes a{margin:3px 5px;color:#424242}
+#Table .Prices{text-align:center; font-weight:bold}
+#Table .Ords{text-align:center;display:none}
+#Table .Qualitys{text-align:center;display:none}
+#Table .SumPrices{text-align:center;display:none}
+ 
+#Table .Images img{width:90%;margin:5px auto;display:block;display:none}
+#Content_Baogia h1{font-size:17px}
+.line_bg{display:none}
+#Head_Top #Left_Head{width:100%}
+#Head_Top #Left_Head img{float:none; margin:5px auto; display:block}
+#Head_Top #Right_Head{display:none}
+}

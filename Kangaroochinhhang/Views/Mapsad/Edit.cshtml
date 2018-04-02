@@ -1,0 +1,219 @@
+﻿@model Kangaroochinhhang.Models.tblMap
+@{
+    ViewBag.Title = "Sửa bản đồ";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+    }
+
+    $(function () {
+        createEditor('vi', 'Content');
+    });
+
+</script>
+
+ @using (Html.BeginForm())
+{
+    <div id="main-content">
+        <div class="container-fluid">
+            <div style="width: 100%; margin: 0 auto;">
+
+                <div id="Breadcrumb" class="Block Breadcrumb ui-widget-content ui-corner-top ui-corner-bottom">
+                    <ul>
+                        <li><a href='/admin'><i class="icon-home" style="font-size:14px;"></i> Trang chủ</a></li>
+                        <li class='SecondLast'><a href="/Mapsad/Edit">Sửa bản đồ</a></li>
+                     </ul>
+                </div>
+
+                <div style="clear: both;"></div>
+
+                <div id="cph_Main_ContentPane">
+                    <div class="widget">
+                        <!-- widget-title -->
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i>&nbsp;Sửa bản đồ</h4>
+
+                            <!-- Button -->
+                            <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                                <div id="toolbox">
+                                    <div style="float:right;" class="toolbox-content">
+
+                                        <table class="toolbar">
+                                            <tr>
+
+                                                <td align="center">
+                                                    <button type="submit" class="toolbar btn btn-info" name="btnSave" id="btnSave"><i class="icon-save"></i> &nbsp;Lưu lại</button>
+
+                                                </td>
+
+                                                
+                                                <td align="center">
+                                                    <a id="cph_Main_ctl00_toolbox_rptAction_lbtAction_4" title="Quay lại" style="color:#FFF !important" class="toolbar btn btn-info" href="">
+                                                        <i class="icon-chevron-left"></i>&nbsp;
+                                                        Quay lại
+                                                    </a>
+                                                </td>
+                                                <td align="center">
+                                                    <a onclick="" id="cph_Main_ctl00_toolbox_rptAction_lbtAction_0" title="Trợ giúp" style="color:#FFF !important" class="toolbar btn btn-info" href="" )">
+                                                        <i class="icon-question-sign"></i>&nbsp;
+                                                        Trợ giúp
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Button -->
+
+                            <div id="hiddenToolBarScroll" class="scrollBox hidden">
+
+                                <div class="FloatMenuBar" style="float:left; margin-left:20px">
+
+                                    <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                                        <div id="Div1">
+
+                                            <div style="float:left;" class="toolbox-content">
+
+                                                <table class="toolbar">
+                                                    <tr>
+
+                                                        <td align="center">
+                                                            <button type="submit" class="toolbar btn btn-info" name="btnSave" id="btnSave"><i class="icon-save"></i> &nbsp;Lưu lại</button>
+
+                                                        </td>
+
+                                                     
+                                                        <td align="center">
+                                                            <a id="cph_Main_ctl00_toolbox_rptAction_lbtAction_4" title="Quay lại" style="color:#FFF !important" class="toolbar btn btn-info" href="">
+                                                                <i class="icon-chevron-left"></i>&nbsp;
+                                                                Quay lại
+                                                            </a>
+                                                        </td>
+                                                        <td align="center">
+                                                            <a onclick="" id="cph_Main_ctl00_toolbox_rptAction_lbtAction_0" title="Trợ giúp" style="color:#FFF !important" class="toolbar btn btn-info" href="" )">
+                                                                <i class="icon-question-sign"></i>&nbsp;
+                                                                Trợ giúp
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                      
+                        <!-- widget-title -->
+                        <!-- widget-body -->
+                        <div class="widget-body">
+                            <div id="cph_Main_ctl00_notification_divNotice" style="padding-top:10px;">
+                                <!-- Messange -->
+                                @Html.Raw(ViewBag.thongbao)
+
+                                <!-- End Messange -->
+                            </div>
+                            <table class="admintable" style="width: 100%;">
+                                 
+                                <tr>
+                                    <td class="key">
+                                        Tên bản đồ <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Name, new { @class = "Name_ad txtName", @autofocus = "autofocus", @required = "required" })
+
+                                 @Html.HiddenFor(p => p.id, new { @Value=@Model.id,@id="idMaps",@Name="idMaps"})
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="key">
+                                        Mô tả
+                                    </td>
+                                    <td>
+                                        @Html.TextAreaFor(p => p.Description, new { @class = "Content_ad", @autofocus = "autofocus", @required = "required" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Mô tả cho bản đồ
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Mô trả cho bản đồ, độ dài khuyến cáo từ 120 đến 160 ký tự
+                                                </p>
+                                            </span>
+                                        </span>
+                                        <span class="Mota" style="color: #F00"></span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Nội dung Chi tiết
+                                    </td>
+                                    <td>
+                                        @Html.TextAreaFor(p => p.Content, new { @class = "Content_ad" })
+                                    </td>
+                                </tr>
+
+                                 
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        function bodauTiengViet(str) {
+            str= str.toLowerCase();
+            str= str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g,"a");
+            str= str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g,"e");
+            str= str.replace(/ì|í|ị|ỉ|ĩ/g,"i");
+            str= str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g,"o");
+            str= str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g,"u");
+            str= str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g,"y");
+            str= str.replace(/đ/g,"d");
+            return str;
+        }
+         $('#Name').keyup(function () {
+             var text = $(this).val();
+             var leght = $(this).val().length;
+            $('#Title').val(text);
+            $('#Keyword').val(bodauTiengViet(text));
+            $('.Soluong').html('Số ký tự là : ' + leght + ' (khuyến cáo là dưới 55 ký tự)');
+            $.post("/Newsad/CheckNews", { "text": text },
+                function (data) {
+                    $('.Aler_ttxtName').html(data);
+                    $(".txtName").css('border:1px solid #F00 !important');
+                });
+         });
+         $('#Description').keyup(function () {
+             var text = $(this).val();
+             var leght = $(this).val().length;
+
+             $('.Mota').html('Số ký tự là : ' + leght + ' (khuyến cáo là dưới 190 ký tự)');
+
+
+
+         });
+
+    });
+</script>
+<script src="~/Scripts/jquery-2.2.0.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<link href="~/Scripts/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/AutoComplete.js"></script>

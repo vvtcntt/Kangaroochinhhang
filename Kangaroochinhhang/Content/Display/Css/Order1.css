@@ -1,0 +1,49 @@
+﻿@charset "utf-8";#Orders{width:800px;margin:20px auto;height:auto;border:1px dashed #d7d7d7;border-radius:5px}
+#Orders h2{text-align:center;margin:10px auto 5px auto;text-transform:uppercase;color:#4a4a4a;font-weight:normal;}
+.rOrder{width:100%;height:25px;float:left;margin:0px}
+.rOrder .Left{width:30%;height:100%;float:left;margin:0px}
+.rOrder .Left span{text-align:right;margin:10px 10px 0px 10px;display:block;color:#4a4a4a}
+.rOrder .Right{width:60%;height:100%;float:left;margin:0px}
+.rOrder .Right input.txtName{height:15px;border:none;border-bottom:1px dashed #4a4a4a;width:300px;margin:7px 5px 0px 5px;font-weight:bold;text-decoration:underline;;color:#4a4a4a}
+.rOrder .Right input.txtAddress{height:15px;border:none;border-bottom:1px dashed #4a4a4a;width:500px;margin:7px 5px 0px 5px;font-weight:bold;color:#4a4a4a}
+.rOrder .Right input.txtMobile{height:15px;border:none;border-bottom:1px dashed #4a4a4a;width:200px;margin:7px 5px 0px 5px;font-weight:bold;color:#4a4a4a}
+.rOrder .Right input.txtDate{height:15px;border:none;border-bottom:1px dashed #4a4a4a;width:200px;margin:7px 5px 0px 5px;font-weight:bold;color:#4a4a4a}
+.rOrder .Right input.txtEmail{height:15px;border:none;border-bottom:1px dashed #4a4a4a;width:300px;margin:7px 5px 0px 5px;font-weight:bold;text-decoration:underline;color:#4a4a4a}
+.rOrder .Right input.txtDescription{height:15px;border:none;border-bottom:1px dashed #4a4a4a;width:550px;margin:7px 5px 0px 5px;font-weight:bold;color:#4a4a4a}
+.rOrders{width:100%;height:auto;float:left;margin:8px 0px;color:#fff}
+.rOrders .Ghichu{font-weight:bold;margin:0px 10px 5px 30px;color:#4a4a4a}
+.rOrders .Ghichu1{font-style:italic;margin:5px 10px 5px 50px;color:#4a4a4a}
+.rOrders .Date{text-align:right;margin:5px 5px;color:#4a4a4a}
+.rOrders .Sign{text-align:right;margin:5px 15px 5px 5px;text-decoration:underline;color:#4a4a4a}
+p.Giohang{text-transform:uppercase;margin:10px 0px;text-align:center;color:#4a4a4a}
+#CheckOrder{width:100%;height:auto;float:left;margin:2px 0px}
+.Row_Order{width:100%;height:25px;float:left;margin:0px;background:#efefef}
+.Col_Stt{width:50px;text-align:center;color:#555555;line-height:25px;font-weight:bold;font-size:12px;float:left}
+.Col_Name{width:350px;text-align:center;color:#555555;line-height:25px;font-weight:bold;font-size:12px;float:left}
+.Col_Price{width:100px;text-align:center;color:#555555;line-height:25px;font-weight:bold;font-size:12px;float:left}
+.Col_Ord{width:60px;text-align:center;color:#555555;line-height:25px;font-weight:bold;font-size:12px;float:left}
+.Col_SumPrice{width:130px;text-align:center;color:#555555;line-height:25px;font-weight:bold;font-size:12px;float:left}
+.Col_Func{width:110px;text-align:center;color:#555555;line-height:25px;font-weight:bold;font-size:12px;float:left}
+.Row_Order_child{width:100%;height:25px;float:left;margin:0px;border-bottom:1px dashed #eeeeee}
+.Row_Order_child .Col_Stt{width:50px;text-align:center;color:#4a4a4a;line-height:25px;height:100%;font-size:12px;float:left;font-weight:normal}
+.Row_Order_child .Col_Name{width:350px;text-align:center;color:#4a4a4a;line-height:25px;height:100%;font-size:12px;float:left;font-weight:normal}
+.Row_Order_child .Col_Name a{color:#4a4a4a}
+.Row_Order_child .Col_Price{width:100px;text-align:right;color:#4a4a4a;line-height:25px;height:100%;font-size:12px;float:left;font-weight:normal}
+.Row_Order_child .Col_Ord{width:60px;text-align:center;color:#4a4a4a;height:100%;font-size:12px;float:lef;font-weight:normalt}
+.Row_Order_child .Col_Ord input{text-align:center}
+.Row_Order_child .Col_Ord input{width:40px;margin:2px auto;height:16px;color:#000;font-size:12px;border:1px solid #edeff1}
+.Row_Order_child .Col_SumPrice{width:130px;text-align:right;color:#4a4a4a;line-height:25px;height:100%;font-size:12px;float:left;font-weight:normal}
+.Row_Order_child .Col_Func{width:110px;text-align:center;color:#000;line-height:25px;font-size:12px;height:100%;float:left;font-weight:normal;color:#333}
+.Row_Order_child .Col_Func a{color:#F00}
+.Sums{text-align:right;margin:10px;display:block;line-height:30px;color:#4a4a4a}
+.Sums span{font-weight:bold}
+#table1 td {
+    text-indent: 10px;
+    border:none !important
+}#table1{ border:none !important}#table1 tr td:last-child{ padding-left:30px !important}
+
+#Orders .Func{width:100%;height:auto;float:left;margin:5px 0px;background:none}
+#Orders .Func a{width:150px;height:23px;line-height:23px;margin:5px 5px 5px 250px;background:#0760ab;border:none;border-radius:5px;color:#FFF;text-transform:uppercase;text-align:center;font-size:12px;border:1px solid #FFF;-webkit-box-shadow:0px 0px 10px #d5d4d4;display:block;float:left}
+#Orders .Func button{width:150px;height:25px;margin:5px 5px 10px 10px;background:#0760ab;border:none;border-radius:5px;color:#FFF;text-transform:uppercase;text-align:center;font-size:12px;border:1px solid #FFF;-webkit-box-shadow:0px 0px 10px #d5d4d4;float:left}
+#Orders .Func a.SendContact{width:150px;height:23px;line-height:23px;margin:5px auto 10px 320px;background:#207ec9;border:none;border-radius:5px;color:#FFF;text-transform:uppercase;text-align:center;font-size:12px;border:1px solid #FFF;-webkit-box-shadow:0px 0px 10px #d5d4d4;display:block;text-align:center !important;display:block}
+.btlSendContact{width:150px;height:23px;line-height:23px;margin:5px auto 10px 320px !important;background:#207ec9;border:none;border-radius:5px;color:#FFF;text-transform:uppercase;text-align:center;font-size:12px;border:1px solid #FFF;-webkit-box-shadow:0px 0px 10px #d5d4d4;display:block;text-align:center !important;display:block}

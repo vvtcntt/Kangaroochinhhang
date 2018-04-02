@@ -1,0 +1,35 @@
+﻿
+@{
+     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+ @model Kangaroochinhhang.Models.tblUser
+
+<div id="wrapper">
+    @using (Html.BeginForm("LoginIndex", "Login", FormMethod.Post, new { @id = "", @class = "login-form" }))
+    {
+        @Html.ValidationSummary(true)
+
+        <div class="header">
+            <h1>Đăng nhập</h1>
+            <span>Bạn vui lòng điền đầy đủ tên tài khoản và mật khẩu để đăng nhập vào quản trị hệ thống !</span>
+        </div>
+
+        <div class="content">
+            @Html.TextBoxFor(p => p.UserName, new { @class = "input username", @placeholder = "Username", @autofocus = "autofocus", @required = "required" })
+
+            <div class="user-icon"></div>
+            @Html.TextBoxFor(p => p.Password, new { @class = "input password", @placeholder = "Password", @autofocus = "autofocus", @required = "required", @type = "password" })
+
+            <div class="pass-icon"></div>
+        </div>
+
+        <div class="footer">
+            <span style="color:#f00; font-weight:bold; margin:5px; float:left; font-size:11px">@Html.Raw(ViewBag.Note)</span>
+            <button type="submit" id="btnAdd" name="btnAdd" class="button">Đăng nhập</button>
+        </div>
+
+        <div class="gradient"></div>
+    }
+
+</div>

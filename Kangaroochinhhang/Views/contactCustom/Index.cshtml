@@ -1,0 +1,105 @@
+﻿
+@{
+    Layout = ViewBag.layout;
+}
+
+<div id="Contents">
+    <div id="content">
+        <div class="nvar">
+            <nav>
+                <ul>
+                    @Html.Raw(ViewBag.nUrl)
+
+                </ul>
+            </nav>
+        </div>
+        <div id="Main_Content">
+
+            <div id="Contact">
+                <div id="Left_Contact">
+                    <div class="Nvar_Contact">
+                        <span>Thông tin công ty</span>
+                    </div>
+                    <div id="Content_LeftContact">
+                        <img class="Logo" src="@ViewBag.logo" alt="@ViewBag.name" />
+                        <h2>
+                            @ViewBag.name
+                        </h2>
+                        <p>
+                            Trụ sở chính: <span>
+                                @ViewBag.address
+                            </span>
+                        </p>
+                        <p>Điện thoại : <span> @ViewBag.mobile</span></p>
+                    <p>  Hotline : <span>@ViewBag.hotline</span> </p>
+
+                    <p>Email :<span>@ViewBag.email</span> - Website: <span>@ViewBag.website - www.Kangaroochinhhang.com</span></p>
+                    <p class="note">Khách hàng chú ý : Thời gian làm việc của công ty bắt đầu từ 7h30 đến 18h hàng ngày. Công ty làm việc tất cả các ngày trong tuần từ thứ 2 đến chủ nhật (kể cả ngày lễ). Hỗ trợ bảo hành sản phẩm chỉ áp dụng các ngày từ thứ 2 đến thứ 6 và trong giờ hành chính .</p>
+                </div>
+            </div>
+            <div id="Right_Contact">
+                <div class="Nvar_Contact">
+                    <span>Form liên hệ</span>
+                </div>
+                <div id="Content_RightContact">
+                    @using (Html.BeginForm())
+                    {
+                        <div class="Tear_Contact">
+                            <div class="Left_TearContact">
+                                <span>Họ và tên :</span>
+                            </div>
+                            <div class="Right_TearContact">
+                                <input type="text" name="txtName" id="txtName" class="txtName" required placeholder="Mời bạn nhập họ và tên" />
+                            </div>
+                        </div>
+                        <div class="Tear_Contact">
+                            <div class="Left_TearContact">
+                                <span>Địa chỉ :</span>
+                            </div>
+                            <div class="Right_TearContact">
+                                <input type="text" name="txtAddress" id="txtAddress" class="txtName" required placeholder="Mời bạn nhập địa chỉ" />
+                            </div>
+                        </div>
+                        <div class="Tear_Contact">
+                            <div class="Left_TearContact">
+                                <span>Điện thoại :</span>
+                            </div>
+                            <div class="Right_TearContact">
+                                <input type="number" name="txtMobile" id="txtMobile" class="txtName" required placeholder="Mời bạn nhập địện thoại" />
+                            </div>
+                        </div>
+                        <div class="Tear_Contact">
+                            <div class="Left_TearContact">
+                                <span>Email :</span>
+                            </div>
+                            <div class="Right_TearContact">
+                                <input type="email" name="txtEmail" id="txtEmail" class="txtName" required placeholder="Mời bạn nhập Email" />
+                            </div>
+                        </div>
+                        <div class="Tear_Contact">
+                            <div class="Left_TearContact">
+                                <span>Nội dung:</span>
+                            </div>
+                            <div class="Right_TearContact">
+                                <textarea id="txtContent" name="txtContent" placeholder="Nhập nội dung liên hệ"></textarea>
+                            </div>
+                        </div>
+                        <div class="Tear_Contact">
+                            <button type="submit" name="btnSend" id="btnSend" class="bntSend" value="Gửi">Gửi thông tin</button>
+                            <p class="note">Chúng tôi chỉ phản hồi lại khi khách hàng điền đầy đủ và chính xác các thông tin. </p>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div id="Maps" style="width:99%; height:auto; float:left; margin:10px 0.5%">
+                @Html.Raw(ViewBag.Maps)
+
+            </div>
+        </div>
+
+        <div class="Clear"></div>
+    </div>
+</div>
+
+</div>
+

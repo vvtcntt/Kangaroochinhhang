@@ -1,0 +1,73 @@
+﻿@{
+     Layout = "~/Views/Shared/_LayoutDefault.cshtml";
+}
+@model Kangaroochinhhang.Models.tblGroupNew
+<div id="MailContent">
+    <div id="Root">
+        @Html.Raw(ViewBag.nUrl)
+    </div>
+    <div id="NewDetail">
+        <div class="nVar_NewDetail">
+            <h1>@Model.Name</h1>
+            <time>Viết vào ngày : @Model.DateCreate</time>
+        </div>
+
+        <div id="Content_News">
+            <div id="Description">
+                @Model.Description
+            </div>
+             
+            <div id="Content">
+                @Html.Raw(Model.Content)
+            </div>
+        </div>
+        <div id="Comment">
+            <div class="nVar_2">
+                <span>Nhận xét đánh giá</span>
+            </div>
+            <div id="Sluion">
+
+                <div class="Mxh" style="float: left; width: 270px; margin-left: 2px">
+                    <div class="fb-like" data-send="true" data-layout="button_count" data-width="60"
+                         data-show-faces="true">
+                    </div>
+                    <div class="tweet">
+                        <if condition="in_array($forum['forumid'], array(1,2))">
+                            <else />
+                            <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="YOUR-TWITTER-USERNAME" rel="nofollow">Tweet</a>
+                            <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+                        </if>
+                    </div>
+                    <div id="g" style="float: left; margin: 7px 5px; height: 15px; width: 20px">
+                        <g:plusone size="medium"></g:plusone>
+                    </div>
+                </div>
+            </div>
+            <div id="review">
+                <span class="rv1">Bạn có thấy bài viết của chúng tôi hữu ích ?</span>
+                <span class="rv2">Mời bạn đánh giá về @Model.Name  !</span>
+                <div id="Content_review">
+                    
+                    <input type="radio" name="review" value="1" class="rd1" /> <img src="~/Content/Display/iCon/rating_1_rstar.gif" alt="1 điểm" />
+                    <input type="radio" name="review" value="2" class="rd2" /><img src="~/Content/Display/iCon/rating_2_rstar.gif" alt="2 điểm" />
+                    <input type="radio" name="review" value="3" class="rd3" /><img src="~/Content/Display/iCon/rating_3_rstar.gif" alt="3 điểm" />
+                    <input type="radio" name="review" value="4" class="rd4" /><img src="~/Content/Display/iCon/rating_4_rstar.gif" alt="4 điểm" />
+                    <input type="radio" name="review" value="5" class="rd5" /><img src="~/Content/Display/iCon/rating_5_rstar.gif" alt="5 điểm" />
+                </div>
+            </div>
+            <div id="ConmentFacebook"><div class="fb-comments" data-href="@Request.Url.ToString()" data-num-posts="20" style="width:100%; float:left; margin:0px" width="100%"></div></div>
+        </div>
+    </div>
+    <div id="NewNews">
+        <div id="nVar_Involve">
+            DỊCH VỤ Tại các tỉnh
+        </div>
+        <div id="Content_NewNews">
+            @Html.Raw(ViewBag.chuoi)
+           
+
+        </div>
+    </div>
+    <div class="Clear"></div>
+</div>
+ 

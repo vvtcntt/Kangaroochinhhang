@@ -1,0 +1,8 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "ckeditor": "~4.9.1"
+    
+  }
+}

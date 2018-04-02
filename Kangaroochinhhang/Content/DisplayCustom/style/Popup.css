@@ -1,0 +1,37 @@
+#lean_overlay {
+	position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+#popup, .popup {
+    width: auto;
+ 	padding-bottom: 2px;
+	display:none;
+     border-radius: 5px; -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px;
+    margin-left:-360px !important;
+ 
+}
+#popup_content{top:100px !important}
+#popup-header, .popup-header { 
+	background: url(../img/hd-bg.png); 
+	padding: 18px 18px 14px 18px; 
+	border-bottom: 1px solid #CCC; 
+	border-top-left-radius: 5px; 
+	-moz-border-radius-topleft: 5px; 
+	-webkit-border-top-left-radius: 5px; 
+	border-top-right-radius: 5px; 
+	-moz-border-radius-topright: 5px; 
+	-webkit-border-top-right-radius: 5px; 
+}
+
+#popup-header  h2, .popup-header  h2 { color: #444; text-align:center; font-size: 2em; font-weight: 700; margin-bottom: 3px; text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5); }
+#popup-header  p, .popup-header  p { color: #444; font-size: 1.3em; margin: 0; text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5); text-shadow: none; }
+.info_popup { text-align:center; margin:20px; }      
+ 

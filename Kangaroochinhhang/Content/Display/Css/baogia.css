@@ -1,0 +1,56 @@
+﻿@charset "utf-8";
+#Baogia{width:100%;height:auto;margin:10px auto;box-shadow:0px 0px 10px 0px #c2c2c2;padding:10px 0px 0px 0px}
+#Head_Top{width:90%;height:auto;margin:5px auto}
+#Head_Top #Left_Head{width:40%;height:100%;margin:0px;float:left}
+#Head_Top #Left_Head img{max-height:340px; float:left; margin:5px 0px}
+#Head_Top #Right_Head{width:60%;height:auto;float:left;margin:0px}
+#Head_Top #Right_Head .hd1{font-size:26px;color:#656565;text-transform:uppercase;margin:5px;font-family:CondensedBold;text-align:right;display:block;font-weight:bold}
+#Head_Top #Right_Head .hd2{font-size:14px;color:#4f4f4f;margin:2px;display:block;text-align:right}
+#Head_Top #Right_Head .hd3{font-size:14px;color:#4f4f4f;margin:2px;display:block;text-align:right}
+#Head_Top #Right_Head .hd4{font-size:14px;color:#4f4f4f;margin:2px;display:block;text-align:right}
+#Content_Baogia{width:90%;height:auto;margin:0px auto}
+#Content_Baogia h1{font-size:23px;color:#000;text-transform:uppercase;text-align:center;margin:25px 5px 5px 5px}
+.line_bg{width:90%;height:1px;border-bottom:1px solid #d7d7d7;margin:10px auto}
+#Content_Baogia .date1{font-size:14px;text-align:right;display:block;margin:5px;color:#414141;font-style:italic}
+#Content_Baogia .kg{font-size:14px;display:block;margin:10px 5px;color:#414141;text-align:center;font-weight:bold}
+table{text-align:justify}
+ table{border-right:none;border-bottom:none}
+ 
+table td{border-top:none;border-left:none}
+#Table{width:100%;height:auto;float:left;margin:10px 0px;border:1px solid #dcdcdc;border-right:none;border-bottom:none}
+#Table .Ord{width:5%;text-align:center}
+#Table .Name{width:41%;text-align:center}
+#Table .Code{width:12%;text-align:center}
+#Table .Price{width:15%;text-align:center}
+#Table .Wan{width:15%;text-align:center}
+
+#Table .Wans a{display:none}
+#Table .Quality{width:4%;text-align:center}
+#Table .SumPrice{width:10%;text-align:center}
+
+#Table .Image{width:12%;text-align:center}
+#Table .Head_tb{height:25px;text-transform:uppercase;  font-size:17px}
+#Table td{text-indent:5px;border:1px solid #dadada;}
+#Table tr{line-height:normal !important}
+#Table .Names a{font-weight:bold;margin:3px 5px;color:#424242; padding:0px 5px; display:block; font-size:14px}
+#Table .Names a span{ color:#F00;       -webkit-animation: dt 700ms infinite;
+    -moz-animation: dt 700s infinite;
+    -o-animation: dt 700ms infinite;
+    animation: dt 700ms infinite; font-weight:normal; font-size:14px}
+#Table .Names .n2{font-weight:normal;margin:3px 5px;display:block;font-style:italic; font-size:14px}
+#Table .n3{color:#ff4f02; padding:3px 5px; display:inline-block; border:1px dashed #9d4017; margin:5px;font-size:14px; font-style:italic; font-weight:normal}
+#Table .n4{color:#3e3e3e; padding:3px 5px; display:inline-block; margin:5px;font-size:14px; font-style:italic; font-weight:normal}
+
+#Table .Codes{font-weight:bold;text-align:center}
+#Table .Codes a{margin:3px 5px;color:#424242; font-size:14px}
+#Table .Prices{text-align:center; padding:5px 0px; font-weight:bold; color:#F00; font-size:16px}
+#Table .Ords{text-align:center}
+#Table .Wans{text-align:center; font-size:14px}
+#Table .Qualitys{text-align:center}
+#Table .SumPrices{text-align:center}
+#Table .Images img{width:90%;margin:5px auto;display:block}
+.ghichu_bg{font-weight:bold;text-decoration:underline;margin:5px 5px 20px 5px;display:block;font-size:14px}
+.ghichu1{font-size:14px;font-style:italic;color:#525252;margin:5px 5px 5px 30px;display:block}
+.Printer{text-align:center;display:block;height:30px;color:#515151;line-height:30px;margin:10px 0px}
+.Printer span.icon{width:30px;height:30px;background:url(../iCon/iCon_Printer.png) no-repeat;display:inline-block}
+.Printer span{line-height:30px;display:inline-block}

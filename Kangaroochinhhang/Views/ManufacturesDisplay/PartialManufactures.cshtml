@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Kangaroochinhhang.Models.tblManufacture>
+<div class="Trademark">
+    <h3>Chúng tôi là nhà phân phối lõi lọc nước chính hãng của các hãng </h3>
+    <div class="content_trademark">
+        @foreach(var item in Model)
+        { 
+        <div class="Tear_trademark">
+            <a href="/@item.Tag" title="@item.Name">   <img src="@item.Images" alt="@item.Name" title="@item.Name" /></a>
+        </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,127 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<Kangaroochinhhang.Models.tblRegister>
+
+@{
+    ViewBag.Title = "List Email";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+        $(document).on("click", ".State", function () {
+            //your code
+
+            var getID = $(this).attr('id');
+            var Active = $(this).attr("value")
+            //alert(getID);
+
+            $.post("/Users/UserEditActive", { "chk": getID, "nchecked": Active },
+               function (data) {
+
+
+                   $(".alert").replaceWith("<div class='alert alert-info'>" + data.result + "</div>");
+                   $(".alert").fadeOut(2000);
+
+
+
+               });
+            //
+        });
+
+    })
+</script>
+<script language="JavaScript" type="text/javascript">
+    function toggle(source) {
+        checkboxes = document.getElementsByClassName('checkitem');
+        for (var i = 0, n = checkboxes.length; i < n; i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+</script>
+@Html.Raw(ViewBag.SendEmail)
+@using (Html.BeginForm("Command", "SendEmail", FormMethod.Post))
+{
+<div id="Content_Detail">
+        <div class="Nvar_Content_Detail">
+            <div class="Left_Nvar">
+                <img src="/Content/Admin/Icon/folder.png" alt="Danh mục sản phẩm" />Email
+            </div>
+             
+            <div class="Right_Nvar">
+                <div id="msg" class="msg">
+                    <div class="alert alert-info" id="update-message">
+                        <span>@Html.Raw(ViewBag.result)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+        
+            <div class="/Content_Content_Detail">
+                <div class="Nvar_1">
+                    <div class="clo_1">
+                       <input name="chkitem" type="checkbox" value="" onclick="toggle(this)" class="checkallitem">
+                    </div>
+                   
+                    <div class="clo_2" style="width:68%">Email</div>
+                    <div class="clo_3">Active</div>
+                     
+                    <div class="clo_5">Edit</div>
+                    <div class="clo_6">Delete</div>
+                </div>
+                @foreach(var item in  Model)
+                {
+                    <div class="Nvar_2">
+                        <div class="clo_1">
+                            <input name="chkitem+@item.id" type="checkbox" value="" class="checkitem">
+                        </div>
+
+                        <div class="clo_2" style="width: 68%"><a href="/../../SendEmail/Index?id=@item.id" title="@item.Email">@item.Email</a> </div>
+                        <div class="clo_3">
+                            @if (item.Active == true)
+                            {
+                                <input name="chk" type="checkbox" checked="checked" id="@item.id" value="true" class="State">
+                            }
+                            else
+                            {
+                                <input name="ckh" type="checkbox" value=""  id="@item.id" value="false" class="State">
+                            }
+
+                        </div>
+                         
+                        <div class="clo_5"> 
+                            <a href="/../../SendEmail/Edit?id=@item.id" title="" class="Edit"></a>
+                        </div>
+                        <div class="clo_6"> 
+                            <a href="/../../SendEmail/DeleteConfirmed?id=@item.id" title="" class="Delete"></a>
+                        </div>
+                    </div>
+       
+                }
+                <div class="nVar_3">
+                    <div class="clo_1">
+                        -
+                    </div>
+
+                    <div class="clo_7">
+
+
+                        <a class="a_bt" href="/../../SendEmail/Create?id=@Html.Raw(ViewBag.Idcha)" title="them moi"><span>+</span> Add</a>
+                      
+                           <button type="submit" id="btnDeleteAll" name="btnDeleteAll" class="btnDeleteAll">Xóa</button>
+                        <a class="a_bt" href="/../../SendEmail/Send" title="them moi"><span>+</span> SendMail</a>
+                     
+
+                    </div>
+
+                     
+                </div>
+
+            </div>
+     
+         @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page, sortOrder = ViewBag.CurrentSortOrder, sortName = ViewBag.CurrentSortName, sortLevel = ViewBag.CurrentSortLevel }), (PagedListRenderOptions)ViewBag.ship)
+     
+    </div>
+}
+ 

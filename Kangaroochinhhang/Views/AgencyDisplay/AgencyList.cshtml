@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutDefault.cshtml";
+}
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Kangaroochinhhang.Models.tblAgency>
+<div id="Contents">
+    <div class="Root">
+        @Html.Raw(ViewBag.nUrl)
+    </div>
+    <div class="Clear"></div>
+    <div id="News">
+        <div id="ContentNews">
+
+            <div id="LeftNews">
+                <div id="LeftNews">
+                    <div class="nVar_news">
+                        <h1>Đại lý của VINCOM tại @Html.Raw(ViewBag.Name)</h1>
+
+                    </div>
+                    @foreach (var item in Model)
+                    {
+                        <div class="Tear_News">
+                            <a href="/5/@item.Tag" title="@item.Name"><img src="@item.Images" alt="@item.Name" /></a>
+                            <a href="/5/@item.Tag" title="@item.Name" class="Name">@item.Name</a>
+                            <span class="Cata"><span></span>Thời gian gửi: @item.DateCreate</span>
+                            <span class="Des">@item.Description</span>
+                        </div>
+                    }
+                    <div class="Clear"></div>
+                    @Html.PagedListPager(Model, page => Url.Action("AgencyList", new { page = page, sortOrder = ViewBag.CurrentSortOrder, sortName = ViewBag.CurrentSortName, sortLevel = ViewBag.CurrentSortLevel }), (PagedListRenderOptions)ViewBag.ship)
+
+
+                </div>
+
+            </div>
+
+
+            <div id="RightNews">
+                <div class="nVar_1">
+                    <span>Đại lý tại các tỉnh</span>
+                </div>
+                <div class="ListMenu">
+                    @Html.Raw(ViewBag.chuoi)
+                    
+
+                </div>
+                <div class="nVar_1">
+                    <span>Chuyên mục khác</span>
+                </div>
+                <div class="ListMenu" >
+                    <a href="/2/Tin-tuc" title="Tin tức">› Tin tức</a>
+                    <a href="/2/Tuyen-dung" title="Tuyển dụng">› Tuyển dụng</a>
+                    <a href="#" title="Khuyến mại" rel="nofollow">› Bản tin khuyến mại</a>
+
+                </div>
+                <div class="nVar_1">
+                    <span>Chi nhánh khác</span>
+                </div>
+                <div class="ListMenu">
+                    @Html.Raw(ViewBag.chuoilienquan)
+
+
+                </div>
+                @{Html.RenderAction("Boxfacebook", "News");}
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="Clear"></div>
+
+
+</div>

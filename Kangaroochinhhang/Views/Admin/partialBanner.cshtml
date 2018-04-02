@@ -1,0 +1,38 @@
+﻿<div class="PageHeader">
+    <div class="LogoHeader">
+        <div class="logoimage">
+            <a class="SiteName" href="/Admin">
+                Hệ thống quản trị Website
+            </a>
+        </div>
+
+    </div>
+    <div class="SystemMenu">
+
+        <div>
+            <ul class="sysMenu">
+                <li class="first"><a class="link-topmenu" href="/"><i class="icon-home"></i> Trang chủ</a></li>
+                <li><a class="link-topmenu" href="/Users"><i class="icon-user"></i> Tài khoản quản trị</a></li>
+                <li><a class="link-topmenu" href="#"><i class="icon-bar-chart"></i> Thống kê</a></li>
+                <li><a class="link-topmenu" href="/" target="_blank"><i class="icon-list-alt"></i> Xem website</a></li>
+                <li><a class="link-topmenu" href="#" target="_blank"><i class="icon-question-sign"></i> Trợ giúp</a></li>
+                <li class="last">
+                    <div class="btn-group">
+                        <a href="#" class="btn account-info btn-info">
+                            <i class="icon-user"></i>
+                            @Request.Cookies["Username"].Values["Username"]
+                        </a><a href="#" data-toggle="dropdown" class="btn btn-info dropdown-toggle dropdown-toggle-acount"><span class="icon-caret-down"></span></a>
+                        <ul class="dropdown-menu custome">
+                            <li><a href="#"><i class="icon-key"></i> Đổi mật khẩu</a></li>
+                            <li><a id="siteUser_Lbtn_Logout" class="NormalGray" href="../../Login/Logout"><i class="icon-signout"></i> Thoát</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="siteinfo">
+            <ul><li style="padding-top:5px;">Bạn có</li><li class="block-time">@Html.Raw(ViewBag.donhang)</li><li style="margin-right:5px; padding-top:5px;">đơn hàng chưa xử lý</li></ul>
+        </div>
+
+    </div>
+</div>

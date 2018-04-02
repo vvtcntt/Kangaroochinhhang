@@ -1,0 +1,372 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutDefaultCustom.cshtml";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(document).on("click", ".chkvat", function () {
+            var chkvat;
+            if ($(".chkvat:checked").is(':checked')) { chkvat = 'true'; }
+            else { chkvat = 'false'; }
+            if (chkvat == 'true') {
+                $(".ContentVAT").css("display", "block");
+            }
+            else {
+                $(".ContentVAT").css("display", "none");
+
+            }
+        });
+        $(document).on("click", ".chknhanhang", function () {
+            var chknhanhang;
+            if ($(".chknhanhang:checked").is(':checked')) { chknhanhang = 'true'; }
+            else { chknhanhang = 'false'; }
+            if (chknhanhang == 'true') {
+                $(".Content_Nhanhang").css("display", "block");
+            }
+            else {
+                $(".Content_Nhanhang").css("display", "none");
+
+            }
+        });
+        $(document).on("click", ".rdttck", function () {
+            var rdttck;
+            if ($(".rdttck:checked").is(':checked')) { rdttck = 'true'; }
+            else { rdttck = 'false'; }
+            if (rdttck == 'true') {
+                $(".ttck").css("display", "block");
+                $(".tttn").css("display", "none");
+                $(".ttct").css("display", "none");
+                $(".ttvs").css("display", "none");
+            }
+            else {
+                $(".ttck").css("display", "none");
+
+            }
+        });
+        $(document).on("click", ".rdtttn", function () {
+            var rdtttn;
+            if ($(".rdtttn:checked").is(':checked')) { rdtttn = 'true'; }
+            else { rdtttn = 'false'; }
+            if (rdtttn == 'true') {
+                $(".ttck").css("display", "none");
+                $(".tttn").css("display", "block");
+                $(".ttct").css("display", "none");
+                $(".ttvs").css("display", "none");
+
+            }
+            else {
+                $(".tttn").css("display", "none");
+
+            }
+        });
+        $(document).on("click", ".rdttct", function () {
+            var rdttct;
+            if ($(".rdttct:checked").is(':checked')) { rdttct = 'true'; }
+            else { rdttct = 'false'; }
+            if (rdttct == 'true') {
+                $(".ttck").css("display", "none");
+                $(".tttn").css("display", "none");
+                $(".ttct").css("display", "block");
+                $(".ttvs").css("display", "none");
+            }
+            else {
+
+            }
+        });
+        $(document).on("click", ".rdttvs", function () {
+            var rdttvs;
+            if ($(".rdttvs:checked").is(':checked')) { rdttvs = 'true'; }
+            else { rdttvs = 'false'; }
+            if (rdttvs == 'true') {
+                $(".ttck").css("display", "none");
+                $(".tttn").css("display", "none");
+                $(".ttct").css("display", "none");
+                $(".ttvs").css("display", "block");
+            }
+            else {
+                $(".ttck").css("display", "none");
+
+            }
+        });
+    })
+</script>
+@Html.Raw(ViewBag.Status)
+@model Kangaroochinhhang.Models.tblOrder
+@using (Html.BeginForm("Command", "Order", FormMethod.Post))
+{
+<div id="Main">
+    <div id="Order">
+        <div id="ListInfoOrder">
+            <div class="nVar_Order">
+                <span>Thông tin của bạn</span>
+            </div>
+            <div class="Content_List">
+                <div class="RowOrd">
+                    <div class="Left_RowOrd">
+                        <span>Họ và tên</span>
+                    </div>
+                    <div class="Right_RowOrd">
+                        @Html.TextBoxFor(p => p.Name, new { @class = "txtName", @autofocus = "autofocus", @required = "required", @placeholder = "Nhập họ tên" })
+
+                     </div>
+
+
+                </div>
+                <div class="RowOrd">
+                    <div class="Left_RowOrd">
+                        <span>Điện thoại</span>
+                    </div>
+                    <div class="Right_RowOrd">
+                        @Html.TextBoxFor(p => p.Mobile, new {@type="tel", @class = "txtMobile", @autofocus = "autofocus", @required = "required", @placeholder = "Điện thoại" })
+                        @Html.TextBoxFor(p => p.Mobiles, new { @type = "tel", @class = "txtMobile", @autofocus = "autofocus",   @placeholder = "Số khác" })
+
+                         
+                    </div>
+
+
+                </div>
+                <div class="RowOrd">
+                    <div class="Left_RowOrd">
+                        <span>Email</span>
+                    </div>
+                    <div class="Right_RowOrd">
+                        @Html.TextBoxFor(p => p.Email, new { @type = "email", @class = "txtEmail",@required = "required", @autofocus = "autofocus", @placeholder = "Nhập Email" }) 
+                    </div>
+
+
+                </div>
+                <div class="RowOrd">
+                    <div class="Left_RowOrd">
+                        <span>Địa chỉ</span>
+                    </div>
+                    <div class="Right_RowOrd">
+                        @Html.TextAreaFor(p => p.Address, new {   @class = "txtAddress", @autofocus = "autofocus",@required = "required", @placeholder = "Nhập địa chỉ" })
+
+
+                     </div>
+
+
+                </div>
+                <div class="VAT">
+                    <div class="row_Vat">
+                        <label style="display:block ; font-weight:normal">
+                            <input type="checkbox" id="chkvat" name="chkvat" class="chkvat" />
+                            <span>Yêu cầu  @ViewBag.manuName xuất hóa đơn đỏ <span>(VAT)</span> cho công ty hoặc tổ chức</span></label>
+
+</div>
+                    <div class="ContentVAT">
+                        <div class="RowOrd">
+                            <div class="Left_RowOrd">
+                                <span>Tên công ty</span>
+                            </div>
+                            <div class="Right_RowOrd">
+                                @Html.TextBoxFor(p => p.NameCP, new { @class = "txtName", @autofocus = "autofocus", @placeholder = "Nhập tên công ty" })
+
+
+                             </div>
+                        </div>
+                        <div class="RowOrd">
+                            <div class="Left_RowOrd">
+                                <span>Địa chỉ</span>
+                            </div>
+                            <div class="Right_RowOrd">
+                                @Html.TextAreaFor(p => p.AddressCP, new { @class = "txtAddress", @autofocus = "autofocus", @placeholder = "Nhập địa chỉ công ty" })
+
+
+                             </div>
+                        </div>
+                        <div class="RowOrd">
+                            <div class="Left_RowOrd">
+
+                                <span>Mã số thuế</span>
+                            </div>
+                            <div class="Right_RowOrd">
+                                @Html.TextBoxFor(p => p.MST, new { @class = "txtMST", @autofocus = "autofocus", @placeholder = "Nhập mã số thuế" })
+
+
+                             </div>
+                        </div>
+                        <div class="Clear"></div>
+                        <span class="Note">(*) Khách hàng vui lòng liên hệ hotline để biết đơn hàng có được hỗ trợ VAT hay không !</span>
+                    </div>
+                </div>
+                <div class="Clear"></div>
+                <div class="Nhanhang">
+                    <div class="row_nhanhang">
+                        <label style="display:block ; font-weight:normal">
+                            <input type="checkbox" id="chknhanhang" name="chknhanhang" class="chknhanhang" />
+                            <span>Nhận hàng tại địa chỉ khác</span></label>
+</div>
+                    <div class="Content_Nhanhang">
+                        <div class="RowOrd">
+                            <div class="Left_RowOrd">
+                                <span>Họ và tên</span>
+                            </div>
+                            <div class="Right_RowOrd">
+                                @Html.TextBoxFor(p => p.Name1, new { @class = "txtName", @autofocus = "autofocus" , @placeholder = "Nhập họ tên" })
+
+                            </div>
+
+
+                        </div>
+                        <div class="RowOrd">
+                            <div class="Left_RowOrd">
+                                <span>Điện thoại</span>
+                            </div>
+                            <div class="Right_RowOrd">
+                                @Html.TextBoxFor(p => p.Mobile1, new { @type = "tel", @class = "txtMobile", @autofocus = "autofocus",   @placeholder = "Điện thoại" })
+                                @Html.TextBoxFor(p => p.Mobile1s, new { @type = "tel", @class = "txtMobile", @autofocus = "autofocus", @placeholder = "Số khác" })
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="RowOrd">
+                            <div class="Left_RowOrd">
+                                <span>Email</span>
+                            </div>
+                            <div class="Right_RowOrd">
+                                @Html.TextBoxFor(p => p.Email1, new { @type = "email", @class = "txtEmail", @autofocus = "autofocus", @placeholder = "Nhập Email" })
+                            </div>
+
+
+                        </div>
+                        <div class="RowOrd">
+                            <div class="Left_RowOrd">
+                                <span>Địa chỉ</span>
+                            </div>
+                            <div class="Right_RowOrd">
+                                @Html.TextAreaFor(p => p.Address1, new { @class = "txtAddress", @autofocus = "autofocus", @placeholder = "Nhập địa chỉ" })
+
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="Clear"></div>
+
+            <a href="" class="timhieu" title="" target="_blank">>> Chính sách bảo mật thông tin</a>
+            <div class="nVar_Order">
+                <span>Hình thức thanh toán</span>
+            </div>
+            <div class="Thanhtoan">
+                <div class="row_thanhtoan">
+                    <label style="display:block ; font-weight:normal"><input type="radio" id="rdtt" name="rdtt" value="1" checked="checked" class="rdtttn" /><span>Giao hàng thu tiền tại nhà</span></label>
+</div>
+                <div class="row_thanhtoan">
+                    <label style="display:block ; font-weight:normal"><input type="radio" id="rdtt" name="rdtt" value="2" class="rdttct" /><span>Nhận hàng và thanh toán tại  @ViewBag.manuName</span></label>
+                </div>
+                <div class="row_thanhtoan">
+                    <label style="display:block ; font-weight:normal"> <input type="radio" id="rdtt" name="rdtt" value="3" class="rdttck" /><span>Chuyển khoản ATM & Ngân hàng</span></label>
+</div>
+                <div class="row_thanhtoan">
+                    <label style="display:block ; font-weight:normal"><input type="radio" id="rdtt" name="rdtt" value="3" class="rdttvs" /><span>Thanh toán visa, mastercard</span></label>
+</div>	                    
+                <div class="tttn tttt">
+                    <span>Khách hàng vui lòng thanh toán khi đã nhận đủ hàng và ký vào hóa đơn nhận hàng ! </span>
+                </div>
+                <div class="ttct tttt">
+                     @Html.Raw(ViewBag.chuoicongty)
+                    <div class="Clear"></div>
+
+                </div>
+                <div class="ttvs tttt">
+                   <span>Khách hàng vui lòng mang thẻ qua công ty để có thể thanh toán bằng phương thức này !</span>
+                    <div class="Clear"></div>
+
+                </div>
+                <div class="ttck">
+
+                    @Html.Raw(ViewBag.chuoibank)
+
+                    <div class="Clear"></div>
+
+                </div>
+                <div class="Clear"></div>
+
+                <a href="" class="timhieu" title="" target="_blank">>> Chính sách thanh toán của  @ViewBag.manuName</a>
+
+            </div>
+            <div class="nVar_Order">
+                <span>Thời gian chuyển hàng</span>
+            </div>
+            <div class="Vanchuyen">
+                <div class="row_Vanchuyen">
+                    <label style="display:block ; font-weight:normal"><input type="radio" id="rdvc" name="rdvc" value="1" checked="checked" /><span>Bất kỳ giờ nào</span></label>
+</div>
+                <div class="row_Vanchuyen">
+                    <label style="display:block ; font-weight:normal"> <input type="radio" id="rdvc" name="rdvc" value="2" /><span>Trong giờ hàng chính</span></label>
+</div>
+                <div class="row_Vanchuyen">
+                    <label style="display:block ; font-weight:normal"> <input type="radio" id="rdvc" name="rdvc" value="3" /><span>Ngoài giờ hàng chính</span></label>
+</div>	                    <div class="Clear"></div>
+
+                <a href="" class="timhieu" title="" target="_blank">>> Chính sách vận chuyển của  @ViewBag.manuName</a>
+
+            </div>
+            <div class="RowOrd1">
+                <div class="Left_RowOrd">
+                    <span>Lời nhắn</span>
+                </div>
+                <div class="Right_RowOrd">
+                    @Html.TextAreaFor(p => p.Description, new { @class = "txtContent", @autofocus = "autofocus", @placeholder = "Nhập lời nhắn cho đơn hàng" })
+
+
+                 </div>
+
+
+            </div>
+            <div class="Clear"></div>
+            <button type="submit" name="btnorder" id="btnorder" class="btnorder">Gửi đơn hàng</button>
+        </div>
+        <div id="ListOrder">
+            <div class="nVar_Order">
+                <span>Giỏ hàng của bạn</span>
+            </div>
+            <div id="Content_ListOrder">
+               @Html.Raw(ViewBag.chuoi)
+
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+</div>
+}
+<script type="text/javascript">
+
+ 
+    function UpdateOrd(pId) {
+        var ord = $(".txtOrd" + pId).val();
+         
+        $.post("/Order/UpdatOder", { "id": pId, "ord": ord },
+           function (data) {
+               $('#Gia' + pId).html(data.gia + " vnd");
+               $(".tt").html(data.tt);
+               htgh
+               $(".countOrder").html(data.sl);
+
+           });
+        return false;
+    }
+    function DeleteOrder(pId) {
+        $.post("/Order/DeleteOrder", { "id": pId },
+           function (data) {
+
+               $('.row' + pId).html(data.thongtin);
+               $(".tt").html(data.tt);
+               $(".count").html(data.count);
+                $(".countOrder").html(data.sl);
+
+
+           });
+        return false;
+    }
+
+</script> 

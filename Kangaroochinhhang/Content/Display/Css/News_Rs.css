@@ -1,0 +1,8 @@
+@charset "utf-8";@media screen and (max-width:768px){#ContentNews #LeftNews{width:98%;height:auto;float:left;margin:0px 5px}
+#RightNews{display:none}
+}
+@media screen and (max-width:488px){#ContentNews #LeftNews .TearNews img{height:60px;width:60px}
+#News h1{font-size:13px}
+#ContentNews .Description{font-size:14px}
+.ContentNew{font-size:14px}
+}

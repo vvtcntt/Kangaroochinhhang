@@ -1,0 +1,310 @@
+﻿@{
+    ViewBag.Title = "Danh sách sản phẩm";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Kangaroochinhhang.Models.tblNew>
+<script type="text/javascript">
+    $(function () {
+        //$("input").keypress(function () {
+        $(document).ready(function () {
+            $('#txtSearch').keyup(function () {
+                var text = $(this).val();
+                $.post("Newsad/PartialNews", { "text": text }, function (data) {
+                    $('#ajaxnhan').html(data);
+                })
+            });
+        });
+        $("#drMenu").change(function () {
+            //your code
+
+            var idCate = $("#drMenu").val();
+            $.post("/Newsad/PartialNews", { "idCate": idCate },
+                function (data) {
+                    $('#ajaxnhan').html(data);
+                    $("#Create_Them").replaceWith("<a id='Create_Them' title='Thêm mới' class='toolbar btn btn-info btnCreate' href='../../Newsad/Create?id=" + idCate + "'><i class='icon-plus'></i>&nbsp;Thêm mới</a>");
+                });
+
+            //
+        });
+        $("#ddlPage").change(function () {
+            //your code
+
+            var pageSizes = $("#ddlPage").val();
+            $.post("/Newsad/PartialNewsad", { "pageSizes": pageSizes },
+                function (data) {
+                    $('#ajaxnhan').html(data);
+                });
+
+            //
+        });
+        $(".alert").hide();
+        $(".alert1").show();
+
+
+    });
+
+</script>
+<script type="text/javascript">
+    function SelectAllCheckboxes(chk) {
+        $j('#cph_Main_ctl00_ctl00_grvProducts >tbody >tr >td:nth-child(1)').find("input:checkbox").attr('checked', chk.checked);
+    }
+    function CheckSelectAtLeastOne() {
+        var checked = false;
+        $j('#cph_Main_ctl00_ctl00_grvProducts >tbody >tr >td:nth-child(1)').find("input:checkbox").each(function () {
+            if (this.checked) { checked = true; }
+        });
+        if (checked == false) {
+            alert('Hãy chọn ít nhất 1 sản phẩm để thao tác');
+            return false;
+        } else { return true; }
+    }
+    function ConfirmDelete() {
+        if (CheckSelectAtLeastOne()) {
+            var confirmAlert = 'Bạn có chắc chắn muốn xóa các sản phẩm này không?';
+            $j('#cph_Main_ctl00_ctl00_grvProducts >tbody').find("tr").each(function () {
+                var checked = false;
+                var imgChecked = false;
+                $j(this).find('img[src="http://st.hangtot.com/favicon.ico"]').each(function () {
+                    imgChecked = true;
+                });
+                $j(this).find("input:checkbox:first").each(function () {
+                    if (this.checked) { checked = true; }
+                });
+                if (checked == true && imgChecked == true) {
+                    confirmAlert = 'Bạn có chắc chắn muốn xóa sản phẩm này và sản phẩm này không'
+                }
+            });
+            return confirm(confirmAlert);
+        }
+        return false;
+    }
+
+
+    function ConvertPrice(numberText, culture) {
+        if (numberText == "") return 0;
+        var number = 0;
+        if (culture == "vi-VN") {
+            number = numberText.replace(/\./g, "");
+            return Number(number);
+        }
+        else {
+            console.log(numberText);
+            var s = numberText.length - 2;
+            var c = numberText.substring(s - 1, s);
+            if (c == ".") {
+                number = numberText.replace(/\,/g, "");
+                return Number(number);
+            }
+            if (c == ",") {
+                number = numberText.replace(/\./g, "");
+                number = number.replace(/\,/g, ".");
+                return Number(number);
+            }
+        }
+        return Number(numberText);
+    }
+    function UpdateNews(pId) {
+        var linkUpdateId = $j("#lbtUpdateProduct" + pId);
+        var id = $j(linkUpdateId).closest('tr').children(".Id").children("#txtId").val();
+        id = pId;
+        //alert(id);
+        var orderNumber = $j(linkUpdateId).closest('tr').children(".OrderNumber").children("#txtOrderNumber").val();
+
+        var ddlMenu = $j(linkUpdateId).closest('tr').children(".ddlMenu").children("#ddlMenu").val();
+      
+        var cbIsActive;
+        if ($j(linkUpdateId).closest('tr').children(".Active").children("#cbIsActive:checked").is(':checked')) { cbIsActive = 'true'; }
+        else { cbIsActive = 'false'; }
+        var chkHome;
+        if ($j(linkUpdateId).closest('tr').children(".Viewhomes").children("#chkHome:checked").is(':checked')) { chkHome = 'true'; }
+        else { chkHome = 'false'; }
+      
+ 
+        var querystring = "{'idnews':'" + id + "'," + 
+                            "'ordernumber':'" + orderNumber + "'," +
+                            "'cbIsActive':'" + cbIsActive + "'," +
+                             "'chkHome':'" + chkHome + "'," +
+                            "'idCate':'" + ddlMenu + "'" + "}";
+
+        $j.ajax({
+            beforeSend: function () { },
+            type: "POST",
+            url: "/Newsad/UpdateNews",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: querystring,
+            success: function (response) {
+                var result = response.result;
+                if (result == "true") { }
+                else {
+                    $(".alert").replaceWith("<div class='alert alert-info'>Bạn đã thay đổi " + result + "</div>");
+                    $(".alert").fadeOut(2000);
+                }
+            }
+        });
+
+
+        return false;
+    }
+    function DeleteNews(pId) {
+        if (confirm('Bạn có chắc chắn muốn xóa không ?'))
+        {
+
+            id = pId;
+            var querystring = "{'id':'" + id + "'}";
+            $j.ajax({
+                beforeSend: function () { },
+                type: "POST",
+                url: "/Newsad/DeleteNews",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: querystring,
+                success: function (response) {
+                    var result = response.result;
+                    if (result == "true") { }
+                    else {
+                        $(".alert").replaceWith("<div class='alert alert-info'>" + response.result + "</div>");
+                        $(".alert").fadeOut(5000);
+                        location.reload();
+                    }
+                }
+            });
+        }
+        return false;
+    }
+ </script>
+@using (Html.BeginForm())
+{   @Html.ValidationSummary(true)
+<div class="container-fluid">
+    <div style="width: 100%; margin: 0 auto;">
+        <div id="Breadcrumb" class="Block Breadcrumb ui-widget-content ui-corner-top ui-corner-bottom">
+            <ul>
+                <li class='SecondLast'><a href=""><i class="icon-home" style="font-size:14px;"></i> Trang chủ</a></li>
+                <li class='Last'><span>Danh sách tin tức</span></li>
+            </ul>
+        </div>
+        <div style="clear: both;"></div>
+        <div id="cph_Main_ContentPane">
+            <div class="widget">
+                <div class="widget-title">
+                    <h4><i class="icon-list-alt"></i>&nbsp;Danh sách tin tức</h4>
+
+                    <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                        <div id="toolbox">
+
+                            <div style="float:right;" class="toolbox-content">
+                                <div id="msg" class="msg" style="float:left">
+                                    <div class="alert alert-info" id="update-message">
+                                    </div>
+                                </div>
+                                <table class="toolbar">
+                                    <tr>
+                                        <td align="center">
+                                            <a id="Create_Them" title="Thêm mới" class="toolbar btn btn-info btnCreate" href="../../Newsad/Create?id=@ViewBag.idMenu">
+                                                <i class="icon-plus"></i>&nbsp;
+                                                Thêm mới
+                                            </a>
+                                        </td>
+                                        <td align="center">
+                                            <button type="submit" class="toolbar btn btn-info" name="btnDelete" id="btnDelete"><i class="icon-trash"></i>&nbsp;Xóa</button>
+
+
+                                        </td>
+                                        <td align="center">
+                                            <a id="cph_Main_ctl00_toolbox_rptAction_lbtAction_0" title="Trợ giúp"  style="color:#FFF !important" class="toolbar btn btn-info" href="">
+                                                <i class="icon-question-sign"></i>&nbsp;
+                                                Trợ giúp
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="hiddenToolBarScroll" class="scrollBox hidden">
+                        <h4>
+                            <i class="icon-list-alt"></i>&nbsp;Danh sách sản phẩm
+                        </h4>
+                        <div class="FloatMenuBar">
+
+                            <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                                <div id="toolbox">
+
+                                    <div style="float:right;" class="toolbox-content">
+                                        <div id="msg" class="msg" style="float:left">
+                                            <div class="alert alert-info" id="update-message">
+                                            </div>
+                                        </div>
+                                        <table class="toolbar">
+                                            <tr>
+
+                                                <td align="center">
+                                                    <a id="Create_Them" title="Thêm mới" class="toolbar btn btn-info btnCreate" href="../../Newsad/Create?id=@ViewBag.idMenu">
+                                                        <i class="icon-plus"></i>&nbsp;
+                                                        Thêm mới
+                                                    </a>
+                                                </td>
+                                                <td align="center">
+                                                    <button type="submit" class="toolbar btn btn-info" name="btnDelete" id="btnDelete"><i class="icon-trash"></i>&nbsp;Xóa</button>
+
+                                                </td>
+                                                <td align="center">
+                                                    <a id="cph_Main_ctl00_toolbox2_rptAction_lbtAction_0" title="Trợ giúp"  style="color:#FFF !important" class="toolbar btn btn-info" href="">
+                                                        <i class="icon-question-sign"></i>&nbsp;
+                                                        Trợ giúp
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget-body">
+
+                    <div class="row-fluid">
+                        <div class="span3">
+                            <div id="sample_1_length" class="dataTables_length">
+                                <select name="ddlPage" id="ddlPage" style="width:160px;">
+                                    <option value="10">10 Bản ghi / trang</option>
+                                    <option selected="selected" value="20">20 Bản ghi / trang</option>
+                                    <option value="30">30 Bản ghi / trang</option>
+                                    <option value="50">50 Bản ghi / trang</option>
+                                    <option value="100">100 Bản ghi / trang</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="span9 form-search pull-right text-right">
+                             
+
+                            <input name="txtSearch" type="search" maxlength="100" id="txtSearch" placeholder="Tên sản phẩm" style="width:200px;" />
+                            @Html.DropDownList("drMenu", "Hiển thị tin tức")
+                            <input type="submit" name="ctl00$cph_Main$ctl00$ctl00$btnSearch" value="Tìm kiếm" id="cph_Main_ctl00_ctl00_btnSearch" class="btn" />
+                            <a class="btn " href="#"><i class="icon-filter"></i> Lọc tin tức</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="cph_Main_ctl00_notification_divNotice" style="padding-top:10px;">
+                            <!-- Messange -->
+                            @Html.Raw(ViewBag.thongbao)
+
+                            <!-- End Messange -->
+                        </div>
+
+                        @{Html.RenderAction("PartialNews", "Newsad");}
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+}

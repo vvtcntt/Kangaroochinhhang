@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "Phân quyền đăng nhập";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+ 
+
+
+
+@using (Html.BeginForm("Role", "Users", FormMethod.Post))
+{   @Html.ValidationSummary(true)
+    <div id="main-content">
+        <div class="container-fluid">
+            <div style="width: 100%; margin: 0 auto;">
+
+                <div id="Breadcrumb" class="Block Breadcrumb ui-widget-content ui-corner-top ui-corner-bottom">
+                    <ul>
+                        <li><a href='/admin'><i class="icon-home" style="font-size:14px;"></i> Trang chủ</a></li>
+                        <li class='SecondLast'><a href="/GroupProduct"> Phân quyền</a></li>
+                     </ul>
+                </div>
+
+                <div style="clear: both;"></div>
+
+                <div id="cph_Main_ContentPane">
+                    <div class="widget">
+                        <!-- widget-title -->
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i>&nbsp;Phân quyền</h4>
+
+                            <!-- Button -->
+                            <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                                <div id="toolbox">
+                                    <div style="float:right;" class="toolbox-content">
+
+                                        <table class="toolbar">
+                                            <tr>
+
+                                                <td align="center">
+                                                    <button type="submit" class="toolbar btn btn-info" name="btnSave" id="btnSave"><i class="icon-save"></i> &nbsp;Lưu lại</button>
+
+                                                </td>
+
+                                                 
+                                                <td align="center">
+                                                    <a id="cph_Main_ctl00_toolbox_rptAction_lbtAction_4" title="Quay lại" style="color:#FFF !important" class="toolbar btn btn-info" href="">
+                                                        <i class="icon-chevron-left"></i>&nbsp;
+                                                        Quay lại
+                                                    </a>
+                                                </td>
+                                                <td align="center">
+                                                    <a onclick="" id="cph_Main_ctl00_toolbox_rptAction_lbtAction_0" title="Trợ giúp"  style="color:#FFF !important" class="toolbar btn btn-info" href="" )">
+                                                        <i class="icon-question-sign"></i>&nbsp;
+                                                        Trợ giúp
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Button -->
+
+                            <div id="hiddenToolBarScroll" class="scrollBox hidden">
+
+                                <div class="FloatMenuBar" style="float:left; margin-left:20px">
+
+                                    <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                                        <div id="Div1">
+
+                                            <div style="float:left;" class="toolbox-content">
+
+                                                <table class="toolbar">
+                                                    <tr>
+
+                                                        <td align="center">
+                                                            <button type="submit" class="toolbar btn btn-info" name="btnSave" id="btnSave"><i class="icon-save"></i> &nbsp;Lưu lại</button>
+
+                                                        </td>
+
+                                                         
+                                                        <td align="center">
+                                                            <a id="cph_Main_ctl00_toolbox_rptAction_lbtAction_4" title="Quay lại" style="color:#FFF !important" class="toolbar btn btn-info" href="">
+                                                                <i class="icon-chevron-left"></i>&nbsp;
+                                                                Quay lại
+                                                            </a>
+                                                        </td>
+                                                        <td align="center">
+                                                            <a onclick="" id="cph_Main_ctl00_toolbox_rptAction_lbtAction_0" title="Trợ giúp"  style="color:#FFF !important" class="toolbar btn btn-info" href="" )">
+                                                                <i class="icon-question-sign"></i>&nbsp;
+                                                                Trợ giúp
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- widget-title -->
+                        <!-- widget-body -->
+                        <div class="widget-body">
+                            <div id="cph_Main_ctl00_notification_divNotice" style="padding-top:10px;">
+                                <!-- Messange -->
+                                @Html.Raw(ViewBag.thongbao)
+
+                                <!-- End Messange -->
+                            </div>
+                            @Html.Raw(ViewBag.Users)
+                            <input type="text" name="txtidUser" id="txtidUser" value="@Request.QueryString["id"].ToString()" style="opacity:0; height:1px" />
+
+                            <table class="table table-striped table-bordered dataTable table-hover" cellspacing="0" id="cph_Main_ctl00_ctl00_grvProducts" style="border-collapse:collapse;">
+                                <tr>
+                                     
+                                    <th scope="col">Tên danh mục
+                                    </th>
+                                    <th scope="col">Toàn bộ quyền</th>
+                                    <th scope="col">Hiển thị</th>
+                                    <th scope="col">Thêm</th>
+                                    <th scope="col">Sửa</th>
+                                    <th scope="col">Xóa</th>
+                                </tr>
+                              
+                                    
+                                        @Html.Raw(ViewBag.Role) 
+
+                               
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+

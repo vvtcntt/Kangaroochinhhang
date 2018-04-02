@@ -1,0 +1,150 @@
+﻿    
+ @model Kangaroochinhhang.Models.tblManufacture        
+<div id="topHeader" style="background:@Model.Color1 !important">
+    <div id="contentHeader">
+        <div id="leftTopHeader">
+            <span class="icon">
+                <i class="fa fa-phone-square" aria-hidden="true"></i>
+            </span>
+            <span class="note">Hotline mua hàng : </span>
+            <span class="hotline">@Model.Phone - @Model.Hotline1</span>
+        </div>
+
+        <div id="rightTopHeader">
+            <span><i class="fa fa-clock-o" aria-hidden="true"></i> Thời gian làm việc : </span><span> Từ 8H đến 22H tất cả các ngày</span>
+        </div>
+        <div class="Clear"></div>
+    </div>
+
+</div>
+<div id="banner" style="background:@Model.Color">
+    <div id="contentBanner">
+        <p><span>Tập đoàn </span> <img src="@Model.Logo" alt="@Model.Name" /></p>
+        <span class="name">Kênh phân phối chính hãng @Model.Name</span>
+        <ul>
+            <li><a href="/@Model.Tag" title="@Model.Name">Trang chủ</a></li>
+            <li><a href="/lien-he" title="Liên hệ">Giới thiệu</a></li>
+            <li><a href="/@Model.Tag" title="Sản phẩm" rel="nofollow">Sản phẩm</a></li>
+            <li><a href="#" title="Khuyến mại">Khuyến mại</a></li>
+            <li><a href="/2/tin-tuc" title="Tin tức">Tin tức</a></li>
+            <li><a href="/lien-he" title="Liên hệ">Liên hệ</a></li>
+        </ul>
+    </div>
+</div>
+<div id="header">
+    <div id="contentHeader">
+        <div id="logo">
+            <a href="/@Model.Tag" title="@Model.Name"><img src="@Model.Images" alt="@Model.Name" /></a>
+            <p>Kênh phân phối <span style="color:@Model.Color">chính hãng</span> </p>
+        </div>
+        <div id="menuMobile" style="background:@Model.Color">
+                 <a href="#menu" title="Danh muc">
+                  <span>  <i class="fa fa-bars" aria-hidden="true"></i>
+                    Danh mục
+            </span>
+            </a>
+            </div>
+            <div id="search">
+                @using (Html.BeginForm("command", "headerCustom", FormMethod.Post))
+                {
+                    <div id="boxSearch">
+                        <input type="search" name="txtSearch" id="txtSearch" placeholder="Nhập sản phẩm @Model.Name cần tìm ..." />
+                        <button type="submit" name="btnSearch" id="btnSearch" style="background:@Model.Color2"><i class="fa fa-search" aria-hidden="true"></i>
+                        <span>Tìm kiếm</span>
+                        </button>
+                    </div>
+                }
+            </div>
+            <div id="support">
+                <div id="order">
+                    @if (Session["soluong"] != "" && Session["soluong"] != null)
+                    {
+
+                        <span class="countOrder" style="background:@Model.Color">@Session["soluong"]</span>
+                    }
+                    else
+                    {
+                        <span class="countOrder" style="background:@Model.Color">0</span>
+                    }
+                    <a href="/gio-hang" title="Giỏ hàng" rel="nofollow">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div id="hotline" style="background:@Model.Color2;border: 1px solid @Model.Color2">
+                    <div class="leftHotline"><span>Hỗ trợ mua hàng</span></div>
+                    <div class="centerHotline"></div>
+                    <div class="rightHotline"><a href="tel:@Model.Hotline1" title="Hỗ trợ @Model.Hotline1">@Model.Hotline1</a> </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+<div id="nvarHeader">
+    <div id="contentNvarHeader">
+        <div id="sidebar">
+            <div id="nvarSidebar" style="background:@Model.Color">
+                <span class="name">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    Danh mục sản phẩm <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </span>
+            </div>
+            <div id="menuBar">
+                <ul class="ul1">
+                    @Html.Raw(ViewBag.result)
+                </ul>
+            </div>
+        </div>
+        <div id="services">
+            <div class="tearService">
+                <div class="left transport"></div>
+                <div class="contentTearServer">
+                    <span class="sp1">Giao hàng</span>
+                    <span class="sp2">Tại Nhà toàn quốc</span>
+                </div>
+            </div>
+            <div class="tearService">
+                <div class="left setup"></div>
+                <div class="contentTearServer">
+                    <span class="sp1">Lắp đặt</span>
+                    <span class="sp2">Tại nhà Hà Nội</span>
+                </div>
+            </div>
+            <div class="tearService">
+                <div class="left pay"></div>
+                <div class="contentTearServer">
+                    <span class="sp1">Thanh toán</span>
+                    <span class="sp2">Khi nhận hàng tại nhà</span>
+                </div>
+            </div>
+            <div class="tearService">
+                <div class="left guarantee
+"></div>
+                <div class="contentTearServer">
+                    <span class="sp1">Bảo hành</span>
+                    <span class="sp2">Chính hãng @Model.Name</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ @if (Request.Browser.IsMobileDevice)
+ { <nav id="menu">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li>
+                <a href="#about">Danh mục sản phẩm</a>
+                <ul>
+                    @Html.Raw(ViewBag.resultMobile)
+                </ul>
+            </li>
+            <li><a href="/2/tin-tuc" title="tin tức">Tin tức</a></li>
+            <li><a href="/3/huong-dan-thanh-toan" title="Hướng dẫn Thanh toán">Thanh toán</a></li>
+            <li><a href="/Lien-he" title="liên hệ">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+ }
+   
+    
+
+ 

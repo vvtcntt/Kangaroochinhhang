@@ -1,0 +1,187 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+body { 
+    font: 12px arial;
+    margin: 0;
+    padding: 0;
+	background:#fff !important 
+	 
+	}
+ul,li{ padding:0px; margin:0px; outline:0px; vertical-align:baseline; border:0px}
+
+ul,li{ list-style:none}
+a{text-decoration:none}
+a:hover{color:#fa8e00 !important;text-decoration:none !important} 
+img { border:none}
+.Clear{ clear:both}
+#OrderPopup{ width:700px; height:auto; float:left; margin:10px; position:relative; background:#FFF; padding:5px; border-radius:4px}
+#OrderPopup table{width:100%;     padding:5px; color:#3e3e3e; vertical-align:top}
+#OrderPopup table tr{  border-bottom:1px dashed #eaeaea ;vertical-align: top }
+#OrderPopup table tr .Name{width:50%}
+#OrderPopup table tr .Name img{width:60px; height:60px; padding:5px; float:left; margin-right:10px}
+#OrderPopup table tr .Namepd { margin:10px 5px 5px 5px; color:#3e3e3e; font-weight:bold; display:block; text-decoration:none; font-size:12px}
+#OrderPopup table tr .Delete{ font-size:13px; color:#F00; margin:3px 5px; display:block}
+#OrderPopup table tr .Price{font-size:12px; text-align:center; width:22%}
+#OrderPopup table tr .Price span{   display:block; margin-top:7px}
+#OrderPopup table tr .PriceSale{width:22%; text-align:center}
+#OrderPopup table tr .PriceSale span{ font-weight:bold;   margin-top:7px; display:block}
+
+#OrderPopup table tr .Ord{width:6%}
+#OrderPopup table tr .Ord input{ width:80%; height:22px; text-align:center; margin-top:3px; border:1px solid #dfdfdf}
+#OrderPopup table tr.top{ font-weight:bold; font-size:13px; color:#ff3c00; height:30px; vertical-align:middle}
+  
+#OrderPopup table tr.top .Name{text-align:center}
+#OrderPopup .Sum{ width:100%; height:auto; float:left; margin:7px 0px}
+#OrderPopup .Sum .LeftSUM{ width:40%; height:auto; float:left; margin:0px}
+#OrderPopup .Sum .LeftSUM span{font-weight:bold; color:#3e3e3; margin:5px; display:inline-block}
+#OrderPopup .Sum .LeftSUM span span{color:#F00}
+#OrderPopup .Sum .RightSUM{ width:60%; height:auto; float:left; margin:0px; text-align:right}
+#OrderPopup .Sum .RightSUM .Sum1{ margin:5px; display:block; font-size:14px}
+#OrderPopup .Sum .RightSUM .Sum2{ margin:5px; display:block; font-size:15px; font-weight:bold}
+.OrderNows{ width:100%; height:auto; float:left; margin: 0px 0px 10px 0px}
+.OrderNows .nexorder{ width:auto; height:40px; float:left; background:url(../iCon/continue-shopping.png) no-repeat left center scroll transparent; padding-left:55px; color:#72b656; line-height:40px; font-weight:bold; font-size:15px}
+.OrderNows .noworder{ width:auto; float:right; padding:10px 10px; background:#ec7115; color:#FFF; font-size:15px; margin-right:5px}
+.close_popup {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background:url(../iCon/icon_close.png);
+    z-index: 2;
+}
+#Content_OrderPopup{ width:100%; height:270px; overflow:auto; float:left;    border: 1px solid #eaeaea;
+}
+
+
+
+
+/*Oeer*/
+#Order{ width:100%; height:auto; float:left; margin:10px 0px; background:#FFF; padding:10px}
+#ListInfoOrder{ width:47%; height:auto; float:left; margin:0px; float:left;border: 1px solid #ddd; border-radius:2px}
+.nVar_Order{ background:#f8f8f8; width:100%; height:35px; float:left; border-bottom: 1px solid #ddd}
+.nVar_Order span{    font-size: 14px;
+    font-weight: 500;
+    padding-left: 10px;
+    display: inline-block;
+    line-height: 35px;
+    vertical-align: bottom; font-weight:normal}
+.Content_List{width:100%; height:auto; float:left; margin:20px 0px 0px 0px}
+.RowOrd{ width:100%; height:auto; float:left; margin:5px 0px}
+.RowOrd1{ width:100%; height:60px; float:left; margin:5px 0px}
+.Left_RowOrd{ width:20%; height:100%; float:left; margin:0px; text-align:right}
+.Left_RowOrd span{ font-size:12px; line-height:30px; margin-right:10px}
+.Right_RowOrd{ width:80%; height:100%; float:left; margin:0px}
+.Right_RowOrd input{border: 1px solid #ddd; font-size:12px;
+    background-color: #FDFDFD;
+    height: 26px;
+    color: #666;
+    outline: none;
+    text-indent: 10px;
+    border-radius: 2px; float:left}
+.Right_RowOrd .txtName{ 
+	width:92%}
+.Right_RowOrd  .txtMobile{width:45%; margin:0px 10px 0px 0px}
+.Right_RowOrd .txtEmail{ 
+	width:92%}
+.txtAddress{border: 1px solid #ddd; font-size:12px;
+    background-color: #FDFDFD;
+    height: 50px;
+    color: #666;
+    outline: none;
+    text-indent: 10px;
+    border-radius: 2px; float:left; width:92%}
+.txtContent{border: 1px solid #ddd; font-size:12px;
+    background-color: #FDFDFD;
+    height: 26px;
+    color: #666;
+    outline: none;
+    text-indent: 10px;
+    border-radius: 2px; float:left; width:91%; height:50px}
+.VAT{ width:100%; height:auto; float:left; margin:20px 0px 0px 0px}
+.VAT .row_Vat{ width:100%; height:20px; float:left; margin:0px }
+.VAT .row_Vat input{float:left; margin:0px 10px 0px 30px !important}
+.VAT .row_Vat span{line-height:14px; display:inline-block}
+.VAT .row_Vat span span{color:#F00}
+.txtMST{ width:56%}
+.ContentVAT{width:100%; height:auto; float:left; margin:5px 0px; display:none}
+.ContentVAT .Note{ color:#F00;  margin:10px 5px; text-align:center; display:block}
+.Nhanhang{ width:100%; height:auto; float:left; margin:10px 0px 20px 0px}
+ .row_nhanhang  input{float:left; margin:0px 10px 0px 30px !important}
+.row_nhanhang  span{line-height:14px; display:block}
+.Content_Nhanhang{width:100%; height:auto; float:left; margin:5px 0px; display:none}
+.Thanhtoan{ width:100%; height:auto; float:left; margin:10px 0px 10px 0px}
+.row_thanhtoan{ width:46%; height:auto; float:left; margin:5px}
+.row_thanhtoan input{float:left; margin:0px 10px 0px 30px !important}
+.row_thanhtoan span{line-height:14px; display:block}
+.Vanchuyen{ width:100%; height:auto; float:left; margin:10px 0px 10px 0px}
+.row_Vanchuyen{ width:46%; height:auto; float:left; margin:5px}
+.row_Vanchuyen input{float:left; margin:0px 10px 0px 30px !important}
+.row_Vanchuyen span{line-height:14px; display:block}
+  .btnorder{ border:none;width: 180px;
+    height: 35px;
+    background: #0063a4 url(../iCon/cart-new.png) no-repeat scroll 4px 10px;
+    padding-left: 30px;
+    color: #FFF;
+    font-size: 14px;
+    border: none;
+    text-transform: uppercase;
+    border: none;  margin:10px auto; display:block
+}
+.timhieu{font-size:12px; color:#6aad00; margin:10px 10px 5px 0px; display:block; clear:both; text-align:center }
+
+#ListOrder{ width:50%; height:auto; float:right; margin:0px;border: 1px solid #ddd; border-radius:2px}
+
+ 
+#ListOrder table{width:100%;    padding:5px; color:#3e3e3e; vertical-align:top}
+#ListOrder table tr{  border-bottom:1px dashed #eaeaea ;vertical-align: top }
+#ListOrder table tr .Name{width:50%}
+#ListOrder table tr .Name img{width:60px; height:60px; padding:5px; float:left; margin-right:10px}
+#ListOrder table tr .Namepd { margin:10px 5px 5px 5px; color:#3e3e3e; font-weight:bold; display:block; text-decoration:none; font-size:12px}
+#ListOrder table tr .Delete{ font-size:13px; color:#F00; margin:3px 5px; display:block}
+#ListOrder table tr .Price{font-size:12px; text-align:center; width:22%}
+#ListOrder table tr .Price span{   display:block; margin-top:7px}
+#ListOrder table tr .PriceSale{width:22%; text-align:center}
+#ListOrder table tr .PriceSale span{ font-weight:bold;   margin-top:7px; display:block}
+
+#ListOrder table tr .Ord{width:6%}
+#ListOrder table tr .Ord input{ width:80%; height:22px; text-align:center; margin-top:3px; border:1px solid #dfdfdf}
+#ListOrder table tr.top{ font-weight:bold; font-size:13px; color:#3e3e3e; height:30px; vertical-align:middle}
+  
+#ListOrder table tr.top .Name{text-align:center}
+#ListOrder .Sum{ width:100%; height:auto; float:left; margin:7px 0px}
+#ListOrder .Sum .LeftSUM{ width:40%; height:auto; float:left; margin:0px}
+#ListOrder .Sum .LeftSUM span{font-weight:bold; color:#3e3e3; margin:5px; display:inline-block}
+#ListOrder .Sum .LeftSUM span span{color:#F00}
+#ListOrder .Sum .RightSUM{ width:60%; height:auto; float:left; margin:0px; text-align:right}
+#ListOrder .Sum .RightSUM .Sum1{ margin:5px; display:block; font-size:14px}
+#ListOrder .Sum .RightSUM .Sum2{ margin:5px; display:block; font-size:15px; font-weight:bold}
+.OrderNows{ width:100%; height:auto; float:left; margin: 0px 0px 10px 0px}
+.OrderNows .nexorder{ width:auto; height:40px; float:left; background:url(../iCon/continue-shopping.png) no-repeat left center scroll transparent; padding-left:55px; color:#72b656; line-height:40px; font-weight:bold; font-size:15px}
+.OrderNows .noworder{ width:auto; float:right; padding:10px 10px; background:#ec7115; color:#FFF; font-size:15px; margin-right:5px}
+.ttck{    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin: 10px auto;
+    background: rgb(251, 251, 251); width:98%; clear:both; display:none
+}
+.Tear_ttck{ width:100%; height:auto; float:left; margin:5px 0px; border-bottom:1px dashed #ddd; clear:both; padding-bottom:5px}
+.Tear_ttck:last-child{border:none}
+.Left_Tear_ttck{ width:20%; height:auto; float:left; margin:0px 3% 0px 0px}
+.Left_Tear_ttck img{width:auto; height:auto; max-width:100%; max-height:80px; margin:5px 5px; display:block}
+.Right_Tear_ttck{ width:77%; height:auto; float:left; margin:0px 0px 0px 0px}
+.row_ttck{ width:100%; height:auto; float:left; margin:4px 0px; font-size:12px; font-weight:bold; clear:both}
+.row_ttck1{width:100%; height: auto; float:left; margin:3px 0px;}
+.row_ttck1 .sp1{ width:20%; display:inline-block; text-align:left}
+.tttt{    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin: 10px auto;
+    background: rgb(251, 251, 251); width:98%; clear:both ; display:none
+}
+.tttn{ text-align:center; color:#f00; margin:5px; text-align:center; padding:10px 0px}
+.ttvs{    text-align: center;
+    color: #f00;
+    margin: 5px;
+    text-align: center;
+    padding: 10px 0px; display:none}

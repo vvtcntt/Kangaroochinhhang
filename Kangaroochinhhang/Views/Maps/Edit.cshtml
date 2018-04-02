@@ -1,0 +1,81 @@
+﻿@model Kangaroochinhhang.Models.tblMap
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{ 
+    @Html.ValidationSummary(true)
+    <div id="InsertPoduct">
+        <div class="Nvar_Content_Detail">
+            <div class="Left_Nvar">
+                <img src="/Content/Admin/Icon/folder.png" alt="Danh mục sản phẩm" />Edit Maps
+            </div>
+            <div class="Right_Nvar">
+                <div id="msg" class="msg">
+                    <div class="alert alert-info" id="update-message">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Content_Content_Detail">
+
+            <div class="tr_1">
+                <div class="left_tr1">
+                    <span>Name :</span>
+                </div>
+                <div class="Right_tr1">
+                    @Html.TextBoxFor(p => p.Name, null, new { @class = "Leght_2" }) <span class="Aler_ttxtName" style="color: #F00"></span>
+
+                </div>
+            </div>
+            <div class="tr_1">
+                <div class="left_tr1">
+                    <span>Description:</span>
+                </div>
+                <div class="Right_tr1">
+                    @Html.TextAreaFor(p => p.Description, new { @class = "Leght_6" })
+
+                </div>
+            </div>
+            <div class="tr_1">
+                <div class="left_tr1">
+                    <span>Content:</span>
+                </div>
+                <div class="Right_tr1">
+                    @Html.TextAreaFor(p => p.Content, new { @class = "Leght_6" })
+
+                </div>
+            </div>
+
+
+
+            <div class="tr_1">
+                <div class="left_tr1">
+                </div>
+                <div class="Right_tr1">
+                    <button type="submit" id="btnAdd" name="btnAdd" class="btnAdd">Edit</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+
+
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+    }
+
+    $(function () {
+        createEditor('vi', 'Content');
+    });
+
+</script>

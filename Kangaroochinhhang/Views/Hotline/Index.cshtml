@@ -1,0 +1,318 @@
+﻿@{
+    ViewBag.Title = "Danh sách Hotline";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Kangaroochinhhang.Models.tblHotline>
+@using Kangaroochinhhang.Models;
+
+<script type="text/javascript">
+    $(".alert").hide();
+    $(".alert1").show();
+    function SelectAllCheckboxes(chk) {
+        $j('#cph_Main_ctl00_ctl00_grvProducts >tbody >tr >td:nth-child(1)').find("input:checkbox").attr('checked', chk.checked);
+    }
+    function CheckSelectAtLeastOne() {
+        var checked = false;
+        $j('#cph_Main_ctl00_ctl00_grvProducts >tbody >tr >td:nth-child(1)').find("input:checkbox").each(function() {
+            if (this.checked) { checked = true; }
+        });
+        if (checked == false) {
+            alert('Hãy chọn ít nhất 1  hạng mục để thao tác');
+            return false;
+        } else { return true; }
+    }
+    function ConfirmDelete() {
+        if (CheckSelectAtLeastOne()) {
+            var confirmAlert = 'Bạn có chắc chắn muốn xóa không?';
+            $j('#cph_Main_ctl00_ctl00_grvProducts >tbody').find("tr").each(function() {
+                var checked = false;
+                var imgChecked = false;
+                $j(this).find('img[src="http://st.hangtot.com/favicon.ico"]').each(function() {
+                    imgChecked = true;
+                });
+                $j(this).find("input:checkbox:first").each(function() {
+                    if (this.checked) { checked = true; }
+                });
+                if(checked == true && imgChecked == true)
+                {
+                    confirmAlert='Bạn có chắc chắn muốn xóa không'
+                }
+            });
+            return confirm(confirmAlert);
+        }
+        return false;
+    }
+
+
+    function UpdateHotlinepId(){
+
+        var linkUpdateId = $j("#lbtUpdateProduct" + pId);
+        var orderNumber = $j(linkUpdateId).closest('tr').children(".OrderNumber").children("#txtOrderNumber").val();
+
+        var Active;
+        if ($j(linkUpdateId).closest('tr').children(".Active").children("#Active:checked").is(':checked')) { Active = 'true'; }
+        else { Active = 'false'; }
+
+        var querystring = "{ 'id':'" + pId + "'," +
+                            "'Ord':'" + orderNumber + "'," +
+                            "'Active':'" + Active + "' }";
+
+        $j.ajax({
+            beforeSend: function() {},
+            type: "POST",
+            url: "/Hotline/UpdateHotline",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: querystring,
+            success: function(response) {
+                var result = response.result;
+                if(result == "true"){  }
+                else{
+                    $(".alert").replaceWith("<div class='alert alert-info'>Bạn đã thay đổi "+result+"</div>");
+                    $(".alert").fadeOut(2000);
+                }
+            }
+        });
+
+        return false;
+    }
+    function DeleteHotline(pId) {
+        if (confirm('Bạn có chắc chắn muốn xóa không ?')) {
+
+            id = pId;
+            var querystring = "{'id':'" + id + "'}";
+            $j.ajax({
+                beforeSend: function() {},
+                type: "POST",
+                url: "/Hotline/DeleteHotline",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: querystring,
+                success: function(response) {
+                    var result = response.result;
+                    if(result == "true"){  }
+                    else{
+                        $(".alert").replaceWith("<div class='alert alert-info'>Bạn đã xóa thành công</div>");
+                        $(".alert").fadeOut(5000);
+                        location.reload();
+                    }
+                }
+            });}
+
+        return false;
+    }
+</script>
+@using (Html.BeginForm())
+{   @Html.ValidationSummary(true)
+<div class="container-fluid">
+    <div style="width: 100%; margin: 0 auto;">
+        <div id="Breadcrumb" class="Block Breadcrumb ui-widget-content ui-corner-top ui-corner-bottom">
+            <ul>
+                <li class='SecondLast'><a href=""><i class="icon-home" style="font-size:14px;"></i> Trang chủ</a></li>
+                <li class='Last'><span>Hạng mục Hotline</span></li>
+            </ul>
+        </div>
+        <div style="clear: both;"></div>
+        <div id="cph_Main_ContentPane">
+            <div class="widget">
+                <div class="widget-title">
+                    <h4>Hạng mục quyền</h4>
+
+                    <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                        <div id="toolbox">
+                            <div style="float:right;" class="toolbox-content">
+                                <div id="msg" class="msg" style="float:left">
+                                    <div class="alert alert-info" style="padding:0px" id="update-message">
+                                    </div>
+                                </div>
+                                <table class="toolbar">
+                                    <tr>
+                                        <td align="center">
+                                            <a id="Create_Them" title="Thêm mới" class="toolbar btn btn-info btnCreate" href="../../Hotline/Create">
+                                                <i class="icon-plus"></i>&nbsp;
+                                                Thêm mới
+                                            </a>
+                                        </td>
+                                        <td align="center">
+                                            <button type="submit" class="toolbar btn btn-info" name="btnDelete" id="btnDelete"><i class="icon-trash"></i>&nbsp;Xóa</button>
+                                        </td>
+                                        <td align="center">
+                                            <a id="cph_Main_ctl00_toolbox_rptAction_lbtAction_0" title="Trợ giúp"  style="color:#FFF !important" class="toolbar btn btn-info" href="">
+                                                <i class="icon-question-sign"></i>&nbsp;
+                                                Trợ giúp
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="hiddenToolBarScroll" class="scrollBox hidden">
+                        <h4>
+                            <i class="icon-list-alt"></i>&nbsp;Danh sách Hotline
+                        </h4>
+                        <div class="FloatMenuBar">
+
+                            <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                                <div id="toolbox">
+                                    <div style="float:right;" class="toolbox-content">
+                                        <div id="msg" class="msg" style="float:left">
+                                            <div class="alert alert-info" id="update-message">
+                                            </div>
+                                        </div>
+                                        <table class="toolbar">
+                                            <tr>
+
+                                                <td align="center">
+                                                    <a id="Create_Them" title="Thêm mới" class="toolbar btn btn-info btnCreate" href="../../Hotline/Create">
+                                                        <i class="icon-plus"></i>&nbsp;
+                                                        Thêm mới
+                                                    </a>
+                                                </td>
+
+                                                <td align="center">
+                                                    <button type="submit" class="toolbar btn btn-info" name="btnDelete" id="btnDelete"><i class="icon-trash"></i>&nbsp;Xóa</button>
+
+                                                </td>
+                                                <td align="center">
+                                                    <a id="cph_Main_ctl00_toolbox2_rptAction_lbtAction_0" title="Trợ giúp"  style="color:#FFF !important" class="toolbar btn btn-info" href="">
+                                                        <i class="icon-question-sign"></i>&nbsp;
+                                                        Trợ giúp
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-body">
+
+
+                    <div>
+                        <div class="row-fluid">
+                            <div class="span3">
+                                <div style="margin-top:18px;">
+                                    Tổng số tài khoản: @Html.Raw(ViewBag.chuoicout)
+                                </div>
+                            </div>
+                            <div class="span9">
+                                <div class="pagination pagination-small pagination-right">
+                                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page, idcate = @ViewBag.idcate, pageSizes = @ViewBag.pageSizes, sortOrder = ViewBag.CurrentSortOrder, sortName = ViewBag.CurrentSortName, sortLevel = ViewBag.CurrentSortLevel }), (PagedListRenderOptions)ViewBag.ship)
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="cph_Main_ctl00_notification_divNotice" style="padding-top:10px;">
+                            <!-- Messange -->
+                            @Html.Raw(ViewBag.thongbao)
+
+                            <!-- End Messange -->
+                        </div>
+                        <table class="table table-striped table-bordered dataTable table-hover" cellspacing="0" id="cph_Main_ctl00_ctl00_grvProducts" style="border-collapse:collapse;">
+                            <tr>
+                                <th scope="col">
+                                    <input id="cph_Main_ctl00_ctl00_grvProducts_chkAll" type="checkbox" name="ctl00$cph_Main$ctl00$ctl00$grvProducts$ctl01$chkAll" onclick="javascript:SelectAllCheckboxes(this);" />
+                                </th>
+                                <th scope="col">Hạng mục</th>
+                                <th scope="col">Số TT</th>
+                                <th scope="col">Kích hoạt</th>
+                                <th scope="col">Thao tác</th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                if (item.Active == true)
+                                {
+                                    <tr class="row0">
+                                        <td align="center" style="width:8px;">
+                                            <input id="chk_@item.id" type="checkbox" name="chk_@item.id" />
+
+                                        </td>
+                                        <td>
+                                            <a title="Sửa module @item.Name" href="../../Hotline/Edit?id=@item.id" id="@Html.Raw("lbtUpdateProduct")@item.id"> @item.Name <span style="color:red">(  @item.id )</span></a>
+                                        </td>
+                                        <td class="OrderNumber" align="center" style="width:45px;">
+                                            <input type="text" id="txtOrderNumber" style="width: 30px;" value="@item.Ord" onchange="javascript:return UpdateHotline(@item.id);" />
+                                        </td>
+                                        <td class="Active text-center" align="center" style="width:45px;">
+                                            @if (item.Active == true)
+                                            {
+                                                <input type="checkbox" id="Active" value="true" checked onchange="javascript:return UpdateHotline(@item.id);" />
+                                            }
+                                            else
+                                            {
+                                                <input type="checkbox" id="Active" value="false" onchange="javascript:return UpdateHotline(@item.id);" />
+                                            }
+                                        </td>
+
+                                        <td class="text-center" align="center" style="width:90px;">
+                                            <a class="action-link-button" title="Sửa tài khoản" href="../../Hotline/Edit?id=@item.id">
+                                                <i class="icon-edit"></i>
+                                            </a>
+                                            <a href="" class="action-link-button" id="@item.id" onclick="javascript:return DeleteHotline(@item.id);" title="Xóa sản danh mục">
+                                                <i class="icon-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    <tr class="row0" style="opacity:0.2">
+                                        <td align="center" style="width:8px;">
+                                            <input id="chk_@item.id" type="checkbox" name="chk_@item.id" />
+
+                                        </td>
+                                        <td>
+                                            <a title="Sửa module @item.Name" href="../../Hotline/Edit?id=@item.id" id="@Html.Raw("lbtUpdateProduct")@item.id"> @item.Name <span style="color:red">(  @item.id )</span></a>
+                                        </td>
+                                        <td class="OrderNumber" align="center" style="width:45px;">
+                                            <input type="text" id="txtOrderNumber" style="width: 30px;" value="@item.Ord" onchange="javascript:return UpdateHotline(@item.id);" />
+                                        </td>
+                                        <td class="Active text-center" align="center" style="width:45px;">
+                                            @if (item.Active == true)
+                                            {
+                                                <input type="checkbox" id="Active" value="true" checked onchange="javascript:return UpdateHotline(@item.id);" />
+                                            }
+                                            else
+                                            {
+                                                <input type="checkbox" id="Active" value="false" onchange="javascript:return UpdateHotline(@item.id);" />
+                                            }
+                                        </td>
+
+                                        <td class="text-center" align="center" style="width:90px;">
+                                            <a class="action-link-button" title="Sửa tài khoản" href="../../Hotline/Edit?id=@item.id">
+                                                <i class="icon-edit"></i>
+                                            </a>
+                                            <a href="" class="action-link-button" id="@item.id" onclick="javascript:return DeleteHotline(@item.id);" title="Xóa sản danh mục">
+                                                <i class="icon-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            }
+
+                        </table>
+                        <div class="pagination pagination-small pagination-right">
+                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page, idcate = @ViewBag.idcate, pageSizes = @ViewBag.pageSizes, sortOrder = ViewBag.CurrentSortOrder, sortName = ViewBag.CurrentSortName, sortLevel = ViewBag.CurrentSortLevel }), (PagedListRenderOptions)ViewBag.ship)
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+}
+

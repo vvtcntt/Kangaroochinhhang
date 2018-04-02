@@ -1,0 +1,421 @@
+﻿@model Kangaroochinhhang.Models.tblNew
+@{
+    ViewBag.Title = "Sửa tin tức";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+    }
+
+    $(function () {
+        createEditor('vi', 'Content');
+    });
+
+</script>
+
+<script type="text/javascript">
+     $(function () {
+         $("#SelectImages").click(function () {
+             var finder = new CKFinder();
+             finder.selectActionFunction = function (fileUrl) {
+                 $("#Images").val(fileUrl);
+             };
+             finder.popup();
+         });
+         $("#drMenu").change(function () {
+             var idCate = $("#drMenu").val();
+             $.ajax(
+                    {
+                        url: '/Newsad/AutoOrd',
+                        type: 'post',
+                        data: { "idCate": idCate },
+                        dataType: 'json',
+                        success: function (data) {
+
+                            $('#Ord').val(data.result);
+                        }
+                    ,
+                        error: function () { }
+                    });
+
+             //
+         });
+     });
+</script>
+@using (Html.BeginForm())
+{
+    <div id="main-content">
+        <div class="container-fluid">
+            <div style="width: 100%; margin: 0 auto;">
+
+                <div id="Breadcrumb" class="Block Breadcrumb ui-widget-content ui-corner-top ui-corner-bottom">
+                    <ul>
+                        <li><a href='/admin'><i class="icon-home" style="font-size:14px;"></i> Trang chủ</a></li>
+                        <li class='SecondLast'><a href="/Productad">Tin tức</a></li>
+                        <li class='Last'><span>Sửa tin tức</span></li>
+                    </ul>
+                </div>
+
+                <div style="clear: both;"></div>
+
+                <div id="cph_Main_ContentPane">
+                    <div class="widget">
+                        <!-- widget-title -->
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i>&nbsp;Sửa tin tức</h4>
+
+                            <!-- Button -->
+                            <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                                <div id="toolbox">
+                                    <div style="float:right;" class="toolbox-content">
+
+                                        <table class="toolbar">
+                                            <tr>
+
+                                                <td align="center">
+                                                    <button type="submit" class="toolbar btn btn-info" name="btnSave" id="btnSave"><i class="icon-save"></i> &nbsp;Lưu lại</button>
+
+                                                </td>
+
+                                                <td align="center">
+                                                    <button type="submit" class="toolbar btn btn-info" name="btnSaveCreate" id="btnSaveCreate"><i class="icon-ok"></i> &nbsp;Lưu và Thêm mới</button>
+
+                                                </td>
+                                                <td align="center">
+                                                    <a id="cph_Main_ctl00_toolbox_rptAction_lbtAction_4" title="Quay lại" style="color:#FFF !important" class="toolbar btn btn-info" href="">
+                                                        <i class="icon-chevron-left"></i>&nbsp;
+                                                        Quay lại
+                                                    </a>
+                                                </td>
+                                                <td align="center">
+                                                    <a onclick="" id="cph_Main_ctl00_toolbox_rptAction_lbtAction_0" title="Trợ giúp"  style="color:#FFF !important" class="toolbar btn btn-info" href="" )">
+                                                        <i class="icon-question-sign"></i>&nbsp;
+                                                        Trợ giúp
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Button -->
+
+                            <div id="hiddenToolBarScroll" class="scrollBox hidden">
+
+                                <div class="FloatMenuBar" style="float:left; margin-left:20px">
+
+                                    <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                                        <div id="Div1">
+
+                                            <div style="float:left;" class="toolbox-content">
+
+                                                <table class="toolbar">
+                                                    <tr>
+
+                                                        <td align="center">
+                                                            <button type="submit" class="toolbar btn btn-info" name="btnSave" id="btnSave"><i class="icon-save"></i> &nbsp;Lưu lại</button>
+
+                                                        </td>
+
+                                                        <td align="center">
+                                                            <button type="submit" class="toolbar btn btn-info" name="btnSaveCreate" id="btnSaveCreate"><i class="icon-ok"></i> &nbsp;Lưu và Thêm mới</button>
+
+                                                        </td>
+                                                        <td align="center">
+                                                            <a id="cph_Main_ctl00_toolbox_rptAction_lbtAction_4" title="Quay lại" style="color:#FFF !important" class="toolbar btn btn-info" href="">
+                                                                <i class="icon-chevron-left"></i>&nbsp;
+                                                                Quay lại
+                                                            </a>
+                                                        </td>
+                                                        <td align="center">
+                                                            <a onclick="" id="cph_Main_ctl00_toolbox_rptAction_lbtAction_0" title="Trợ giúp"  style="color:#FFF !important" class="toolbar btn btn-info" href="" )">
+                                                                <i class="icon-question-sign"></i>&nbsp;
+                                                                Trợ giúp
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- widget-title -->
+                        <!-- widget-body -->
+                        <div class="widget-body">
+                            <div id="cph_Main_ctl00_notification_divNotice" style="padding-top:10px;">
+                                <!-- Messange -->
+                                @Html.Raw(ViewBag.thongbao)
+
+                                <!-- End Messange -->
+                            </div>
+                            <table class="admintable" style="width: 100%;">
+                                <tr>
+                                    <td class="key">
+                                        Danh mục cha <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.DropDownList("drMenu", "-- Danh mục cha --")
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Danh mục cha
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Danh mục cấp trên của danh mục đang cập nhật
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Tên tin tức <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Name, new { @class = "Name_ad txtName", @autofocus = "autofocus", @required = "required" })
+
+                                        <input type="text" name="idProduct" id="idProduct" value="@Model.id" style="opacity:0" />
+                                        @Html.TextBoxFor(p => p.Tag, null, new { @Name = "NameURL", @style = " opacity:0" })
+
+                                        <span class="Aler_ttxtName" style="color: #F00"></span>
+                                        <br />
+                                        @{bool URL = false;}
+                                        @Html.CheckBoxFor(model => URL, new { @style = "float:left" }) <span style="margin:4px 5px; display:inline-block">: Sửa đường dẫn URL</span>
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Tên tin tức
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Tên tin tức (ví dụ : Bình nóng lạnh Ariston SLIM 30 Lít), độ dài khuyến cáo là 60-65 ký tự
+                                                </p>
+                                            </span>
+                                        </span>
+                                        <span class="Aler_ttxtName" style="color: #F00"></span>
+                                        <span class="Soluong" style="color: #F00"></span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="key">
+                                        Mô tả
+                                    </td>
+                                    <td>
+                                        @Html.TextAreaFor(p => p.Description, new { @class = "Content_ad", @autofocus = "autofocus", @required = "required" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Mô tả cho tin tức
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Mô trả cho tin tức, độ dài khuyến cáo từ 120 đến 160 ký tự
+                                                </p>
+                                            </span>
+                                        </span>
+                                        <span class="Mota" style="color: #F00"></span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Nội dung Chi tiết
+                                    </td>
+                                    <td>
+                                        @Html.TextAreaFor(p => p.Content, new { @class = "Content_ad" })
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="key">
+                                        Ảnh
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Images, new { @class = "Name_ad" })&nbsp;<input id="SelectImages" type="button" value="Lựa chọn ảnh" class="Images_ad" />
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Thứ tự
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Ord, new { @class = "Ord_ad" })
+
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Thứ tự hiển thị
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Thứ tự hiển thị của danh mục sản phẩm
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="key">
+                                        Hiển thị trang chủ
+                                    </td>
+                                    <td>
+                                        @{ bool ViewHomes = ((Model.ViewHomes == null) || (Model.ViewHomes == false)) ? false : true; }
+                                        @Html.CheckBoxFor(model => ViewHomes)
+                                        
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Hiển thị trang chủ
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Là sản phẩm mà bạn muốn hiện thị ở trang chủ theo danh mục, nếu danh mục được ưu tiên ngoài trang chủ thì sản phẩm này sẽ được hiển thị theo
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Hiển thị
+                                    </td>
+                                    <td>
+                                        @{ bool Active = ((Model.Active == null) || (Model.Active == false)) ? false : true; }
+                                        @Html.CheckBoxFor(model => Active)
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Hiển thị
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Lựa chọn để danh mục sản phẩm hiển thị trên website
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Rộng Full trang
+                                    </td>
+                                    <td>
+                                        @{ bool Style = ((Model.Style == null) || (Model.Style == false)) ? false : true; }
+                                        @Html.CheckBoxFor(model => Style)
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Rộng hết trang
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Rộng hết trang
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Tiêu đề tin
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Title, new { @class = "Name_ad" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Tiêu đề trang
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Nội dung được hiển thị dưới dạng tiêu đề trong kết quả tìm kiếm và trên trình duyệt của người dùng.
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Thẻ từ khóa (Tags)
+                                    </td>
+                                    <td>
+                                        @Html.TextAreaFor(p => p.Keyword, new { @class = "Content_ad KeywordNews" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Thẻ từ khóa
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Các từ khóa liên quan
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Tabs bài viết
+                                    </td>
+                                    <td>
+                                        @Html.TextAreaFor(p => p.Tabs, new { @class = "Content_ad KeywordNews" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Thẻ từ khóa Tabs
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Các từ khóa liên quan Tabs
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Hãng<span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.ListBox("mutilManu")
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Danh mục hãng
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Danh mục hãng
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                      Lượt xem
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Visit, new { @class = "Ord_ad" })
+
+
+                                        
+                                    </td>
+                                </tr>                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+ 
+<script src="~/Scripts/jquery-2.2.0.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<link href="~/Scripts/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/AutoComplete.js"></script>

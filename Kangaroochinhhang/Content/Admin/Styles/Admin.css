@@ -1,0 +1,153 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.boder_menu {
+    min-width: 1023px;
+    width: 100%;
+    background-color:#0571af;
+}
+#menu {
+    display: block;
+    float: none;
+    height: 40px;
+    line-height: 40px;
+    margin: auto;
+}
+#menu ul {
+    float: left;
+    list-style: none outside none;
+    margin-left:20px;
+}
+#menu ul li {
+    float: left;
+    position: relative;
+}
+#menu ul li ul li {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+}
+#menu ul li ul li {
+    width: 100%;
+}
+#menu ul li a {
+    background-image: url("../../images/icon_sub.gif");
+    background-position: right center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    height: 38px;
+    line-height: 38px;
+    margin-right: 12px;
+    padding: 0 15px 0 6px;
+}
+#menu li:hover a, #menu li.current a {
+    background-image: url("../../images/icon_sub.gif");
+    color: #FFFFFF;
+    text-decoration:none;
+}
+#menu li {
+    margin: 0 4px 0 0;
+    padding-bottom: 3px;
+}
+#menu li:hover {
+    background-color:#015788;
+}
+#menu li ul {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #026198;
+    border-color: #00ABC9 -moz-use-text-color -moz-use-text-color;
+    border-image: none;
+    border-right: medium none;
+    border-style: none;
+    border-width: 3px medium medium;
+    /*box-shadow: 5px 5px 0 #D9D9D9;*/
+    display: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 40px;
+    width: 240px;
+    z-index: 100;
+}
+#menu li ul li {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    line-height: normal;
+    padding: 0;
+}
+#menu li ul li a, #menu li:hover ul li a {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #0177bb;
+    color: #FFFFFF;
+    margin: 0 12px;
+    font-size:14px;
+    padding-left:10px;
+}
+
+#menu li ul li a {
+    padding: 0;
+}
+.m_icon {
+    float: left;
+    padding: 12px 5px 0 0;
+    text-align: center;
+    width: 23px;
+}
+#menu li:hover, #menu li.current {
+    background-image: url("../../images/menu_hover.gif");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+}
+#menu li ul li:hover {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+#menu li:hover ul {
+    display: block;
+    opacity: 0.95;
+}
+#menu li ul li a:hover {
+    border-bottom-color:#1799a3;
+}
+#menu li ul li:hover {
+    background: #015788;
+    border: medium none;
+}
+#menu li ul li.last a {
+    border: medium none;
+}
+#menu .MenuText i {
+    font-size:16px;
+}
+#menu .MenuText i.icon-shopping-cart, #menu .MenuText i.icon-gift, #menu .MenuText i.icon-globe, #menu .MenuText i.icon-signin {
+    font-size:18px;
+}
+.Content_ad{ width:936px}
+.Name_ad{ width:350px}
+.Name_cp{ width:550px}
+
+.Code_ad{ width:150px}
+.Images_ad{ height:28px}
+.Ord_ad{width:70px}
+.Price_ad{ width:200px}
+#MutilMenu{ width:300px; height:300px; border:1px solid #ecebeb}
+.boxcheck input{ margin:2px 5px; float:left;}
+.boxcheck{ float:left; height:30px; margin:0px 5px; line-height:30px; color:red}
+.Tear_Images{width:80px; height:100px; float:left; margin:5px}
+.Tear_Images img{width:100%; height:80px; float:left}
+tr.row0:hover{background:#616161 !important}
+.refresh i {
+    font-size:30px;
+    display: inline-block;
+     margin:5px; opacity:0.7
+ }
+.refresh i:hover{opacity:1}
+.lb1{line-height:27px; float:left; margin:0px 5px; color:red}
+.lb1 input{float:left}

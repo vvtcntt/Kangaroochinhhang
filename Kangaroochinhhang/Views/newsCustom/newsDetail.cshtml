@@ -1,0 +1,125 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutDefaultCustom.cshtml";
+}
+
+@model Kangaroochinhhang.Models.tblNew
+
+<div id="root">
+    <nav>
+        @Html.Raw(ViewBag.nUrl)
+    </nav>
+</div>
+<div id="news">
+
+    <div id="newsContent" style="@ViewBag.style">
+        <div id="nvarDetailNews">
+            <h1 style="color:@ViewBag.color">
+                @Model.Name
+            </h1>
+            <ul>
+                <li>
+                    <a href="/2/@ViewBag.tagMenuName" title="@ViewBag.menuName">
+                        <i class="fa fa-folder-open" aria-hidden="true"></i>
+                        @ViewBag.menuName
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="Ngày viết bài">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+
+                        @Model.DateCreate
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="Ngày viết bài">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+
+
+                        @ViewBag.user
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="detailNews">
+            <div id="desciption">
+@Model.Description            </div>
+            <div id="contentDetail">
+                @Html.Raw(Model.Content)
+            </div>
+            <div id="tags">
+                <span><i class="fa fa-tags" aria-hidden="true"></i> Tags: </span> @Html.Raw(ViewBag.tags)
+            </div>   
+            <div class="Mxh" style="float: left; width: 100%; margin-left: 0px">
+                <div class="fb-like" data-send="true" data-layout="button_count" data-width="60"
+                     data-show-faces="true" style="float:left">
+                </div>
+                <div style="margin:0px 5px; float:left" class="zalo-share-button" data-href="http://developers.zalo.me" data-oaid="579745863508352884" data-layout="2" data-color="blue" data-customize=false></div>
+                <div class="tweet" style="margin:0px 5px; float:left">
+                    <if condition="in_array($forum['forumid'], array(1,2))">
+                        <else />
+                        <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="YOUR-TWITTER-USERNAME" rel="nofollow">Tweet</a>
+                        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+                    </if>
+                </div>
+                <div id="g" style="float: left; margin: 0px 5px; height: 15px; width: 20px">
+                    <g:plusone size="medium"></g:plusone>
+                </div>
+            </div>
+             <div id="commment">
+                <span class="name">
+                    <i class="fa fa-comments-o" aria-hidden="true"></i>
+                    Bình luận sản phẩm
+                </span>
+                <div id="contentComment">
+                    <div id="boxComment">
+                        <input type="text" name="txtComment" id="txtComment" placeholder="Nhập nội dung bình luận ...." />
+                    </div>
+                    <div id="submitComment">
+                        <input type="text" name="txtName" id="txtName" placeholder="Nhập họ và tên" />
+                        <input type="email" name="txtEmail" id="txtEmail" placeholder="Nhập Email" />
+                        <button style="background:#38ab35" type="submit" id="btnComment" name="btnComment">Bình luận</button>
+                        <a href="" style=""><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
+                    </div>
+                    @*<div id="listComment">
+                        <div class="tearComment">
+                            <span class="nameComment"><i class="fa fa-user-circle" aria-hidden="true"></i> Hoàng Văn Thái</span>
+                            <div class="contentTearCommment">
+                                Chào anh,
+                                Với sản phẩm này dùng không bị lỗi thời anh nha , sản phẩm này rất nhiều người ưa chuộng anh nhé .
+                                Thông tin đến anh.
+                            </div>
+                            <div class="boxLike">
+                                <a href="" title="">Trả lời</a><a href="" title=""><i class="fa fa-thumbs-up" aria-hidden="true"></i> Thích (10)</a><a href="" title="">10:25PM 25/07/2017</a>
+                            </div>
+
+                        </div>
+                         
+                    </div>*@
+                </div>
+            </div>
+            <div id="newIinvolve">
+                <span class="name">Tin tức liên quan</span>
+                <ul>
+                   @Html.Raw(ViewBag.result)
+                     
+                     
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sidebarNews" style="@ViewBag.style1">        
+        @{Html.RenderAction("partialMenuRightNews", "newsCustom");}
+        @{Html.RenderAction("partialListNewsRightNews", "newsCustom");}
+
+
+    </div>
+</div>
+<style>
+     #detailNews h2{ font-size:17px; color:@ViewBag.color1 font-family:"Open Sans",sans-serif!important; margin:12px 0px; position:relative; padding-bottom:5px;       font-weight:bold; text-transform:uppercase;}
+#detailNews h2:before{position:absolute; border-bottom:2px solid @ViewBag.color; content:''; bottom:0px; left:0px; width:80px}
+#detailNews h2:after{position:absolute; border-bottom:2px solid @ViewBag.color3; content:''; bottom:0px; left:82px; width:200px}
+      #detailNews h3{ font-size:17px; color:@ViewBag.color1 font-family:"Open Sans",sans-serif!important; margin:12px 0px; position:relative; padding-bottom:5px;       font-weight:bold; text-transform:uppercase;}
+#detailNews h3:before{position:absolute; border-bottom:2px solid @ViewBag.color; content:''; bottom:0px; left:0px; width:80px}
+#detailNews h3:after{position:absolute; border-bottom:2px solid @ViewBag.color3; content:''; bottom:0px; left:82px; width:200px}
+</style>

@@ -1,0 +1,205 @@
+﻿@charset "utf-8";
+@media screen and (max-width:768px){#Banner{width:100%;}
+#Banner #LeftBanner{width:45%}
+#Banner #RightBanner{width:55%}
+#Banner #LeftBanner h2{font-size:15px;line-height:67px}
+#Banner #LeftBanner #Logo{width:70px;height:100%}
+#Banner #LeftBanner #Logo a img{max-width:70px;height:auto}
+#Banner #RightBanner a{font-size:12px;margin:auto 6px}
+.line{width:100%}
+#Header{width:100%} #Content_Banner_Footer {
+        width: 100% !important;
+    }
+#mainFooter{width:100%}
+.contentLocation table tr td{width:30%}
+#Header #ContentHeader{width:100%}
+#Header #ContentHeader .Notes{width:100%}
+.Listkhacbiet{width:100%}
+.Tear_kb{width:30%;margin:5px 7px}
+#Info{display:100%;margin:0px}
+#Info #Info_Content{width:100%;margin:0px;float:left;padding:5px 0px}
+.Content_Tear_One{width:97%;margin:5px auto;float:none}
+.Content_Tear_True{width:97%;margin:5px auto;float:none}
+.Tear_One .Left{width:100%}
+.Tear_One .Right{width:100%}
+.Trademark{width:100%;margin:5px 0px}
+#Header #ContentHeader h1{font-size:25px}
+.Trademark h3{font-size:16px}
+.Trademark .content_trademark .Tear_trademark{width:18%}
+.Func .Content_Func .nVar .Name span{margin:auto auto;text-align:center;display:block}
+.Func .Content_Func .nVar .Name{width:100%;margin:0px}
+.Func .Content_Func .List_Func .Tear_Func{width:23%}
+.Why{width:100%;margin:5px 0px}
+.Why .Right img{width:100%;height:auto}
+.Func .Content_Func{width:100%}
+.Right_Content_Note{width:84%}
+#when{width:100%;overflow:hidden}
+#Right_when h3{text-align:center}
+#when #Left_when{width:98%}
+#Right_when{width:98%}
+.Content_Tear_True .Left{width:100%}
+.Content_Tear_True .Right{width:100%}
+.Support .nVars{width:100%}
+.Support .Content_Support{width:100%}
+.Support .Content_Support .Tear_Support{width:30%;float:left;margin:5px 10px}
+.Succes .Content_Succes{width:100%}
+.Succes .Content_Succes .title{font-size:25px;margin:10px auto 0px auto}
+.Succes .Content_Succes .slogan{font-size:15px;margin:2px 5px}
+.Succes .Content_Succes p{font-size:13px}
+#Content_footer{width:100%;overflow:hidden}
+#Content_footer #buttom #Left_Content_footer{width:100%}
+#Content_footer #Right_Content_footer{display:none}
+.content_compare{width:100%;height:auto;float:left}
+#Services{width:100%;float:left;margin:0px}
+.Tear_Chinhhang{width:48%;height:auto}
+.Tear_Dichvu{width:48%;margin:0px 5px 0px 10px;height:auto}
+.Tear_Dichvu .Name{font-size:15px}
+.Tear_Chinhhang .Name{font-size:15px}
+.Tear_Muahang{display:none}
+#List_if{display:none}
+.Tear_Chinhhang:last-child{display:none}
+#List_Info{width:100%;height:auto;float:left;margin:0px}
+.Tear_Info{width:30%;height:auto;float:left}
+.Tear_Info_p{width:32%;height:auto;float:left}
+.Tear_Info_n{display:none}
+.Tear_Info .Name{font-size:15px}
+.Tear_Info_p .Name{font-size:15px}
+#Content_Res{width:100%}
+#Content_Res #Left_Res{width:100%;margin:0px}
+#Content_Res #Right_Res{width:100%;margin:0px}
+#Note #Content_Note{width:100%;padding:0px}
+#Bottom_Note #Left_Bottom_Note{width:100%;margin:0px;padding:0px}
+#Bottom_Note #Right_Bottom_Note{width:100%;margin:0px;padding:0px}
+#Bottom_Note #Right_Bottom_Note #Top_Right_Bottom_Note{width:100%;height:352px;background:url(../iCon/bg_note1.png) no-repeat center center scroll transparent;background-size:80%;opacity:0.7}
+#Left_Bottom_Note .Tear_Note a{text-align:center;display:block;margin:0px auto}
+#Left_Bottom_Note .Tear_Note{width:95%;height:auto;float:none;margin:4px auto}
+#Top_Note h3{font-size:30px}
+#Content_Supports{width:100%;padding:0px}
+#Content_Supports #support_1{width:55%;margin:5px}
+#Content_Supports .support_2{width:40%;margin:2px}
+#Content_Supports .support_2 p{font-size:15px;line-height:30px}
+#Content_Supports .cl1{margin-top:20px}
+#Content_Supports .support_3{display:none}
+.Tear_if{width:45%;margin:10px 15px;padding:0px}
+#Info_Company{width:97%;margin:5px 0px 40px 0px}
+#Info_Company #Logo{width:12%}
+#content_Coppyright{width:100%;float:left;margin:0px}
+#Content_NewProduct{width:100%}
+#Content_NewProduct #Left_NewProduct{width:100%;float:left;margin:10px 0px}
+#Content_NewProduct #Left_NewProduct .Tear_pdn{width:130px;height:160px}
+#Content_NewProduct #Left_NewProduct .Tear_pdn .img{height:130px}
+#Content_NewProduct #Right_NewProduct{width:94%;float:none;margin:4px auto}
+#Content_NewProduct #Right_NewProduct .Tear_N{margin:5px 0px}
+#Sales #Content_Sales{width:100%}
+#Baogias #Content_Baogias{width:100%}
+#Baogias #Content_Baogias #ListBaogia .Tear_Baogias{ width:22.4%}
+.tearLoca{width: 50%}
+#infomation #contentInfo ul.listLocation li{width:25%}
+#listInfo #contentListInfo{width:100%}
+#listInfo #contentListInfo .tearInfo{width:48%; margin:5px 1%}
+#contentFooterbottom{width:100%}
+#logoFooter{width:35%}
+#centerFooter{width:65%}
+#rightFooter{width:100%; text-align:center}
+#rightFooter img{float:none}
+#Support_Footer{display:none}
+#footerbottom{padding-bottom:5px}#Content_Supports .support_2 p span{background:#FFF; display:inline-block; padding:0px 3px; font-weight:bold; font-size:13px; color:#F00}
+
+}
+@media screen and (max-width:488px){#Banner #LeftBanner{width:100%}
+#Banner #RightBanner{display:none}
+#Banner #LeftBanner h2{font-size:15px;line-height:67px;margin-left:10px}
+#Banner #LeftBanner #Logo{margin-left:10px;margin-right:7px}
+#Header{display:none}
+#Info #Info_Content h2{font-size:17px}
+#Info #Info_Content span.gp{font-size:12px}
+.Tear_One .Des3{width:100%;margin:0px}
+.Content_Tear_True .Right .Des1 .Tr{width:42%}
+.Support{display:none}
+#Content_footer #Top .ft1{font-size:18px}
+.line{display:none}
+#Right_when .Des{text-align:center}
+.Tear_when{width:98%;border:none}
+#when #Left_when{border:none;margin:0px}
+#when #Left_when img{width:98%;height:auto}
+.Trademark .content_trademark .Tear_trademark{width:46%}
+.Trademark h3{font-size:17px;text-transform:none}
+#Right_when h3{font-size:17px;text-transform:none}
+.Why h2{font-size:25px}
+.Why .Left .Tear_1s{margin:2px 0px 25px 0px;}
+.Why .Left .Tear_1s .Right_Tear1 .name1{font-size:18px}
+.Why .Note .Content_Note .Left_Content_Note{display:none}
+.Right_Content_Note{width:90%;margin:3px auto;float:none;}
+.Func .Content_Func .List_Func .Tear_Func{width:46%}
+.Func .Content_Func .nVar{height:auto}
+.Func .Content_Func .nVar .Name span{font-size:15px}
+.content_compare h3{font-size:22px}
+.content_compare .chinhang{font-size:22px}
+.content_compare a{width:100%;background-size:100%;margin:0px}
+.Content_Func .xemthem{width:100%;font-size:13px}
+#Info #Info_Content p{display:none}
+#Info #Info_Content span.gp{display:none}
+#Info #Info_Content h2{display:none}
+.Tear_Dichvu{width:99%;height:auto;margin:5px 2px}
+.Tear_Chinhhang{width:99%;height:auto;margin:5px 2px}
+.Tear_Info{width:46%;height:auto;margin:5px 2px 5px 8px}
+.Tear_Info_p{width:99%;height:auto;margin:5px 2px;display:none}
+.Tear_1{width:48%}
+.Info_Res .Thoigian .Right_Thoigian .sp1{font-size:16px}
+.Tear_Info .Name{font-size:14px}
+.Info_Res .Thoigian .Right_Thoigian{float:right;;width:80%}
+.Info_Res .Tietkiem .Right_Tietkiem{float:right;;width:80%}
+.Info_Res .Tuvan .Right_Tuvan{float:right;;width:80%}
+.Info_Res .Loiich{font-size:22px}
+.Tear_Info .Name{font-size:13px}
+#Content_footer #buttom #Left_Content_footer .org{font-size:13px}
+#Content_Res #Right_Res .rows .Left_Row span{font-size:12px}
+#Content_Res #Right_Res .rows .Left_Row{width:30%}
+#Content_Res #Right_Res .rows .Right_Row{width:70%}
+#Content_Res #Right_Res .rows .Left_Row span{text-align:right}
+#Bottom_Note #Right_Bottom_Note #Top_Right_Bottom_Note{height:200px}
+#Top_Note h3{font-size:25px}
+#Content_Supports #support_1{width:97%;margin:5px}
+#Content_Supports .support_2{width:47%;margin:2px}
+#Content_Supports .support_2 p{line-height:25px;text-align:center;font-size:15px}
+#Content_Supports .support_2 p img{width:17px;height:17px}
+.Tear_if{width:95%;margin:5px auto;float:none}
+#Info_Company #Logo{width:22%}
+#Info_Com{width:78%}
+#Info_Mxh{display:none}
+.Center_Coppyright{display:none}
+#Content_NewProduct #Left_NewProduct .Tear_pdn{width:44%}
+#Sales #Content_Sales .sl1{font-size:20px}
+#Sales #Content_Sales .sl1 span{font-size:25px}
+#Sales #Content_Sales .sl2{font-size:17px}
+.Tear_if h4 span{text-align:center;display:block}
+.Tear_if:last-child{float:left;padding-right:15px;padding-left:15px;}
+.Tear_if ul li a{text-align:center;display:block;line-height:normal;margin:5px auto}
+.Tear_if ul{line-height:0px}
+.Tear_if ul{margin:0px;border:none}
+.Times{width:95%;height:60px;}
+.Times .time1{font-size:12px;margin-top:7px}
+.Times .time1 span{font-weight:bold;font-size:16px}
+.Times .Date1{font-size:11px;color:#0a83bb;margin:2px 5px 2px 86px;display:inline-block}
+#Content_Supports .cl1{margin-top:2px}
+.Tear_if ul li:before{content:""}
+.Tear_if h4{line-height:15px}
+#Baogias #Content_Baogias #ListBaogia .Tear_Baogias{ width:44%}
+#Baogias #Content_Baogias h2{ font-size:25px}
+#Baogias #Content_Baogias span{ margin-top:10px}
+.tearLoca{ width:100%}
+#infomation #contentInfo ul.listLocation li{width:50%}
+#mainRegister #boxRegister{width:96%; margin:auto 2%}
+#mainRegister #boxRegister input{width:66%; font-size:12px !important}
+#supportFooter{display:none}
+#payFooter{display:none}
+.social ul li:first-child{width:100%; margin-bottom:6px}
+#listInfo{display:none}
+#logoFooter{width:100%; text-align:center}
+#logoFooter img{float:none}
+#centerFooter{width:100%; text-align:center}
+#linkOut{display:none}
+#Content_Supports .support_2 p{color:#FFF !important}
+#footerbottom{ padding-bottom:80px}
+#Content_Supports .support_2 a{ text-align:center}
+}

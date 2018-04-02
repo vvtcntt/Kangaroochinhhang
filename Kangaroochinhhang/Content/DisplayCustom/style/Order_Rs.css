@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media screen and (max-width: 768px) 
+{
+	#ListInfoOrder{ width:100%; margin:0px}
+	#ListOrder{ width:100%; margin:5px 0px}
+}
+@media screen and (max-width: 480px) 
+{
+.Left_RowOrd{width:30%}	
+.VAT .row_Vat{ height:auto}
+.Right_RowOrd{ width:70%}
+.VAT .row_Vat span{ margin:0px 5px ; text-align:center }
+.VAT .row_Vat input{ float:none; margin:5px auto; display:block}
+.row_nhanhang span{ margin:0px 5px ; text-align:center }
+.row_nhanhang input{ float:none; margin:5px auto; display:block}
+.row_thanhtoan{ width:90%}
+.row_Vanchuyen{ width:90%}
+#ListOrder table tr .Name img{ width:40px; height:40px}
+.btnorder{float:none !important; margin:5px auto}
+#ListOrder table tr .Namepd{font-weight:normal}
+.Right_RowOrd .txtMobile{margin-right:3px}
+}

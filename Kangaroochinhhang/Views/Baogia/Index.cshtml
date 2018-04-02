@@ -1,0 +1,141 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutDefaultCustom.cshtml";
+}
+@model Kangaroochinhhang.Models.TblConfig
+ @*<div id="Contents">
+     <div class="nVar_Product">
+         <nav>@Html.Raw(ViewBag.nUrl)</nav>
+     </div><div class="Clear"></div>
+    <div id="Baogia">
+        <div id="Head_Top">
+            <div id="Left_Head"><img src="@ViewBag.imagemanu" alt="@ViewBag.Namemanu" /></div>
+            <div id="Right_Head">
+                <span class="hd1">Trung tâm phân phối chính hãng @ViewBag.Namemanu</span>
+                <span class="hd2">Địa chỉ: @Model.Address</span>
+                <span class="hd3">Điện thoại: @Model.MobileIN - Hotline : @Model.HotlineIN</span>
+                <span class="hd4">Email : @Model.Email - website: www.Kangaroochinhhang.com</span>
+            </div>
+            <div class="Clear"></div>
+        </div>
+        <div class="line_bg"></div>
+        <div id="Content_Baogia">
+            <h1>Bảng báo giá @Html.Raw(ViewBag.name)</h1>
+            <span class="date1">Hà Nội, ngày @DateTime.Now.Day tháng @DateTime.Now.Month năm @DateTime.Now.Year</span>
+            <span class="kg">@Model.Name là nhà phân phối chính thức của @Html.Raw(ViewBag.Namemanu). Chúng tôi xin gửi tới quý khách hàng bảng báo giá bán lẻ sản phẩm @Html.Raw(ViewBag.name).</span>
+
+            <table border="0" id="Table" cellpadding="5">
+                <tr class="Head_tb">
+                    <td class="Ord">STT</td>
+                    <td class="Name">Tên sản phẩm</td>
+                    <td class="Code">Mã SP</td>
+                    <td class="Wan">Hạn sử dụng</td>
+                    <td class="Price">Đơn giá</td>
+                    <td class="Image">Hình ảnh</td>
+                      
+                </tr>
+                @Html.Raw(ViewBag.chuoi)
+               
+            </table>
+            <span class="ghichu_bg">* Ghi chú</span>
+            <span class="ghichu1">- Toàn bộ sản phẩm báo giá là sản phẩm @Html.Raw(ViewBag.Namemanu) chính hãng 100%. Nếu khách hàng phát hiện hàng nhái chúng tôi tặng khách hàng <span style="color:#F00; font-weight:bold; font-size:16px">1.000.000đ</span></span>
+
+            <span class="ghichu1">- Giá trên chưa bao gồm 10% VAT. Khách hàng nếu lấy VAT vui lòng cộng thêm 10%</span>
+            <span class="ghichu1">- Giá trên đã bao gồm chi phí vận chuyển và lắp đặt tại nội thành Hà Nội. Nếu giá trị đơn hàng dưới 255.000đ thì cộng thêm 20.000đ chi phí vận chuyển. Các tỉnh khác vui lòng liên hệ !</span>
+            <span class="ghichu1">- Bảng báo giá trên có giá trị trong tháng @DateTime.Now.Month năm @DateTime.Now.Year. Giá có thể thay đổi mà không báo trước. Khách lấy nhiều vui lòng liên hệ để nhận báo giá tốt hơn !</span>
+            <div class="Clear"></div>
+            <div class="Clear"></div>
+        </div>
+        <div id="ghichu">@Html.Raw(ViewBag.Info)</div>
+        <div class="Clear"></div>
+
+    </div>
+     <a href="" title="In trang" class="Printer" onclick="printArea('Baogia');"><span class="icon"></span> <span>In trang</span></a>
+         <div class="Clear"></div>
+</div>*@
+
+
+
+
+<div id="root">
+    <nav>
+        @Html.Raw(ViewBag.nUrl)
+
+
+    </nav>
+</div>
+<div id="product">
+    <div id="Baogia">
+        <div id="Head_Top">
+            <div id="Left_Head"><img src="@ViewBag.imagemanu" alt="@ViewBag.Namemanu" /></div>
+            <div id="Right_Head">
+                <span class="hd1" style="color:@ViewBag.color;">Trung tâm phân phối chính hãng @ViewBag.Namemanu</span>
+                <span class="hd3">Điện thoại: @Model.MobileIN - Hotline : @Model.HotlineIN</span>
+                @if (ViewBag.email != "" && ViewBag.email != null)
+                {
+                    <span class="hd4">Email : @ViewBag.email - website: @ViewBag.website</span>
+                }
+                else
+                {
+                    <span class="hd4">Email : @Model.Email - website: www.Kangaroochinhhang.com</span>
+                }
+                
+            </div>
+            <div class="Clear"></div>
+        </div>
+        <div class="line_bg"></div>
+        <div id="Content_Baogia">
+            <h1 style="font-weight:bold;font-size:35px; margin:35px 0px 10px 0px">Bảng báo giá @Html.Raw(ViewBag.name)</h1>
+            <span class="date1">Hà Nội, ngày @DateTime.Now.Day tháng @DateTime.Now.Month năm @DateTime.Now.Year</span>
+            <span class="kg">@Model.Name là nhà phân phối chính thức của @Html.Raw(ViewBag.Namemanu). Chúng tôi xin gửi tới quý khách hàng bảng báo giá bán lẻ sản phẩm @Html.Raw(ViewBag.name).</span>
+            <table border="0" id="Table" cellpadding="5">
+                <tr class="Head_tb">
+                    <td class="Ord">STT</td>
+                    <td class="Name">Tên sản phẩm</td>
+                    <td class="Code">Mã SP</td>
+                    <td class="Wan">Hạn sử dụng</td>
+                    <td class="Price">Đơn giá</td>
+                    <td class="Image">Hình ảnh</td>
+                </tr>
+                @Html.Raw(ViewBag.chuoi)
+            </table>
+            <span class="ghichu_bg">* Ghi chú</span>
+            <span class="ghichu1">- Toàn bộ sản phẩm báo giá là sản phẩm @Html.Raw(ViewBag.Namemanu) chính hãng 100%. Nếu khách hàng phát hiện hàng nhái chúng tôi tặng khách hàng <span style="color:#F00; font-weight:bold; font-size:16px">1.000.000đ</span></span>
+
+            <span class="ghichu1">- Giá trên chưa bao gồm 10% VAT. Khách hàng nếu lấy VAT vui lòng cộng thêm 10%</span>
+            <span class="ghichu1">- Giá trên đã bao gồm chi phí vận chuyển và lắp đặt tại nội thành Hà Nội. Nếu giá trị đơn hàng dưới 255.000đ thì cộng thêm 20.000đ chi phí vận chuyển. Các tỉnh khác vui lòng liên hệ !</span>
+            <span class="ghichu1">- Bảng báo giá trên có giá trị trong tháng @DateTime.Now.Month năm @DateTime.Now.Year. Giá có thể thay đổi mà không báo trước. Khách lấy nhiều vui lòng liên hệ để nhận báo giá tốt hơn !</span>
+            <div class="Clear"></div>
+            <div class="Clear"></div>
+        </div>
+        <div id="ghichu">@Html.Raw(ViewBag.Info)</div>
+        <div class="Clear"></div>
+
+    </div>
+</div>
+<script language="text/javascript">
+    function printArea(areaName) {
+        var printContents = document.getElementById(areaName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
+<script type="text/javascript">
+    function printArea(areaName) {
+        var printContents = document.getElementById(areaName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+    }
+</script>
+<style>
+    #ghichu{width:100%;height:auto;float:left; margin:5px 0px; font-size:13px; color:#3e3e3e}
+    #ghichu img{max-width:100%; height:auto !important; float:left; margin:0px}
+</style>

@@ -1,0 +1,58 @@
+﻿@charset "utf-8";#News{width:100%;height:auto;float:left;margin:0px}
+#News h1{font-weight:normal;color:#464646;text-transform:uppercase;margin:5px 5px;font-size:16px}
+#ContentNews{width:100%;height:auto;margin:5px 0px}
+#ContentNews #LeftNews{width:80%;height:auto;float:left;margin:0px;border-right:1px solid #f7f4f4;text-align:justify}
+#ContentNews #LeftNews .TearNews{width:100%;height:auto;float:left;margin:5px 0px;border-bottom:1px dashed #e1e1e1;padding:5px 0px}
+#ContentNews #LeftNews .TearNews img{height:100px;width:100px;float:left;margin:2px 7px 2px 3px}
+#ContentNews #LeftNews .TearNews a.Name{font-size:14px;font-weight:bold;color:#3c3c3c;margin:2px 5px;display:block}
+#ContentNews #LeftNews .TearNews a.Name span{font-style:italic;color:#8c8c8c;font-weight:normal}
+#ContentNews #LeftNews .TearNews .Des{font-size:14px;color:#3c3c3c;margin:5px 3px;display:block}
+#RightNews{width:18%;height:auto;float:right;margin:0px}
+#RightNews #Content_Right{width:100%;height:auto;float:left;margin:0px}
+#Content_Righta{display:none;overflow:hidden}
+#RightNews .nVar_1{width:100%;height:auto;float:left;margin:0px}
+#RightNews .nVar_1 span{font-size:15px;text-align:center;text-transform:uppercase;color:#4f4f4;margin:2px 5px;display:block;line-height:20px;border-bottom:1px solid #1881bd;position:relative;padding-bottom:7px}
+#RightNews .nVar_1 span:before{background:#ff7200;bottom:0px;content:"";display:block;height:1px;left:0;margin:0 0 -1px;position:absolute;width:40px;}
+#RightNews .ListMenu{width:100%;margin:0px 0px 15px 0px;float:left}
+#RightNews .ListMenu a{margin:5px;color:#424242;display:block;font-size:15px;font-family:UTM_SwissCondensed}
+#ContentNews .Description{width:98%;height:auto;margin:10px auto 5px auto;font-size:14px;text-indent:15px;font-weight:bold;text-align:justify;line-height:20px}
+.Tintuclienquan{width:98%;height:auto;margin:7px auto 7px auto;font-size:14px;text-indent:15px;font-weight:bold;text-align:justify;background:#faf9f9;padding-top:5px;padding-bottom:5px}
+.Tintuclienquan h2{margin:0px; font-weight:normal}
+.Tintuclienquan a{font-weight:normal;font-size:14px;color:#999999;display:block;margin:2px 2px;font-style:italic}
+.ContentNew{width:98%;height:auto;margin:5px auto;font-size:14px;text-align:justify;line-height:20px}
+.ContentNew img{max-width:100%;height:auto !important;margin:7px 5px}
+.Author{width:98%;height:auto;float:left;margin:5px;}
+.Author span{font-style:italic;text-align:right;margin:5px;float:right}
+.ListNewsLienquan{width:98%;height:auto;float:left;margin:10px 0px}
+.name_ListNewsLienquan{font-size:14px;font-weight:bold;margin:5px 5px 15px 5px;text-transform:uppercase;display:block}
+.ListNewsLienquan li a{font-size:14px;margin:5px;color:#616161;display:block}
+.nVar_news{width:100%;height:auto;float:left;margin:5px 0px 15px 0px;border-bottom:1px dashed #ccc;padding-bottom:6px}
+.nVar_news .Cate{color:#989898;padding:5px 0px;padding-right:15px;vertical-align:baseline}
+.nVar_news .Cate span{width:14px;height:11px;background:url(../iCon/folder-icon.png) no-repeat;display:inline-block;margin-right:7px;opacity:0.5}
+.nVar_news .Cata{color:#989898;padding:5px 0px;padding-right:15px;vertical-align:baseline}
+.nVar_news .Cata span{width:13px;height:11px;background:url(../iCon/icon_calendar.png) no-repeat;display:inline-block;margin-right:7px;}
+.nVar_news .Account{color:#989898;padding:5px 0px;padding-right:15px;vertical-align:baseline}
+.nVar_news .Account span{width:14px;height:11px;background:url(../iCon/account.png) no-repeat;display:inline-block;margin-right:7px;opacity:0.6;margin-top:2px}
+.Tear_News .Cata{color:#989898;padding:5px 0px;padding-right:15px;vertical-align:baseline;font-size:10px}
+.Tear_News .Cata span{width:13px;height:11px;background:url(../iCon/icon_calendar.png) no-repeat;display:inline-block;margin-right:7px;}
+.Tear_News .Account{color:#989898;padding:5px 0px;padding-right:15px;vertical-align:baseline;font-size:10px}
+.Tear_News .Account span{width:14px;height:11px;background:url(../iCon/account.png) no-repeat;display:inline-block;margin-right:7px;opacity:0.6;margin-top:2px}
+#Box_MXH{width:100%;height:auto;float:left;margin:15px 0px}
+#Box_MXH1{width:198px !important;height:auto;float:left;margin:1px 0px;top:0px;display:none}
+#Box_News{width:100%;height:auto;float:left;margin:15px 0px}
+#Box_News h3{margin:0px; font-weight:normal}
+#Box_News a{font-size:14px;color:#424242;margin:6px 5px;display:block}
+#Box_News a::before{content:'■    ';color:#4587ff}
+.Tear_News{width:100%;height:auto;float:left;margin:5px 0px;border-bottom:1px dashed #e1e1e1;padding-bottom:10px}
+.Tear_News img{float:left;margin:3px 10px 3px 3px;width:100px;height:auto;max-height:100px}
+.Tear_News h2{margin:0px;font-weight:normal}
+.Tear_News .Name{font-size:14px;font-weight:bold;color:#424242;margin:5px 5px;display:block}
+.Tear_News .Date{font-weight:normal;color:#929292;font-style:italic;font-size:10px;display:block}
+.Tear_News .Des{font-size:14px;color:#606060;margin:10px 5px 4px 5px;display:block}
+.Agency_Info{width:99%; height:auto; margin:5px auto; border:1px solid #efefef; background:#ffffda; padding:10px 0px; border-radius:5px}
+.Agency_Info ul{width:100%; height:auto; float:left; margin:0px}
+.Agency_Info ul li{width:50%; float:left}
+.Agency_Info ul li .agen{font-size:14px; margin:2px 8px; display:inline-block }
+.Agency_Info ul li span span{font-weight:bold}
+.Agency_Info ul li span .icon{ width:14px; height:14px; float:left; margin:1px 5px; background:url(../iCon/icon_1.png); font-weight:bold}
+.Agency_Info img{max-width:95%; margin:5px auto; display:block}

@@ -1,0 +1,79 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+@media screen and (max-width: 480px) {
+#imageProduct {
+        width: 100%
+    }
+#infoProduct {
+        width: 100%;
+        margin: 10px 0px
+    }
+ul.ulInfo li {
+        margin-top: 5px
+    }
+.boxOrder {
+        text-align: center
+    }
+.boxOrder .order {
+            float: none;
+            margin: 5px auto
+        }
+.boxOrder #service {
+            width: 100%;
+            text-align: center
+        }
+#transports {
+        display: none
+    }
+#contentDetailProduct {
+        font-size: 15px
+    }
+#contentDetailProduct .half {
+            width: 100%;
+            padding: 0px
+        }
+#submitComment input {
+        width: 99%;
+        margin: 5px 0px
+    }
+#listImageProduct a img {
+        height: 65px
+    }
+#headshort h1 {
+        width: auto;
+        padding: 0px
+    }
+#contentHeadShort {
+        display: none
+    }
+#product {
+        padding-top: 0px
+    }
+#root {
+        display: none
+    }
+#contentProduct {
+        padding: 7px
+    }
+#listImageProduct ul li {
+        width: 32%
+    }
+#contentDetailProduct h2 {
+        text-align: left
+    }
+}
+#paraHaft {
+    width: 100%;
+    margin: 0px
+}
+
+#videoContent {
+    width: 100%; margin:0px
+   
+}
+#tableContent tr td{ width:100%; padding:5px}
+#table3 tr td {
+    width: 100%;
+    padding: 5px
+}

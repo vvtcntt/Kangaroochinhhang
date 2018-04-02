@@ -1,0 +1,31 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+#Contact{ width:100%; height:auto; margin:10px auto; float:left; background:#FFF}
+
+#Left_Contact{ width:50%; height:auto; float:left; margin:0px}
+#Content_LeftContact{ width:100%; height:auto; float:left; margin:10px 0px 0px 0px;border:1px solid #e2e2e2; border-radius:5px}
+#Left_Contact .Logo{ width:auto; height:auto; margin:2px auto; display:block; padding-top:20px}
+#Left_Contact h2{ font-size:15px; color:#000; text-transform:uppercase; margin:10px auto; text-align:center}
+#Left_Contact p{ font-size:12px; margin:7px 10px}
+#Left_Contact p span{ font-weight:bold}
+
+.Nvar_Contact{ width:auto; height:20px; margin-left:40px; background-color:#fff; position:absolute; float:left}
+.Nvar_Contact span{ color:#000; font-weight:bold; line-height:20px; margin: auto 5px; text-transform:uppercase}
+#Right_Contact{ width:48%; height:auto; float:left; margin:0px 0px 0px 10px}
+#Content_RightContact{width:100%; height:auto; float:left; margin:10px 0px 0px 0px;border:1px solid #e2e2e2; border-radius:5px}
+.Tear_Contact:first-child{ margin-top:15px}
+.Tear_Contact:last-child{ height:auto !important; background:none}
+.Tear_Contact{ width:100%; height:auto; float:left; margin:5px auto; background:url(../Icon/line_Menu.png) repeat-x left bottom transparent}
+.Left_TearContact{ width:25%; height:100%; float:
+left; background:url(../Icon/line_heigh_Menu.png) repeat-y left right transparent}
+.Left_TearContact span{ font-size:12px; color:#4c4b4b; line-height:25px; float:right; margin-right:10px; display:block} 
+.Right_TearContact{ width:70%; height:auto; float:left; margin:0px }
+.Right_TearContact input{width:90%; height:25px; border:none; margin:2px 5px; border:1px solid #e2e2e2; font-size:11px; float:left; text-indent:20px}
+.Right_TearContact textarea{width:90%; height:100%; border:none; margin:2px 5px; border:1px solid #e2e2e2; float:left; text-indent:20px}
+.Tear_Contact:last-child input{ height:70px}
+.Tear_Contact button{  margin:0px auto; display:block;padding:5px 7px; background:#FFF; border:1px solid #f0eeee}
+.note{ color:#ff4800; text-align:center; margin:5px}
+.HeadShort1{ font-size:12px; text-indent:15px; font-weight:bold; width:100%; margin:5px auto}
+.Description1{ width:100%; height:auto;   margin:5px auto ;margin:5px auto}
+.btnSend{  }

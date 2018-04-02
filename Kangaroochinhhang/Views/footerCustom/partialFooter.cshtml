@@ -1,0 +1,248 @@
+﻿@model Kangaroochinhhang.Models.tblManufacture
+<div id="Supports" style="background:@Model.Color">
+    <div id="Content_Supports">
+        <div id="support_1">
+            <div class="Times">
+                <span class="time1">THỜI GIAN LÀM VIỆC : <span>7H - 22H</span></span>
+                <span class="Date1">Làm việc cả ngày thứ 7, Chủ nhật</span>
+            </div>
+        </div>
+        <div class="support_2 cl1">
+            <p> <i class="fa fa-phone-square" aria-hidden="true"></i> 
+Hà Nội</p>
+            <a href="tel:@Model.Hotline1" title="Điện thoại hỗ trợ"> @Model.Hotline1 </a>
+        </div>
+        <div class="support_2">
+            <p><i class="fa fa-phone-square" aria-hidden="true"></i>
+ Toàn quốc</p>
+            <a href="tel:@Model.Hotline2" title="Điện thoại hỗ trợ"> @Model.Hotline2 </a>
+        </div>
+         <div class="support_3">
+            <a href="/Lien-he" title="Liên hệ" rel="nofollow"> <i class="fa fa-envelope-o" aria-hidden="true"></i>
+ Liên hệ ngay</a>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div id="mainFooter">
+        <div id="infomation">
+            <img class="logo" src="@Model.Images" alt="@Model.Name" />
+            <h5 style="color:@Model.Color">KÊNH PHÂN PHỐI CHÍNH HÃNG @Model.Name</h5>
+            <p class="if" style="color:#f94f01">Hệ thống các chi nhánh mốc online của <span>@Model.Name</span> trên toàn quốc</p>
+
+            <div id="contentInfo">
+
+                <div class="contentLocation showLocation" id="location1">
+                    @Html.Raw(ViewBag.result)
+                </div>
+            </div>
+        </div>
+
+        <figure class="social">
+            <ul>
+                <li>Kết nối mạng xã hội cùng <span>@Model.Name</span></li>
+                <li><a target="_blank" href="@Model.FanpageFacebook/" title=""><i class="fa fa-facebook"></i></a></li>
+                <li><a target="_blank" href="@Model.FanpageGoogle" title=""><i class="fa fa-google-plus"></i></a></li>
+                <li><a target="_blank" href="#" title=""><i class="fa fa-twitter"></i></a></li>
+                <li><a target="_blank" href="@Model.FanpageYoutube" title=""><i class="fa fa-youtube"></i></a></li>
+                <li><a target="_blank" href="#" title=""><i class="fa fa-rss"></i></a></li>
+            </ul>
+        </figure>
+    </div>
+</div>
+<div id="listInfo">
+    <div id="contentListInfo">
+        <div class="tearInfo">
+            <span class="name">Về chúng tôi</span>
+            <ul>
+                <li><a href="/2/Tin-tuc" title="Tin tức">Tin tức mới</a></li>
+                <li><a href="/Dai-ly-cua-VINCOM" title="Đại lý VINCOM">Đại lý của @Model.Name</a></li>
+                <li><a href="/2/tu-van-ky-thuat" title="Tư vấn kỹ thuật" rel="nofollow">Tư vấn kỹ thuật</a></li>
+                <li><a href="/Dang-ky-thay-loi-loc-nuoc" title="Đăng ký thay lõi lọc nước định kỳ">Đăng ký thay lõi tại nhà</a></li>
+                <li><a href="/lien-he" rel="nofollow" title="Bản đồ">Bản đồ</a></li>
+            </ul>
+        </div>
+        <div class="tearInfo">
+            <span class="name">Tư vấn kỹ thuật</span>
+            <ul>
+                @Html.Raw(ViewBag.chuoinew)
+            </ul>
+        </div>
+        <div class="tearInfo">
+            <span class="name">Sản phẩm nổi bật</span>
+            <ul>
+                @Html.Raw(ViewBag.resultProduct)
+            </ul>
+        </div>
+        <div class="tearInfo">
+            <span class="name">Bảng báo giá mới nhất</span>
+            <ul>
+                @Html.Raw(ViewBag.resultBaogia)
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="footerbottom">
+    <div id="contentFooterbottom">
+        <div id="logoFooter">
+            <a href="#" title="Trang chủ">
+                <img src="@Model.Images" alt="@Model.Name">
+            </a>
+        </div>
+        <div id="centerFooter">
+            <p class="p1">Copyright ® 2016 – 2017 <span>@Model.Website</span> - <a href="http://Kangaroochinhhang.com" title="Thay lõi lọc nước tại nhà"><span>Thay lõi lọc nước tại nhà</span></a>. All Rights Reserved.</p>
+            <p class="p2">Trung Tâm phân phối @Model.Name Lớn Nhất Việt Nam - Được vận hành trực tiếp bởi <span>@Model.Name chính Hãng</span>. vn</p>
+        </div>
+        <div id="rightFooter">
+            <a href="#" title="Đã thông báo với bộ công thương">
+                 <img alt="Đã thông báo với bộ công thương" src="~/Content/Display/iCon/dathongbao.png">
+            </a>
+        </div>
+        <div class="Clear"></div>
+    </div>
+</div>
+<div id="Support_Footer" style="background:@Model.Color">
+    <div id="Content_SupportFooter">
+        <div id="Support">
+            <span class="thacmac">Thời gian làm việc : Từ 8H -22H cả thứ 7,CN</span>
+            <div class="Tear_Sp">
+                <div class="Left_Tear_Sp">
+                </div>
+                <div class="Right_Tear_Sp">
+                    <span class="sp1">
+                        Tư vấn 01
+                    </span>
+                    <span class="sp2">
+                        @Model.Hotline1
+                    </span>
+                </div>
+            </div>
+            <div class="Tear_Sp">
+                <div class="Left_Tear_Sp">
+                </div>
+                <div class="Right_Tear_Sp">
+                    <span class="sp1">
+                        Tư vấn 02
+                    </span>
+                    <span class="sp2">
+                       @Model.Hotline2
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id="Call" data-toggle="modal" data-target="#myModal">
+            <span>YÊU CẦU CHÚNG TÔI</span>
+            <small>Gọi lại cho bạn</small>
+            <div class="icon"></div>
+        </div>
+    </div>
+</div>
+@Html.Raw(ViewBag.results)
+<div id="over"></div>
+ 
+
+<div id="linkOut" style="width: 100%; height: auto; float: left; margin: 0px; color: #333940; font-size:12px; opacity:0.1" ><a href="http://binhnonglanh.top" title="bình nóng lạnh tốt nhất">Bình nóng lạnh tốt nhất</a> với <a href="http://binhnonglanh.top/binh-nong-lanh-ariston-lp" title="Bình nóng lạnh Ariston">Bình nóng lạnh Ariston</a> hay sản phẩm <a href="http://binhnonglanh.top/binh-nong-lanh-ferroli-lp" title="Bình nóng lạnh Ferroli">Bình nóng lạnh Ferroli</a></div>
+@if (Request.Browser.IsMobileDevice == false)
+{
+    @Html.Raw(ViewBag.codeChat)
+
+}
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        @using (Html.BeginForm("CommandCall", "Footer", FormMethod.Post))
+            {
+        <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Yêu cầu gọi điện</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-content">
+
+                        <img src="~/Content/Display/ICon/calendar.png" alt="Lịch hẹn" />
+                        <div class="text-hello">@Model.Name Xin chào quý khách,</div>
+
+                        <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi gọi điện trực tiếp tư vấn cho bạn sau 1-2 phút</p>
+                        <input class="request_phone form-control" type="text" required name="request_phone" id="request_phone" value="" placeholder="Số điện thoại liên hệ lại">
+                        <div class="phone_error alert-danger"></div>
+                        <textarea class="request_content form-control" required name="request_content" id="request_content" placeholder="Nội dung thắc mắc?"></textarea>
+
+                        <!-- dieupt09112016 BEGIN -->
+                        <div>
+                            <p class="conten-sub">Bạn Ở Khu Vực Nào?</p>
+
+                            <input type="radio" id="loc_req_1" name="request_location" value="hn" class="css-checkbox-x2 request_location" checked="checked">
+                            <label for="loc_req_1" class="css-label-x2">HN</label>
+
+                            <input type="radio" id="loc_req_2" name="request_location" value="hcm" class="css-checkbox-x2 request_location">
+                            <label for="loc_req_2" class="css-label-x2">HCM</label>
+                            <input type="radio" id="loc_req_3" name="request_location" value="tk" class="css-checkbox-x2 request_location">
+                            <label for="loc_req_3" class="css-label-x2">Tỉnh khác</label>
+                        </div>
+                        <!-- dieupt09112016 END -->
+
+                        <div class="content_error alert-danger"><div class="loading"></div></div>
+                        <div class="submit-content error_send" style="display:none;text-align: center;">
+                        </div>
+                        <div class="submit-content js_submit"><span class="send-go btn" onclick="javascript:return Senmail()">Gửi Đi</span><div class="go-hotline"> Gọi hotline <span>@Model.Hotline1</span> (24/7)</div></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="result" style="margin:5px 10px; color:#238f0e; font-weight:bold; display:inline-block; padding:5px;  float:left"></span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script>
+    function Senmail() {
+        var content = $("#request_content").val();
+        var phone = $("#request_phone").val();
+        var kiemtra = 0;
+        if (content.length < 10) {
+            kiemtra = 1;
+            alert("Bạn vui lòng nhập nội dung yêu cầu !");
+            $(".result").html("Bạn vui lòng nhập nội dung yêu cầu");
+        }
+        if (phone.length < 10) {
+            kiemtra = 1;
+            alert("Bạn vui lòng nhập số điện thoại !");
+            $(".result").html("Bạn vui lòng nhập số điện thoại của bạn !");
+        }
+        if (kiemtra != 1) {
+            $(".loading").html("<img src=\"/Content/Display/ICon/InternetSlowdown_Day.gif\" style=\"width:70px; margin:5px auto; display:block;clear:both\" /> ");
+
+            $.post("/footer/CommandCall", { "phone": phone, "content": content },
+                    function (data) {
+
+                        $(".result").html(data.result);
+                        $(".loading").html("");
+                        $("#request_content").val() = "";
+                        $("#request_phone").val() = "";
+                    });
+        }
+
+        return false;
+    }
+
+</script> 
+<style>
+    
+    .support .leftSupport { 
+    background: url(../../Content/DisplayCustom/icon/hotline_iCon.png) no-repeat 5px 36px scroll @Model.Color2;
+    }
+    .support .leftSupport:after {
+  
+    border-left: 40px solid @Model.Color2;
+
+}
+ .support {
+  
+    background: @Model.Color;
+}
+    .support .leftSupport p:before{ width:90%; height:1px; background:#fff; opacity:0.3; content:''; position:absolute; left:0px; bottom:0px}
+ 
+</style>
+ 

@@ -1,0 +1,378 @@
+﻿@{
+    ViewBag.Title = "Thêm mới hình ảnh";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script>
+    $(document).ready(function () {
+        $("#drMenu").change(function () {
+            var idCate = $("#drMenu").val();
+            $.ajax(
+                   {
+                       url: '/address/AutoOrd',
+                       type: 'post',
+                       data: { "idCate": idCate },
+                       dataType: 'json',
+                       success: function (data) {
+
+                           $('#Ord').val(data.result);
+                       }
+                   ,
+                       error: function () { }
+
+                       //
+                   });
+
+        });
+    });
+</script>
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+        //CKEDITOR.config.toolbarLocation = 'Basic';
+    }
+
+    $(function () {
+        createEditor('vi', 'Maps');
+    });
+
+</script>
+@model Kangaroochinhhang.Models.TblAddress
+@using (Html.BeginForm("Create", "address", FormMethod.Post))
+{   @Html.ValidationSummary(true)
+    <div id="main-content">
+        <div class="container-fluid">
+            <div style="width: 100%; margin: 0 auto;">
+
+                <div id="Breadcrumb" class="Block Breadcrumb ui-widget-content ui-corner-top ui-corner-bottom">
+                    <ul>
+                        <li><a href='/admin'><i class="icon-home" style="font-size:14px;"></i> Trang chủ</a></li>
+                        <li class='Last'><span>Thêm mới địa chỉ</span></li>
+                    </ul>
+                </div>
+
+                <div style="clear: both;"></div>
+
+                <div id="cph_Main_ContentPane">
+                    <div class="widget">
+                        <!-- widget-title -->
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i>&nbsp;Thêm mới địa chỉ</h4>
+
+                            <!-- Button -->
+                            <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                                <div id="toolbox">
+                                    <div style="float:right;" class="toolbox-content">
+
+                                        <table class="toolbar">
+                                            <tr>
+
+                                                <td align="center">
+                                                    <button type="submit" class="toolbar btn btn-info" name="btnSave" id="btnSave"><i class="icon-save"></i> &nbsp;Lưu lại</button>
+
+                                                </td>
+
+                                                <td align="center">
+                                                    <button type="submit" class="toolbar btn btn-info" name="btnSaveCreate" id="btnSaveCreate"><i class="icon-ok"></i> &nbsp;Lưu và Thêm mới</button>
+
+                                                </td>
+                                                <td align="center">
+                                                    <a id="cph_Main_ctl00_toolbox_rptAction_lbtAction_4" title="Quay lại" style="color:#FFF !important" class="toolbar btn btn-info" href="">
+                                                        <i class="icon-chevron-left"></i>&nbsp;
+                                                        Quay lại
+                                                    </a>
+                                                </td>
+                                                <td align="center">
+                                                    <a onclick="" id="cph_Main_ctl00_toolbox_rptAction_lbtAction_0" title="Trợ giúp" style="color:#FFF !important" class="toolbar btn btn-info" href="" )">
+                                                        <i class="icon-question-sign"></i>&nbsp;
+                                                        Trợ giúp
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Button -->
+
+                            <div id="hiddenToolBarScroll" class="scrollBox hidden">
+
+                                <div class="FloatMenuBar" style="float:left; margin-left:20px">
+
+                                    <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                                        <div id="Div1">
+
+                                            <div style="float:left;" class="toolbox-content">
+
+                                                <table class="toolbar">
+                                                    <tr>
+
+                                                        <td align="center">
+                                                            <button type="submit" class="toolbar btn btn-info" name="btnSave" id="btnSave"><i class="icon-save"></i> &nbsp;Lưu lại</button>
+
+                                                        </td>
+
+                                                        <td align="center">
+                                                            <button type="submit" class="toolbar btn btn-info" name="btnSaveCreate" id="btnSaveCreate"><i class="icon-ok"></i> &nbsp;Lưu và Thêm mới</button>
+
+                                                        </td>
+                                                        <td align="center">
+                                                            <a id="cph_Main_ctl00_toolbox_rptAction_lbtAction_4" title="Quay lại" style="color:#FFF !important" class="toolbar btn btn-info" href="">
+                                                                <i class="icon-chevron-left"></i>&nbsp;
+                                                                Quay lại
+                                                            </a>
+                                                        </td>
+                                                        <td align="center">
+                                                            <a onclick="" id="cph_Main_ctl00_toolbox_rptAction_lbtAction_0" title="Trợ giúp" style="color:#FFF !important" class="toolbar btn btn-info" href="" )">
+                                                                <i class="icon-question-sign"></i>&nbsp;
+                                                                Trợ giúp
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- widget-title -->
+                        <!-- widget-body -->
+                        <div class="widget-body">
+                            <div id="cph_Main_ctl00_notification_divNotice" style="padding-top:10px;">
+                                <!-- Messange -->
+                                @Html.Raw(ViewBag.thongbao)
+
+                                <!-- End Messange -->
+                            </div>
+                            <table class="admintable" style="width: 100%;">
+                                <tr>
+                                    <td class="key">
+                                        Hãng<span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.ListBox("mutilManu")
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Danh mục hãng
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Danh mục hãng
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Tỉnh Thành<span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.DropDownList("drAddress", "-- Tỉnh thành--")
+                                         <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Tỉnh Thành
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Tỉnh Thành
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                       Tên <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Name, new { @class = "Name_ad txtName", @autofocus = "autofocus", @required = "required" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Tên nhà địa chỉ
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Tên nhà địa chỉ
+                                                </p>
+                                            </span>
+                                        </span>
+                                        <span class="Aler_ttxtName" style="color: #F00"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Địa chỉ <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Address, new { @class = "Name_ad txtName", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                   Địa chỉ
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Địa chỉ
+                                                </p>
+                                            </span>
+                                        </span>
+                                        <span class="Aler_ttxtName" style="color: #F00"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Số điện thoại <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Mobile, new { @class = "Name_ad txtName", @autofocus = "autofocus"  })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Số điện thoại
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Số điện thoại
+                                                </p>
+                                            </span>
+                                        </span>
+                                        <span class="Aler_ttxtName" style="color: #F00"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Hotline <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Hotline, new { @class = "Name_ad txtName", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Hotline
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Hotline
+                                                </p>
+                                            </span>
+                                        </span>
+                                        <span class="Aler_ttxtName" style="color: #F00"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Email <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Email, new { @class = "Name_ad txtName", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                   Địa chỉ email
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Địa chỉ email
+                                                </p>
+                                            </span>
+                                        </span>
+                                        <span class="Aler_ttxtName" style="color: #F00"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Maps <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextAreaFor(p => p.Maps, new { @class = "Content_ad", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                   Bản đồ
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                  Bản đồ
+                                                </p>
+                                            </span>
+                                        </span>
+                                        <span class="Aler_ttxtName" style="color: #F00"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Ảnh
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Images, new { @class = "Name_ad" })&nbsp;<input id="SelectImages" type="button" value="Lựa chọn ảnh" class="Images_ad" />
+
+
+                                    </td>
+                                </tr>
+                                 
+                                 
+                                <tr>
+                                    <td class="key">
+                                        Hiển thị
+                                    </td>
+                                    <td>
+                                        @{bool Active = true;}
+                                        @Html.CheckBoxFor(model => Active)
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Hiển thị
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Lựa chọn để hiển thị
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Thứ tự
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Ord, new { @class = "Ord_ad", @Value = @Html.Raw(ViewBag.Ord) })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Thứ tự hiển thị
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Thứ tự hiển thị
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                 
+                                 
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+                                            }
+
+<script type="text/javascript">
+    $(function () {
+        $("#SelectImages").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#Images").val(fileUrl);
+            };
+            finder.popup();
+        });
+     });
+</script>

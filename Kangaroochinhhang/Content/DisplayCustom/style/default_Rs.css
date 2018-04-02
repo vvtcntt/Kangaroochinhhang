@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media screen and (max-width: 768px) 
+{
+}
+@media screen and (max-width: 480px) 
+{
+	
+	#topHeader{display:none}
+	#contentBanner{width:100%}
+	#header #contentHeader{width:100%; float:left}
+ 	#header #logo{width:30%}
+#header #support{ width:auto !important; float:left}
+	#header #support #hotline{ display:none}
+	#contentBanner p span{float:none; font-size:40px}
+	#contentBanner span.name{font-size:25px}
+	nav.page-navigation{display:none}
+	#header #logo{display:none}
+	#header #search{width:50%}
+	#header #support{width:80%; float:none; margin:5px auto}
+	#header #search #boxSearch input{width:76%}
+	#header #search #boxSearch button{width:23%}
+	#main{width:100%}
+	#nvarHeader{display:none}
+	#header #search #boxSearch button{font-size:12px}
+	#header #search #boxSearch button i{display:block}
+		#header #search #boxSearch button span{display:none}
+	#header{padding:5px 0px}
+	#slideAdw #slide{width:100%; margin:0px; height:auto}
+	#slideAdw #adwHeader{display:none}
+	#sidebarProductHot p{font-size:20px; text-align:center}
+	.f-nav{display:none !important}
+	.Menufloor{display:none}
+	.RightFloor{display:none}
+	.LeftFloor .Leftfloor1{display:none}
+	.contentProducts .adwProducts{display:none}
+	.listProducts{width:100%; height:auto; float:left; margin:5px 0px; border:none}
+	.tear{width:50% !important}
+	#newsHomes .tearNewsHomes{width:100%; height:auto; float:left; margin:5px 0px}
+	.tearVideoHomes{width:100%; height:auto; float:left; margin:5px 0px}
+	#Content_Supports{width:100%}
+	#support_1{width:100%; margin:5px 0px}
+	.support_2{width:50%; height:auto; float:left; margin:0px}
+	.support_3{display:none}
+	.Times{width:98%; float:none; margin:10px auto}
+	.Times .time1{font-size:14px}
+	.Times .time1 span{font-size:18px}
+	.Times .Date1{font-size:14px}
+	#Supports{padding-top:0px}
+	#mainFooter{ width:100%}
+	.tearLoca{width:100%}
+	.tearLoca .contentTearLoca .leftcontentTearLoca{width:25%; padding:0px}
+	.tearLoca .contentTearLoca .rightcontentTearLoca{width:72%; height:auto; float:left; margin:0px 0px 0px 3%; padding:0px}
+	.tearLoca .p1{margin:0px 5px}
+	.tearLoca .contentTearLoca .leftcontentTearLoca img{width:100%; margin:0px}
+	#listInfo{ display:none}
+	#footerbottom{display:none}
+	.contentNewsHomes .tearNews img{width:20%}
+ #Support_Footer{display:none}
+ #menuMobile{display:block}
+	}

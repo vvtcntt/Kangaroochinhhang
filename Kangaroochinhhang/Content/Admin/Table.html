@@ -1,0 +1,1136 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+    <title>Hệ thống quản trị website</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="Shortcut Icon" href="Content/Images/Admin/administrator.png" type="image/x-icon" />
+
+     
+     <link type="text/css" rel="stylesheet" href="Styles/Admin.css">
+    <link type="text/css" rel="stylesheet" href="Styles/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="Styles/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="Styles/style.css">
+    <link type="text/css" rel="stylesheet" href="Styles/style_default.css">
+    <link type="text/css" rel="Stylesheet" href="Styles/jquery-ui-1.9.2.custom.css"    
+    <link type="text/css" rel="stylesheet" href="Styles/iselector.css">
+    <link rel="stylesheet" type="text/css" href="Styles/jquery.fancybox.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="Styles/imodal.css">
+    <script async="" src="Scripts/analytics.js">
+    </script><script type="text/javascript" src="Scripts/jquery.min.js"></script>
+    <script type="text/javascript">        var $j = jQuery.noConflict();</script>
+    <script type="text/javascript" src="Scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="Scripts/common.js"></script>
+    <script type="text/javascript" src="Scripts/iselector.js"></script>
+    <script type="text/javascript" src="Scripts/admin.js"></script>
+    <script type="text/javascript" src="Scripts/imodal.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="Scripts/scripts.js"></script>
+    <!--  -->
+
+
+
+</head>
+<body class="fixed-top">
+     
+    <form method="post" action="/admin.aspx?module=products" id="form1">
+ 
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+<script src="/Extensions/fancybox-2/jquery.mousewheel-3.0.6.pack.js" type="text/javascript"></script>
+<script src="/Extensions/fancybox-2/jquery.fancybox.pack.js" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+</div>
+        <div class="PageHeader">
+            <div class="LogoHeader">
+                <div class="logoimage">
+                    <a class="SiteName" href="/admin">
+                       Hệ thống quản trị Website
+                    </a>
+                </div>
+                 
+            </div>
+            <div class="SystemMenu">
+                
+<div>
+    <ul class="sysMenu">
+        <li class="first"><a class="link-topmenu" href="/admin"><i class="icon-home"></i> Trang chủ</a></li>
+        <li><a class="link-topmenu" href="/admin.aspx?module=users"><i class="icon-user"></i> Tài khoản quản trị</a></li>
+        <li><a class="link-topmenu" href="/admin.aspx?module=analytics"><i class="icon-bar-chart"></i> Thống kê</a></li>
+        <li><a class="link-topmenu" href="/" target="_blank"><i class="icon-list-alt"></i> Xem website</a></li>
+        <li><a class="link-topmenu" href="http://www.bizweb.vn/Tro-giup-p164.html" target="_blank"><i class="icon-question-sign"></i> Trợ giúp</a></li>
+        <li class="last">
+            <div class="btn-group">
+                <a href="/admin.aspx?module=users&action=edituser&id=84211" class="btn account-info btn-info"><i class="icon-user"></i>
+                    admin</a><a href="#" data-toggle="dropdown" class="btn btn-info dropdown-toggle dropdown-toggle-acount"><span class="icon-caret-down"></span></a>
+                <ul class="dropdown-menu custome">
+                    <li><a href="/admin.aspx?module=users&action=changepass"><i class="icon-key"></i> Đổi mật khẩu</a></li>
+                    <li><a id="siteUser_Lbtn_Logout" class="NormalGray" href="javascript:__doPostBack(&#39;ctl00$siteUser$Lbtn_Logout&#39;,&#39;&#39;)"><i class="icon-signout"></i> Thoát</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="siteinfo">
+    <ul><li style="padding-top:5px;">Bạn có</li><li class="block-time">14</li><li style="margin-right:5px; padding-top:5px;">đơn hàng chưa xử lý</li></ul>
+</div>
+
+            </div>
+        </div>
+        
+    <div id="container" class="row-fluid">
+        <div class="clear" style="height: 10px">
+        </div>
+        
+ 
+
+<div class="boder_menu">
+
+    <div id="menu">
+        <ul>
+        <li>
+            <a class="TopMenuItem" href="javascript:;">
+                <span class="MenuText"><i class="icon-cogs"></i> Cấu hình</span>
+            </a>
+            <ul>
+                <li class="SubFirst">
+                    <a href="/admin.aspx?module=sitesetting">
+                        <span class="SubMenuText">Cấu hình website
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=currencysetting">
+                        <span class="SubMenuText">Cấu hình tiền tệ
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=paymentsetting">
+                        <span class="SubMenuText">Cấu hình thanh toán 
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=shippingsetting">
+                        <span class="SubMenuText">Cấu hình vận chuyển
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=support">
+                        <span class="SubMenuText">Hỗ trợ trực tuyến
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=ftpsetting">
+                        <span class="SubMenuText">Cấu hình FTP
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=redirects">
+                        <span class="SubMenuText">Chuyển hướng 301
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        
+        <li>
+            <a class="TopMenuItem" href="javascript:;">
+                <span class="MenuText"><i class="icon-tags"></i> Sản phẩm</span>
+            </a>
+            <ul>
+                <li class="SubFirst">
+                    <a href="/admin.aspx?module=products">
+                        <span class="SubMenuText">Danh sách sản phẩm
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=categories">
+                        <span class="SubMenuText">Danh mục sản phẩm
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/admin.aspx?module=export"> 
+                        <span class="SubMenuText">Xuất danh sách sản phẩm
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=vendors">
+                        <span class="SubMenuText">Nhà sản xuất
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=customcategories">
+                        <span class="SubMenuText">Danh mục tùy chọn
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=productfeatures">
+                        <span class="SubMenuText">Thuộc tính sản phẩm
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=productoption">
+                        <span class="SubMenuText">
+                            Nhóm tùy chọn sản phẩm
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=productreviews">
+                        <span class="SubMenuText">Đánh giá, phản hồi sản phẩm
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="TopMenuItem" href="javascript:;">
+                <span class="MenuText"><i class="icon-th-large"></i> Nội dung</span>
+            </a>
+            <ul>
+                <li class="SubFirst">
+                    <a href="/admin.aspx?module=articles">
+                        <span class="SubMenuText">Quản lý tin tức
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=articlecategories">
+                        <span class="SubMenuText">Danh mục tin
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=survey">
+                        <span class="SubMenuText">Thăm dò ý kiến
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=gallery">
+                        <span class="SubMenuText">Quản lý Slideshow ảnh
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=download">
+                        <span class="SubMenuText">Quản lý download
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=pages">
+                        <span class="SubMenuText">Quản lý trang chức năng 
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=filemanager">
+                        <span class="SubMenuText">Quản lý ảnh 
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        
+         
+        
+        <li>
+            <a class="TopMenuItem" href="javascript:;">
+                <span class="MenuText"><i class="icon-picture"></i> Hình ảnh</span>
+            </a>
+            <ul>
+                <li class="SubFirst">
+                    <a href="/admin.aspx?module=menu">
+                        <span class="SubMenuText">Quản lý Menu
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=skins">
+                        <span class="SubMenuText">Giao diện website 
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=skins&action=mobile">
+                        <span class="SubMenuText">Thiết bị di động
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=skins&action=banner">
+                        <span class="SubMenuText">Logo & Banner 
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=skins&action=footer">
+                        <span class="SubMenuText">Chân trang (Footer) 
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=skins&action=background">
+                        <span class="SubMenuText">Thay đổi hình nền 
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="TopMenuItem" href="javascript:;">
+                <span class="MenuText"><i class="icon-shopping-cart"></i> Đơn hàng</span>
+            </a>
+            <ul>
+                <li class="SubFirst">
+                    <a href="/admin.aspx?module=orders">
+                        <span class="SubMenuText">Danh sách đơn hàng
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=orders&act=message">
+                        <span class="SubMenuText">Tin nhắn từ khách hàng
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="TopMenuItem" href="javascript:;">
+                <span class="MenuText"><i class="icon-signin"></i> Liên kết</span>
+            </a>
+            <ul>
+                <li class="SubFirst">
+                    <a href="/admin.aspx?module=sitesetting&action=hangtotstoresetting">
+                        <span class="SubMenuText">Gian hàng Hangtot.com
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=socialshop">
+                        <span class="SubMenuText">Ứng dụng Facebook
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="TopMenuItem" href="javascript:;">
+                <span class="MenuText"><i class="icon-user"></i> Khách hàng</span>
+            </a>
+            <ul>
+                <li class="SubFirst">
+                    <a href="/admin.aspx?module=contacts">
+                        <span class="SubMenuText">Liên hệ từ khách hàng 
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=customers">
+                        <span class="SubMenuText">Danh sách khách hàng 
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=customergroups">
+                        <span class="SubMenuText">Nhóm khách hàng
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin.aspx?module=emailsubscription">
+                        <span class="SubMenuText">Danh sách Email đăng ký
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+</div>
+
+        
+        <div id="main-content">
+            <div class="container-fluid">
+                <div style="width: 100%; margin: 0 auto;">
+                    
+<div id="Breadcrumb" class="Block Breadcrumb ui-widget-content ui-corner-top ui-corner-bottom">
+    <ul>
+        <li class='SecondLast'><a href='/admin'><i class="icon-home" style="font-size:14px;"></i> Trang chủ</a></li><li class='Last'><span>Danh sách sản phẩm</span></li>
+    </ul>
+</div>
+<div style="clear: both;"></div>
+
+                        
+    <div id="cph_Main_ContentPane">
+
+
+
+
+<div class="widget">
+    <div class="widget-title">
+        <h4><i class="icon-list-alt"></i>&nbsp;Danh sách sản phẩm</h4>
+        
+<div class="ui-widget-content ui-corner-top ui-corner-bottom">
+    <div id="toolbox">
+        
+        <div style="float:right;" class="toolbox-content">
+            
+                    <table class="toolbar">
+                        <tr>
+                
+                    
+                
+                    <td align="center">
+                        <a id="cph_Main_ctl00_toolbox_rptAction_lbtAction_1" title="Thêm mới" class="toolbar btn btn-info" href="javascript:__doPostBack(&#39;ctl00$cph_Main$ctl00$toolbox$rptAction$ctl02$lbtAction&#39;,&#39;&#39;)"><i class="icon-plus"></i>&nbsp;
+                            Thêm mới</a>
+                    </td>
+                
+                    <td align="center">
+                        <a onclick="javascript:return ConfirmDelete();" id="cph_Main_ctl00_toolbox_rptAction_lbtAction_2" title="Xóa" class="toolbar btn btn-info" href="javascript:__doPostBack(&#39;ctl00$cph_Main$ctl00$toolbox$rptAction$ctl03$lbtAction&#39;,&#39;&#39;)"><i class="icon-trash"></i>&nbsp;
+                            Xóa</a>
+                    </td>
+                <td align="center">
+                        <a id="cph_Main_ctl00_toolbox_rptAction_lbtAction_0" title="Trợ giúp"  style="color:#FFF !important" class="toolbar btn btn-info" href=""><i class="icon-question-sign"></i>&nbsp;
+                            Trợ giúp</a>
+                    </td>
+                        </tr>
+                    </table>
+                
+        </div>
+    </div>
+</div>
+        <div id="hiddenToolBarScroll" class="scrollBox hidden">
+            <h4>
+                <i class="icon-list-alt"></i>&nbsp;Danh sách sản phẩm</h4>
+            <div class="FloatMenuBar">
+                
+<div class="ui-widget-content ui-corner-top ui-corner-bottom">
+    <div id="toolbox">
+        
+        <div style="float:right;" class="toolbox-content">
+            
+                    <table class="toolbar">
+                        <tr>
+                
+                    <td align="center">
+                        <a id="cph_Main_ctl00_toolbox2_rptAction_lbtAction_0" title="Trợ giúp"  style="color:#FFF !important" class="toolbar btn btn-info" href=""><i class="icon-question-sign"></i>&nbsp;
+                            Trợ giúp</a>
+                    </td>
+                
+                    <td align="center">
+                        <a id="cph_Main_ctl00_toolbox2_rptAction_lbtAction_1" title="Thêm mới" class="toolbar btn btn-info" href="javascript:__doPostBack(&#39;ctl00$cph_Main$ctl00$toolbox2$rptAction$ctl02$lbtAction&#39;,&#39;&#39;)"><i class="icon-plus"></i>&nbsp;
+                            Thêm mới</a>
+                    </td>
+                
+                    <td align="center">
+                        <a onclick="javascript:return ConfirmDelete();" id="cph_Main_ctl00_toolbox2_rptAction_lbtAction_2" title="Xóa" class="toolbar btn btn-info" href="javascript:__doPostBack(&#39;ctl00$cph_Main$ctl00$toolbox2$rptAction$ctl03$lbtAction&#39;,&#39;&#39;)"><i class="icon-trash"></i>&nbsp;
+                            Xóa</a>
+                    </td>
+                
+                        </tr>
+                    </table>
+                
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+    <div class="widget-body">
+        
+
+        
+<script type="text/javascript">
+function SelectAllCheckboxes(chk) {
+    $j('#cph_Main_ctl00_ctl00_grvProducts >tbody >tr >td:nth-child(1)').find("input:checkbox").attr('checked', chk.checked);
+}
+function CheckSelectAtLeastOne() {
+    var checked = false;
+    $j('#cph_Main_ctl00_ctl00_grvProducts >tbody >tr >td:nth-child(1)').find("input:checkbox").each(function() {
+        if (this.checked) { checked = true; }
+    });
+    if (checked == false) {
+        alert('Hãy chọn ít nhất 1 sản phẩm để thao tác');
+        return false;
+    } else { return true; }
+}
+function ConfirmDelete() {
+    if (CheckSelectAtLeastOne()) {
+        var confirmAlert = 'Bạn có chắc chắn muốn xóa các sản phẩm này không?';
+        $j('#cph_Main_ctl00_ctl00_grvProducts >tbody').find("tr").each(function() {
+            var checked = false;
+            var imgChecked = false;
+            $j(this).find('img[src="http://st.hangtot.com/favicon.ico"]').each(function() {
+                imgChecked = true;
+            });
+            $j(this).find("input:checkbox:first").each(function() {
+                if (this.checked) { checked = true; }
+            });
+            if(checked == true && imgChecked == true)
+            {
+                confirmAlert='Bạn có chắc chắn muốn xóa sản phẩm này và sản phẩm trên gian hàng hangtot.com?'
+            }
+        });
+        return confirm(confirmAlert);
+    }
+    return false;
+}
+function ShowQuickHelp(container, title, desc)
+{
+    div = document.createElement("div");
+    div.id = 'help';
+    div.style.zIndex = 1;
+    div.style.display = 'block';
+    div.style.position = 'absolute';
+    div.style.width = '185px';
+    div.style.backgroundColor = '#FEFCD5';
+    div.style.border = 'solid 1px #E7E3BE';
+    div.style.padding = '10px';
+    if(title != '') {
+	    div.innerHTML = '<div class="helpTip"><strong>' + title + '</strong></div><br />';
+    }
+    div.innerHTML += '<div style="width:185px; padding-left:0px" class=helpTip>' + desc + '</div>';
+    SetQuickHelpPosition(div, container, 185)
+    container.parentNode.appendChild(div);
+}
+function SetQuickHelpPosition(d, container, width)
+{
+    var containerX = 0;
+    var containerY = 0;
+    var containerTemp = container;
+    while( containerTemp != null ) {
+	    containerX += containerTemp.offsetLeft;
+	    containerY += containerTemp.offsetTop;
+	    containerTemp = containerTemp.offsetParent;
+    }
+    var scrollXY = getScrollXY();
+    var windowRight = document.documentElement.clientWidth;
+    var divX = windowRight-width;
+    var divY = containerY+15;
+    if (divX<=containerX-scrollXY[0]) {
+	    d.style.left= divX+'px';
+    }
+    else if(width+containerX+50 > $j(window).width()) {
+	    d.style.left = (divX-width-50)+'px';
+    }
+    d.style.top = divY+'px';
+}
+function getScrollXY()
+{
+    var scrOfX = 0, scrOfY = 0;
+    if( typeof( window.pageYOffset ) == 'number' ) {
+	    //Netscape compliant
+	    scrOfY = window.pageYOffset;
+	    scrOfX = window.pageXOffset;
+    } else if( document.body && ( document.body.scrollLeft || document.body.scrollTop ) ) {
+	    //DOM compliant
+	    scrOfY = document.body.scrollTop;
+	    scrOfX = document.body.scrollLeft;
+    } else if( document.documentElement && ( document.documentElement.scrollLeft || document.documentElement.scrollTop ) ) {
+	    //IE6 standards compliant mode
+	    scrOfY = document.documentElement.scrollTop;
+	    scrOfX = document.documentElement.scrollLeft;
+    }
+    return [ scrOfX, scrOfY ];
+}
+function HideQuickHelp(p)
+{
+    if ($j("#help").length) {
+	    $j("#help").css('display','none');
+	    setTimeout('RemoveHelp()', 1);
+    }
+}
+function RemoveHelp() {
+    $j("#help").remove();
+}
+
+function ConvertPrice(numberText, culture) {
+    if(numberText == "") return 0;
+    var number = 0;
+    if(culture == "vi-VN") {
+        number = numberText.replace(/\./g, "");
+        return Number(number);
+    }
+    else {
+        console.log(numberText);
+        var s = numberText.length - 2;
+        var c = numberText.substring(s - 1, s);
+        if(c == ".") {
+            number = numberText.replace(/\,/g, "");
+            return Number(number);
+        }
+        if(c == ",") {
+            number = numberText.replace(/\./g, "");
+            number = number.replace(/\,/g, ".");
+            return Number(number);
+        }
+    }
+    return Number(numberText);
+}
+function UpdateProduct(linkUpdateId, pId)
+{
+    var id = $j(linkUpdateId).closest('tr').children(".Id").children("#txtId").val();
+    var code = $j(linkUpdateId).closest('tr').children(".Code").children("#txtCode").val();
+    var price = $j(linkUpdateId).closest('tr').children(".Price").children("#txtPrice").val();
+    var retailPrice = $j(linkUpdateId).closest('tr').children(".RetailPrice").children("#txtRetailPrice").val();
+    var salePrice = $j(linkUpdateId).closest('tr').children(".SalePrice").children("#txtSalePrice").val();
+    var orderNumber = $j(linkUpdateId).closest('tr').children(".OrderNumber").children("#txtOrderNumber").val();
+    var status = $j(linkUpdateId).closest('tr').children(".Status").children("#ddlStatus").val();
+    var isVisible;
+    
+    if ($j(linkUpdateId).closest('tr').children(".Visible").children("#cbIsVisible:checked").is(':checked')){
+        isVisible = 'true';
+    }
+    else{
+        isVisible = 'false';
+    }
+
+    if(price < salePrice){ alert("Giá khuyến mãi phải nhỏ hơn giá bán !"); return false; }
+    
+    var querystring = "{'siteid':'" + 52691 + "'," + 
+                        "'productid':'" + id + "'," + 
+                        "'price':'" + price + "'," + 
+                        "'retailprice':'" + retailPrice + "'," + 
+                        "'saleprice':'" + salePrice + "'," + 
+                        "'ordernumber':'" + orderNumber + "'," + 
+                        "'isvisible':'" + isVisible + "'," +
+                        "'code':'" + code + "'," +
+                        "'status':'" + status + "'" + "}";
+
+    $j.ajax({
+        beforeSend: function() {},
+        type: "POST",
+        url: "/WebServices/ProductService.asmx/UpdateProduct",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: querystring,
+        success: function(response) {
+            var result = response.d.ValueReturn;
+            if(result == "true") alert("Cập nhật thông tin sản phẩm thành công !");
+            else{ if(result != "false") alert(result);}
+        }
+    });
+    
+    return false;
+    
+}
+
+function UpdateProduct2(pId){
+    var linkUpdateId = $j("#lbtUpdateProduct" + pId);
+    var id = $j(linkUpdateId).closest('tr').children(".Id").children("#txtId").val();
+    id = pId;
+    //alert(id);
+    var code = $j(linkUpdateId).closest('tr').children(".Code").children("#txtCode").val();
+    var price = $j(linkUpdateId).closest('tr').children(".Price").children("#txtPrice").val();
+    //var retailPrice = $j(linkUpdateId).closest('tr').children(".RetailPrice").children("#txtRetailPrice").val();
+    var retailprice = 0;
+    var salePrice = $j(linkUpdateId).closest('tr').children(".SalePrice").children("#txtSalePrice").val();
+    var orderNumber = $j(linkUpdateId).closest('tr').children(".OrderNumber").children("#txtOrderNumber").val();
+    var status = $j(linkUpdateId).closest('tr').children(".Status").children("#ddlStatus").val();
+    var culture = $j(linkUpdateId).closest('tr').children(".Price").children("#txtPrice").attr("culture");
+    var isVisible;
+
+    if ($j(linkUpdateId).closest('tr').children(".Visible").children("#cbIsVisible:checked").is(':checked')){ isVisible = 'true'; }
+    else{ isVisible = 'false'; }
+    
+    console.log(price);
+    //console.log(retailPrice);
+    console.log(salePrice);
+
+    price = ConvertPrice(price, culture);
+    //retailPrice = ConvertPrice(retailPrice, culture);
+    salePrice = ConvertPrice(salePrice, culture);
+
+    if(price < salePrice){ alert("Giá khuyến mãi phải nhỏ hơn giá bán !"); return false; }
+    
+    //(ByVal siteid As Integer, ByVal productid As Integer, ByVal price As String, ByVal ordernumber As Integer, ByVal isvisible As String) As StringServiceInfo
+    //(ByVal siteid As Integer, ByVal productid As Integer, ByVal price As String, ByVal retailprice As String, ByVal saleprice As String, ByVal ordernumber As Integer, ByVal isvisible As String, ByVal code As String, ByVal status As String)
+    var querystring = "{'siteid':'" + 52691 + "'," + 
+                        "'productid':'" + id + "'," + 
+                        "'price':'" + price + "'," +
+                        "'retailprice' :'"+retailprice+"',"+ 
+                        "'saleprice':'"+salePrice+"',"+
+                        "'ordernumber':'" + orderNumber + "'," +                         
+                        "'isvisible':'" + isVisible + "',"+
+                        "'code':'"+code+"',"+
+                        "'status':'"+status+"'}";
+                        
+    $j.ajax({
+        beforeSend: function() {},
+        type: "POST",
+        url: "/WebServices/ProductService.asmx/UpdateProduct",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: querystring,
+        success: function(response) {
+            var result = response.d.ValueReturn;
+            if(result == "true"){  }
+            else{ alert(result); }
+        }
+    });
+
+    return false;
+}
+
+</script>
+<script type="text/javascript">
+function CreateHangtotProduct(){
+    var useHangtot = 'False';
+    if( useHangtot == 'True'){
+        $j.iModal({
+            type: 'iframe',
+            title: 'Chọn sản phẩm mẫu trên Hangtot.com',
+            onOpen: function () {
+                $j('.closeModalButton').bind('click', function () {
+                    $j.iModal.close();
+                });
+                $j('#ModalContainer').show();
+            },
+            //buttons: '<input type="button" class="closeModalButton" value="Close"/>',
+            url: '/Admin/Hangtot/HangtotProductSearch.aspx?type=selectinfo&random=' + Math.floor((Math.random()*9000000)+1000000),
+            width: 780,
+            height: 410,
+            top: '15%'
+        });
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+function OpenHangtotSync(productid,productname) {
+    $j.iModal({
+        type: 'iframe',
+        title: 'Đăng sản phẩm ' + decodeURIComponent(productname.replace(/\+/g, '%20')) + ' lên Hangtot.com',
+        onOpen: function () {
+            $j('.closeModalButton').bind('click', function () {
+                $j.iModal.close();
+            });
+            $j('#ModalContainer').show();
+        },
+        //buttons: '<input type="button" class="closeModalButton" value="Close"/>',
+        url: '/Admin/Hangtot/HangtotProductSearch.aspx?type=productsync&productid=' + productid + '&productname=' + productname,
+        width: 780,
+        height: 400,
+        top: '15%'
+    });
+
+    return false;
+}
+
+function OpenHangtotProduct(productid) {
+    $j.iModal({
+        type: 'iframe',
+        title: 'Chi tiết sản phẩm liên kết trên Hangtot.com',
+        onOpen: function () {
+            $j('.closeModalButton').bind('click', function () {
+                $j.iModal.close();
+            });
+            $j('#ModalContainer').show();
+        },
+        //buttons: '<input type="button" class="closeModalButton" value="Close"/>',
+        url: '/Admin/Hangtot/HangtotProductDetail.aspx?productid=' + productid,
+        width: 450,
+        height: 220,
+        top: '15%'
+    });
+
+    return false;
+}
+</script>
+
+<div class="row-fluid">
+    <div class="span3">
+        <div id="sample_1_length" class="dataTables_length">
+            <select name="ctl00$cph_Main$ctl00$ctl00$ddlPage" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$cph_Main$ctl00$ctl00$ddlPage\&#39;,\&#39;\&#39;)&#39;, 0)" id="cph_Main_ctl00_ctl00_ddlPage" style="width:160px;">
+	<option value="10">10 Bản ghi / trang</option>
+	<option selected="selected" value="20">20 Bản ghi / trang</option>
+	<option value="30">30 Bản ghi / trang</option>
+	<option value="50">50 Bản ghi / trang</option>
+	<option value="100">100 Bản ghi / trang</option>
+
+</select>
+        </div>
+    </div>
+    <div class="span9 form-search pull-right text-right">
+        <input name="ctl00$cph_Main$ctl00$ctl00$txtSearch" type="text" maxlength="100" id="cph_Main_ctl00_ctl00_txtSearch" placeholder="Tên sản phẩm" style="width:200px;" />
+        <select name="ctl00$cph_Main$ctl00$ctl00$ddlCate" id="cph_Main_ctl00_ctl00_ddlCate" style="width:200px;">
+	<option selected="selected" value="-1">-- Danh mục sản phẩm --</option>
+	<option value="832431">S&#225;ch kinh doanh</option>
+	<option value="832432">└-------- T&#224;i ch&#237;nh v&#224; đầu tư</option>
+	<option value="832433">└-------- Marketing v&#224; b&#225;n h&#224;ng</option>
+	<option value="832434">└-------- L&#227;nh đạo v&#224; quản l&#253;</option>
+	<option value="832428">Văn học</option>
+	<option value="832429">└-------- Văn học Việt Nam</option>
+	<option value="832430">└-------- Văn học nước ngo&#224;i</option>
+	<option value="832435">S&#225;ch gi&#225;o khoa</option>
+	<option value="832436">└-------- S&#225;ch gi&#225;o khoa cấp I</option>
+	<option value="832437">└-------- S&#225;ch gi&#225;o khoa cấp II</option>
+	<option value="832438">└-------- S&#225;ch gi&#225;o khoa cấp III</option>
+	<option value="832439">└-------- S&#225;ch tham khảo</option>
+
+</select>
+        <input type="submit" name="ctl00$cph_Main$ctl00$ctl00$btnSearch" value="Tìm kiếm" id="cph_Main_ctl00_ctl00_btnSearch" class="btn" />
+        <a class="btn " href="/admin.aspx?module=products&act=advance-search"><i class="icon-filter"></i> Lọc sản phẩm</a>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span3">
+        <div style="margin-top:18px;">
+            Tổng số sản phẩm: <span style='color: #A52A2A;'>50</span> / <span style='color: #333;'>100</span>
+        </div>
+    </div>
+    <div class="span9">
+        
+<div class="pagination pagination-small pagination-right">
+    <ul>
+        <li>
+            <a id="cph_Main_ctl00_ctl00_PagingTop_hplFirst" class="disabled" href="javascript:;">Trang đầu</a>
+        </li>
+        <li>
+            <a id="cph_Main_ctl00_ctl00_PagingTop_hplPrevPage" class="disabled" href="javascript:;">«</a>
+        </li>
+        
+                <li>
+                    <a id="cph_Main_ctl00_ctl00_PagingTop_rptPaging_hplPaging_0" class="active" href="http://tuannd.bizwebvietnam.com/admin.aspx?module=products&amp;pn=1" style="background-color:#F5F5F5;color:#999999;">1</a>
+                    
+                </li>
+            
+                <li>
+                    <a id="cph_Main_ctl00_ctl00_PagingTop_rptPaging_hplPaging_1" href="http://tuannd.bizwebvietnam.com/admin.aspx?module=products&amp;pn=2">2</a>
+                    
+                </li>
+            
+                <li>
+                    <a id="cph_Main_ctl00_ctl00_PagingTop_rptPaging_hplPaging_2" href="http://tuannd.bizwebvietnam.com/admin.aspx?module=products&amp;pn=3">3</a>
+                    
+                </li>
+            
+        <li>
+            <a id="cph_Main_ctl00_ctl00_PagingTop_hplNextPage" href="http://tuannd.bizwebvietnam.com/admin.aspx?module=products&amp;pn=2">»</a>
+        </li>
+        <li>
+            <a id="cph_Main_ctl00_ctl00_PagingTop_hplLast" href="http://tuannd.bizwebvietnam.com/admin.aspx?module=products&amp;pn=3">Trang cuối</a>
+        </li>
+    
+    
+    </ul>
+</div>
+
+
+    </div>
+</div>
+<div>
+	<table class="table table-striped table-bordered dataTable table-hover" cellspacing="0" id="cph_Main_ctl00_ctl00_grvProducts" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">
+                <input id="cph_Main_ctl00_ctl00_grvProducts_chkAll" type="checkbox" name="ctl00$cph_Main$ctl00$ctl00$grvProducts$ctl01$chkAll" onclick="javascript:SelectAllCheckboxes(this);" />
+            </th>
+            <th scope="col">Ảnh</th>
+            <th scope="col">Mã sản phẩm</th><th scope="col">Tên sản phẩm</th>
+            <th scope="col">Thuộc nhóm</th>
+            <th scope="col">Giá</th>
+            <th scope="col">Giá khuyến mại</th>
+            <th scope="col">Tình trạng</th>
+            <th scope="col">Thứ tự</th>
+            <th scope="col">Hiển thị</th>
+            <th scope="col">Trang chủ</th>
+            <th scope="col">Khuyến mại</th>
+            <th scope="col">Thao tác</th>
+		</tr>
+        <tr class="row0">
+			<td align="center" style="width:8px;">
+                <input id="cph_Main_ctl00_ctl00_grvProducts_chkEdit_0" type="checkbox" name="ctl00$cph_Main$ctl00$ctl00$grvProducts$ctl02$chkEdit" />
+                 
+            </td>
+            <td class="text-center" align="center" style="width:30px;">
+                <img src="http://media.bizwebmedia.net/Thumbnails/templates/images/2011/5/5548131800cauhoibttracnghiem.30.30.jpg" alt=""
+                    onerror="this.src='http://media.bizwebmedia.net/Thumbnail.ashx?img=templates/images/2011/5/5548131800cauhoibttracnghiem.gif&width=30&height=30';" />
+            </td>
+            <td class="Code" align="center" style="width:80px;">
+                <input type="text" id="txtCode" style="width: 70px; text-align: left;" value='STK 06'
+                    onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td>
+                <a href="/admin.aspx?module=products&act=edit&id=2946699">
+                    800 câu hỏi bài tập trắc nghiệm Vật lí 11</a>
+            </td>
+            <td class="Status" align="center" style="width:200px;">
+                <select id="ddlMenu" style="width:200px; text-align: left;" onchange="javascript:return UpdateProduct3(2946699);">
+                    <option value="allow" selected="selected">Bồn cầu</option>
+                    <option value="disallow" >Hết hàng</option>
+                 </select>
+            </td>
+            <td class="Price" align="center" style="width:90px;">
+                <input type="text" id="txtPrice" style="width: 75px; text-align: right;" value="36.000"
+                    onchange="javascript:return UpdateProduct2(2946699);" culture="vi-VN" />
+            </td>
+            <td class="SalePrice" align="center" style="width:70px;">
+                <input type="text" id="txtSalePrice" style="width: 75px; text-align: right;" value="0"
+                    onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="Status" align="center" style="width:95px;">
+                <select id="ddlStatus" style="width: 95px; text-align: left;" onchange="javascript:return UpdateProduct2(2946699);">
+                    <option value="allow" selected="selected">Còn hàng</option>
+                    <option value="disallow" >Hết hàng</option>
+                 </select>
+            </td>
+            <td class="OrderNumber" align="center" style="width:45px;">
+                <input type="text" id="txtOrderNumber" style="width: 30px;" value="1" onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="Visible text-center" align="center" style="width:45px;">
+                <input type="checkbox" id="cbIsVisible" checked onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="Visible text-center" align="center" style="width:45px;">
+                <input type="checkbox" id="chkHome" checked onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="Visible text-center" align="center" style="width:45px;">
+                <input type="checkbox" id="chkSale" checked onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="text-center" align="center" style="width:90px;">                
+                <a href="/admin.aspx?module=products&act=edit&id=2946699" class="action-link-button" id="lbtUpdateProduct2946699"
+                    title="Xóa sản phẩm">
+                    <i class="icon-trash"></i></a>
+                  <a class="action-link-button" title="Thêm sản phẩm so sánh" href="/admin.aspx?module=products&act=add&cateid=832428&random=5039628&urlreturn=%2fadmin.aspx%3fmodule%3dcategories">
+                    <i class="icon-plus"></i>
+                </a>
+            </td>
+		</tr>
+        <tr class="row0">
+			<td align="center" style="width:8px;">
+                <input id="cph_Main_ctl00_ctl00_grvProducts_chkEdit_0" type="checkbox" name="ctl00$cph_Main$ctl00$ctl00$grvProducts$ctl02$chkEdit" />
+                 
+            </td>
+            <td class="text-center" align="center" style="width:30px;">
+                <img src="http://media.bizwebmedia.net/Thumbnails/templates/images/2011/5/5548131800cauhoibttracnghiem.30.30.jpg" alt=""
+                    onerror="this.src='http://media.bizwebmedia.net/Thumbnail.ashx?img=templates/images/2011/5/5548131800cauhoibttracnghiem.gif&width=30&height=30';" />
+            </td>
+            <td class="Code" align="center" style="width:80px;">
+                <input type="text" id="txtCode" style="width: 70px; text-align: left;" value='STK 06'
+                    onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td>
+                <a href="/admin.aspx?module=products&act=edit&id=2946699">
+                    800 câu hỏi bài tập trắc nghiệm Vật lí 11</a>
+            </td>
+            <td class="Status" align="center" style="width:200px;">
+                <select id="ddlMenu" style="width:200px; text-align: left;" onchange="javascript:return UpdateProduct3(2946699);">
+                    <option value="allow" selected="selected">Bồn cầu</option>
+                    <option value="disallow" >Hết hàng</option>
+                 </select>
+            </td>
+            <td class="Price" align="center" style="width:90px;">
+                <input type="text" id="txtPrice" style="width: 75px; text-align: right;" value="36.000"
+                    onchange="javascript:return UpdateProduct2(2946699);" culture="vi-VN" />
+            </td>
+            <td class="SalePrice" align="center" style="width:70px;">
+                <input type="text" id="txtSalePrice" style="width: 75px; text-align: right;" value="0"
+                    onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="Status" align="center" style="width:95px;">
+                <select id="ddlStatus" style="width: 95px; text-align: left;" onchange="javascript:return UpdateProduct2(2946699);">
+                    <option value="allow" selected="selected">Còn hàng</option>
+                    <option value="disallow" >Hết hàng</option>
+                 </select>
+            </td>
+            <td class="OrderNumber" align="center" style="width:45px;">
+                <input type="text" id="txtOrderNumber" style="width: 30px;" value="1" onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="Visible text-center" align="center" style="width:45px;">
+                <input type="checkbox" id="cbIsVisible" checked onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="Visible text-center" align="center" style="width:45px;">
+                <input type="checkbox" id="chkHome" checked onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="Visible text-center" align="center" style="width:45px;">
+                <input type="checkbox" id="chkSale" checked onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="text-center" align="center" style="width:90px;">                
+                <a href="/admin.aspx?module=products&act=edit&id=2946699" class="action-link-button" id="lbtUpdateProduct2946699"
+                    title="Xóa sản phẩm">
+                    <i class="icon-trash"></i></a>
+                  <a class="action-link-button" title="Thêm sản phẩm so sánh" href="/admin.aspx?module=products&act=add&cateid=832428&random=5039628&urlreturn=%2fadmin.aspx%3fmodule%3dcategories">
+                    <i class="icon-plus"></i>
+                </a>
+            </td>
+		</tr>
+        <tr class="row0">
+			<td align="center" style="width:8px;">
+                <input id="cph_Main_ctl00_ctl00_grvProducts_chkEdit_0" type="checkbox" name="ctl00$cph_Main$ctl00$ctl00$grvProducts$ctl02$chkEdit" />
+                 
+            </td>
+            <td class="text-center" align="center" style="width:30px;">
+                <img src="http://media.bizwebmedia.net/Thumbnails/templates/images/2011/5/5548131800cauhoibttracnghiem.30.30.jpg" alt=""
+                    onerror="this.src='http://media.bizwebmedia.net/Thumbnail.ashx?img=templates/images/2011/5/5548131800cauhoibttracnghiem.gif&width=30&height=30';" />
+            </td>
+            <td class="Code" align="center" style="width:80px;">
+                <input type="text" id="txtCode" style="width: 70px; text-align: left;" value='STK 06'
+                    onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td>
+                <a href="/admin.aspx?module=products&act=edit&id=2946699">
+                    800 câu hỏi bài tập trắc nghiệm Vật lí 11</a>
+            </td>
+            <td class="Status" align="center" style="width:200px;">
+                <select id="ddlMenu" style="width:200px; text-align: left;" onchange="javascript:return UpdateProduct3(2946699);">
+                    <option value="allow" selected="selected">Bồn cầu</option>
+                    <option value="disallow" >Hết hàng</option>
+                 </select>
+            </td>
+            <td class="Price" align="center" style="width:90px;">
+                <input type="text" id="txtPrice" style="width: 75px; text-align: right;" value="36.000"
+                    onchange="javascript:return UpdateProduct2(2946699);" culture="vi-VN" />
+            </td>
+            <td class="SalePrice" align="center" style="width:70px;">
+                <input type="text" id="txtSalePrice" style="width: 75px; text-align: right;" value="0"
+                    onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="Status" align="center" style="width:95px;">
+                <select id="ddlStatus" style="width: 95px; text-align: left;" onchange="javascript:return UpdateProduct2(2946699);">
+                    <option value="allow" selected="selected">Còn hàng</option>
+                    <option value="disallow" >Hết hàng</option>
+                 </select>
+            </td>
+            <td class="OrderNumber" align="center" style="width:45px;">
+                <input type="text" id="txtOrderNumber" style="width: 30px;" value="1" onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="Visible text-center" align="center" style="width:45px;">
+                <input type="checkbox" id="cbIsVisible" checked onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="Visible text-center" align="center" style="width:45px;">
+                <input type="checkbox" id="chkHome" checked onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="Visible text-center" align="center" style="width:45px;">
+                <input type="checkbox" id="chkSale" checked onchange="javascript:return UpdateProduct2(2946699);" />
+            </td>
+            <td class="text-center" align="center" style="width:90px;">                
+                <a href="/admin.aspx?module=products&act=edit&id=2946699" class="action-link-button" id="lbtUpdateProduct2946699"
+                    title="Xóa sản phẩm">
+                    <i class="icon-trash"></i></a>
+                  <a class="action-link-button" title="Thêm sản phẩm so sánh" href="/admin.aspx?module=products&act=add&cateid=832428&random=5039628&urlreturn=%2fadmin.aspx%3fmodule%3dcategories">
+                    <i class="icon-plus"></i>
+                </a>
+            </td>
+		</tr>
+         
+	</table>
+</div>
+
+
+<div class="pagination pagination-small pagination-right">
+    <ul>
+        <li>
+            <a id="cph_Main_ctl00_ctl00_PagingBottom_hplFirst" class="disabled" href="javascript:;">Trang đầu</a>
+        </li>
+        <li>
+            <a id="cph_Main_ctl00_ctl00_PagingBottom_hplPrevPage" class="disabled" href="javascript:;">«</a>
+        </li>
+        
+                <li>
+                    <a id="cph_Main_ctl00_ctl00_PagingBottom_rptPaging_hplPaging_0" class="active" href="http://tuannd.bizwebvietnam.com/admin.aspx?module=products&amp;pn=1" style="background-color:#F5F5F5;color:#999999;">1</a>
+                    
+                </li>
+            
+                <li>
+                    <a id="cph_Main_ctl00_ctl00_PagingBottom_rptPaging_hplPaging_1" href="http://tuannd.bizwebvietnam.com/admin.aspx?module=products&amp;pn=2">2</a>
+                    
+                </li>
+            
+                <li>
+                    <a id="cph_Main_ctl00_ctl00_PagingBottom_rptPaging_hplPaging_2" href="http://tuannd.bizwebvietnam.com/admin.aspx?module=products&amp;pn=3">3</a>
+                    
+                </li>
+            
+        <li>
+            <a id="cph_Main_ctl00_ctl00_PagingBottom_hplNextPage" href="http://tuannd.bizwebvietnam.com/admin.aspx?module=products&amp;pn=2">»</a>
+        </li>
+        <li>
+            <a id="cph_Main_ctl00_ctl00_PagingBottom_hplLast" href="http://tuannd.bizwebvietnam.com/admin.aspx?module=products&amp;pn=3">Trang cuối</a>
+        </li>
+    
+    
+    </ul>
+</div>
+
+    </div>
+</div>
+</div>
+
+                </div>
+            </div>
+            <div style="margin-right: 25px; float: right; color: Gray;">
+               Copyright © 2016 Bonnuoc Vietnam Co. Ltd. All Rights Reserved
+
+            </div>
+            <div style="height: 10px; margin-top: 40px;">
+            </div>
+        </div>
+    </div>
+    <span id="additionalAttr"></span>
+    <script type="text/javascript">
+        $j("#registerAd").fancybox({
+            'width': 780,
+            'height': 550,
+            'autoScale': false,
+            'transitionIn': 'fade',
+            'transitionOut': 'fade',
+            'speedIn': 500,
+            'speedOut': 300,
+            'titleShow': false,
+            'hideOnOverlayClick': false,
+            'type': 'iframe',
+            onStart: function () {
+                var text =
+                "<style type='text/css'>" +
+                "#fancybox-outer{ background: transparent; }" +
+                "#fancy-bg-n, #fancy-bg-ne, #fancy-bg-e, #fancy-bg-se, #fancy-bg-s, #fancy-bg-sw, #fancy-bg-w, #fancy-bg-nw{ background-image: none; }" +
+                "#fancybox-close{ right: 54px; top: 23px; background-image: url('/sites/admin/images/registerad/close.png'); background-position: center center; background-repeat: no-repeat; }" +
+                "</style>";
+                $j("#additionalAttr").html(text);
+            },
+            onCancel: function () { $j("#additionalAttr").html(''); },
+            onCleanup: function () { $j("#additionalAttr").html(''); },
+            onClose: function () { $j("#additionalAttr").html(''); }
+        });
+    </script>
+    </form>
+</body>
+</html>

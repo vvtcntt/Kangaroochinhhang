@@ -1,0 +1,51 @@
+﻿@charset "utf-8";@media screen and (max-width:768px){#Contents{width:100%;overflow:hidden}
+#ProductDetail{width:100%;height:auto;float:left;margin:5px 0px}
+#Left_ProductDetail{width:40%}
+#Right_ProductDetail{width:56%}
+#ProductInvolve{width:100%;margin:5px 0px !important}
+#Top2 #Left_Top2 span .PriceSale{font-size:16px}
+#Right_Top2 .bh2{font-size:16px}
+#nVar_ContentProduct .nVar a{margin:5px;font-size:11px}
+#nVar_ContentProduct .nVar a:last-child{display:none}
+#Content_ProductInvolve .Tear_pd{width:180px;float:left;margin:2px}
+#Content_ProductInvolve .Tear_1{width:31%;float:left;margin:5px}
+#Contents #HeadShort #Content_HeadShort{height:170px;background-size:100% !important}
+#Contents #HeadShort #nvar{top:15%}
+#ListProduct h2{font-size:18px}
+#LeftProduct{width:100%;margin:0px}
+#Top3{height:auto}
+#Top3 #Left_Top3 span .Price_Sale{font-size:15px}
+#Top3 #Right_Top3 .sp2{font-size:14px}
+#Left_Top_Headder:hover #Menu{margin-top:-33px}
+#LeftProduct #Left_ContentProduct #Top_Product #List_Product .Tear_pl{width:22.8%}
+#RightProduct{width:100%}
+#Support{display:none}
+#MenuProduct{display:none}
+#ProductLienquan .Tear_1{width:23%;float:left}
+#Contents #HeadShort #Left_HeadShort{width:100%;margin:0px}
+#Contents #HeadShort #Right_HeadShort{width:100%;margin:0px}
+.Tear_1{width:31%}
+}
+@media screen and (max-width:488px){#Content_Product{float:none;width:95%;height:100%;margin:5px auto}
+#Left_ProductDetail{width:100%;margin-bottom:15px}
+#Right_ProductDetail{width:100%}
+#ProductInvolve{display:none}
+#Top2 #Left_Top2 span .PriceSale{font-size:16px}
+#Contents #HeadShort #Content_HeadShort{height:80px}
+.ListProduct .nVar2{height:auto}
+.ListProduct .Names{position:relative}
+.Tear_1{width:46%}
+#Contents #Box_Name #Rigt_Box_Name{display:none}
+#LeftProduct #Left_ContentProduct{width:100%;margin:0px}
+#Right_ContentProduct{width:100%;margin:7px 0px}
+#LeftProduct_Content_Content{margin:5px 0px}
+#LeftProduct_Parametter{margin:5px 0px}
+#LeftProduct_Parametter_content{margin:5px 0px}
+#Right_ContentProduct #Top1 h1{text-align:center}
+#ProductLienquan .Tear_1{width:48%;float:left}
+#RightProduct #Supports{display:none}
+#MenuProduct{display:none}
+#LeftProduct_Parametter #Note{width:100%;height:auto;float:left;margin:0px}
+#LeftProduct .ListProduct .Tear_1{width:46%}
+#LeftProduct_Content_Content{font-size:14px}
+}

@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutDefaultCustom.cshtml";
+}
+
+ 
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Kangaroochinhhang.Models.tblNew>
+
+ 
+<div id="root">
+    <nav>
+        @Html.Raw(ViewBag.nUrl)
+    </nav>
+</div>
+<div id="news">
+
+    <h1 class="name">Tin tức mới</h1>
+    <div id="newsContent">
+        <div id="newsList">
+@foreach (var item in Model)
+{
+            <div class="tearNews">
+                <a href="/3/@item.Tag" title="@item.Name"><img src="@item.Images" alt="@item.Name" /></a>
+                <a href="/3/@item.Tag" title="@item.Name" class="name">@item.Name</a>
+                <span>Bài viết được gửi lúc : @item.DateCreate</span>
+                <p>
+@item.Description                </p>
+                <a href="/3/@item.Tag" title="@item.Name" class="detail">Xem tiếp</a>
+            </div>
+}
+            @Html.PagedListPager(Model, page => Url.Action("tagNews", new { page = page, sortOrder = ViewBag.CurrentSortOrder, sortName = ViewBag.CurrentSortName, sortLevel = ViewBag.CurrentSortLevel }), (PagedListRenderOptions)ViewBag.ship)
+
+
+        </div>
+    </div>
+    <div id="sidebarNews">
+        @{Html.RenderAction("partialMenuRightNews", "newsCustom");}
+     </div>
+</div>
+

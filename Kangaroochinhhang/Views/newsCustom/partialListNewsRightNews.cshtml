@@ -1,0 +1,42 @@
+﻿@model Kangaroochinhhang.Models.tblManufacture
+
+<div class="tearSideBar">
+    <div class="nvarSidebar" style="background:@ViewBag.color">
+        <i class="fa fa-th-list" aria-hidden="true"></i>
+        Bài viết nổi bật
+    </div>
+    <div class="contentTearSidebar">
+        <ul>
+            @Html.Raw(ViewBag.result)
+           
+        </ul>
+    </div>
+</div>
+<div class="tearSideBar">
+    <div class="nvarSidebar"  style="background:@ViewBag.color">
+        <i class="fa fa-th-list" aria-hidden="true"></i>
+        Bài viết mới đăng
+    </div>
+    <div class="contentTearSidebar">
+        <ul>
+            @Html.Raw(ViewBag.resultNews)
+
+        </ul>
+    </div>
+</div>
+<div class="tearSideBar">
+    <div class="nvarSidebar"  style="background:@ViewBag.color">
+        <i class="fa fa-th-list" aria-hidden="true"></i>
+        Theo dõi 
+    </div>
+    <div class="contentTearSidebar">
+        <div id="Box_MXH">
+            <div class="fb-page"
+                 data-href="@Model.FanpageFacebook"
+                 data-hide-cover="false"
+                 data-show-facepile="false"
+                 data-show-posts="false"></div>
+        </div>
+@Html.Raw(Model.FanpageZalo)    
+    </div>
+</div>

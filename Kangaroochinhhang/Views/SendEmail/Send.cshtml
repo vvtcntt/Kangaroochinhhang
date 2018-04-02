@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Send";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+ 
+@*<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#btnSend").click(function () {
+            var Name = $("#txtName").val();
+            var Email = $("#txtEmail").val();
+            var Content = $(document.getElementById("txtContent")).select;
+          
+            $.ajax({
+
+                url: '/SendEmail/SendEmail',
+                type: 'post',
+                dataType: 'json',
+                data: { "Name": Name, "Email": Email, "Content": Content.select },
+                success: function (data) {
+
+                }
+                   ,
+                error: function () { }
+            });
+
+        });
+
+
+
+    });
+
+</script> *@
+ 
+
+@using (Html.BeginForm("SendEmail", "SendEmail", FormMethod.Post))
+{ 
+    @Html.ValidationSummary(true)
+
+     <div class="Nvar_Content_Detail">
+        <div class="Left_Nvar">
+            <img src="/Content/Admin/Icon/folder.png" alt="User" />SEND EMAIL
+        </div>
+
+    </div>
+    <div class="Content_Content_Detail">
+         
+         
+        <div class="tr_1">
+            <div class="left_tr1">
+                <span>Tiêu đề :</span>
+            </div>
+            <div class="Right_tr1">
+                @Html.TextBox("txtName",null, new { @class = "Leght_2" })
+            </div>
+        </div>     
+        <div class="tr_1">
+            <div class="left_tr1">
+                <span>Content :</span>
+            </div>
+            <div class="Right_tr1">
+                @Html.TextArea("txtContent",null, new { @class = "Leght_2", @rows="10" })
+
+            </div>
+        </div>
+        <div class="tr_1">
+            <div class="left_tr1">
+            </div>
+            <div class="Right_tr1">
+                <button type="submit" id="btnSend" name="btnSend" class="btnAdd">Send</button>
+            </div>
+        </div>
+    </div>
+}
+ 
+

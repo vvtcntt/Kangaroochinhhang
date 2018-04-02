@@ -1,0 +1,70 @@
+﻿<div class="Content_Content_Detail" id="ajaxnhan">
+    <div class="Nvar_1">
+        <div class="clo_1">
+            <input name="chkitem" type="checkbox" value="" onclick="toggle(this)" class="checkallitem">
+        </div>
+         <div class="clo_2">Name</div>
+        <div class="clo_3">Active</div>
+        <div class="clo_4">Ord</div>
+        <div class="clo_5">Edit</div>
+        <div class="clo_6">Delete</div>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="Nvar_2">
+            <div class="clo_1">
+                <input name="chkitem+@item.id" type="checkbox" value="" class="checkitem">
+            </div>
+           
+            @if (item.Active == true)
+            {
+                <div class="clo_2" style="width: 57%"><a href="/../../address/Edit?id=@item.id" title="@item.Name">@item.Name</a> </div>
+            }
+            else
+            {
+                <div class="clo_2" style="width: 57%; opacity:0.2"><a href="/../../address/Edit?id=@item.id" title="@item.Name">@item.Name</a> </div>
+            }
+            <div class="clo_3">
+                @if (item.Active == true)
+                {
+                    <input name="chk" type="checkbox" checked="checked" id="@item.id" value="true" class="State">
+                }
+                else
+                {
+                    <input name="ckh" type="checkbox" value="false" id="@item.id" class="State">
+                }
+
+            </div>
+            <div class="clo_4">
+                <input type="text" id="@item.id" name="txtSort" value="@item.Ord" class="txtSort" />
+            </div>
+            <div class="clo_5">
+                <a href="/../../address/Edit?id=@item.id" title="" class="Edit"></a>
+            </div>
+            <div class="clo_6">
+                <a onclick="return confirm('Bạn có muốn xóa không?');" href="/address/DeleteConfirmed?id=@item.id" title="@item.id" class="Delete"></a>
+
+
+            </div>
+        </div>
+
+    }
+    <div class="nVar_3">
+        <div class="clo_1">
+            -
+        </div>
+
+        <div class="clo_7">
+
+            <a class="a_bt" id="CreateProduct" href="../../address/Create?idCate=@Html.Raw(ViewBag.idMenu)" title="them moi"><span>+</span> Add</a>
+            <button type="submit" id="btnDeleteAll" name="btnDeleteAll" onclick="return confirm('Bạn có xóa không ?');" class="btnDeleteAll">Delete</button>
+
+            <button type="submit" id="btlPrinter" name="btnPrinter" class="btnDeleteAll">Printer</button>
+        </div>
+        <div class="clo_8">
+        </div>
+    </div>
+
+</div>
+
+

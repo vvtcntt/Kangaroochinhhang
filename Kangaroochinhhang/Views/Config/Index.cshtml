@@ -1,0 +1,776 @@
+﻿
+@{
+    ViewBag.Title = "Cấu hình website";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+ @model Kangaroochinhhang.Models.TblConfig
+ 
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+    }
+
+    $(function () {
+        createEditor('vi', 'Content');
+    });
+
+</script>
+
+<script type="text/javascript">
+     $(function () {
+         $("#SelectsLogo").click(function () {
+             var finder = new CKFinder();
+             finder.selectActionFunction = function (fileUrl) {
+                 $("#Logo").val(fileUrl);
+             };
+             finder.popup();
+         });
+         $("#SelectsFavicon").click(function () {
+             var finder = new CKFinder();
+             finder.selectActionFunction = function (fileUrl) {
+                 $("#Favicon").val(fileUrl);
+             };
+             finder.popup();
+         });
+ 
+          
+     });
+</script>
+@Html.Raw(ViewBag.Role)
+@using (Html.BeginForm("Index", "Config", FormMethod.Post))
+{   @Html.ValidationSummary(true)
+    <div id="main-content">
+        <div class="container-fluid">
+            <div style="width: 100%; margin: 0 auto;">
+
+                <div id="Breadcrumb" class="Block Breadcrumb ui-widget-content ui-corner-top ui-corner-bottom">
+                    <ul>
+                        <li><a href='/admin'><i class="icon-home" style="font-size:14px;"></i> Trang chủ</a></li>
+                        <li class='SecondLast'><a href="/GroupProduct"> Cấu hình website</a></li>
+                      
+                    </ul>
+                </div>
+
+                <div style="clear: both;"></div>
+
+                <div id="cph_Main_ContentPane">
+                    <div class="widget">
+                        <!-- widget-title -->
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i>&nbsp; Cấu hình website</h4>
+
+                            <!-- Button -->
+                            <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                                <div id="toolbox">
+                                    <div style="float:right;" class="toolbox-content">
+
+                                        <table class="toolbar">
+                                            <tr>
+
+                                                <td align="center">
+                                                    <button type="submit" class="toolbar btn btn-info" name="btnSave" id="btnSave"><i class="icon-save"></i> &nbsp;Lưu lại</button>
+
+                                                </td>
+
+                                                 
+                                                 
+                                                <td align="center">
+                                                    <a onclick="" id="cph_Main_ctl00_toolbox_rptAction_lbtAction_0" title="Trợ giúp"  style="color:#FFF !important" class="toolbar btn btn-info" href="" )">
+                                                        <i class="icon-question-sign"></i>&nbsp;
+                                                        Trợ giúp
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Button -->
+
+                            <div id="hiddenToolBarScroll" class="scrollBox hidden">
+
+                                <div class="FloatMenuBar" style="float:left; margin-left:20px">
+
+                                    <div class="ui-widget-content ui-corner-top ui-corner-bottom">
+                                        <div id="Div1">
+
+                                            <div style="float:left;" class="toolbox-content">
+
+                                                <table class="toolbar">
+                                                    <tr>
+
+                                                        <td align="center">
+                                                            <button type="submit" class="toolbar btn btn-info" name="btnSave" id="btnSave"><i class="icon-save"></i> &nbsp;Lưu lại</button>
+
+                                                        </td>
+
+                                                         
+                                                         
+                                                        <td align="center">
+                                                            <a onclick="" id="cph_Main_ctl00_toolbox_rptAction_lbtAction_0" title="Trợ giúp"  style="color:#FFF !important" class="toolbar btn btn-info" href="" )">
+                                                                <i class="icon-question-sign"></i>&nbsp;
+                                                                Trợ giúp
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- widget-title -->
+                        <!-- widget-body -->
+                        <div class="widget-body">
+                            <div id="cph_Main_ctl00_notification_divNotice" style="padding-top:10px;">
+                                @Html.Raw(ViewBag.thongbao)
+                            </div>
+                            <table class="admintable" style="width: 100%;">
+                                 
+                                <tr>
+                                    <td class="key">
+                                        Title<span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Title, new { @class = "Name_cp txtName", @autofocus = "autofocus" })
+
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Tiêu đề website 
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Tiêu đề website được hiển thị trên thanh Title trình duyệt
+                                                </p>
+                                            </span>
+                                        </span>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Mô tả
+                                    </td>
+                                    <td>
+                                        @Html.TextAreaFor(p => p.Description, new { @class = "Content_ad", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Mô tả cho website
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Mô trả cho website, độ dài khuyến cáo từ 120 đến 160 ký tự, đây chính là thẻ Meta Description của website
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Từ khóa tìm kiếm
+                                    </td>
+                                    <td>
+                                        @Html.TextAreaFor(p => p.Keywords, new { @class = "Content_ad", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Từ khóa cho website
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Các từ khóa tìm kiếm website, tối đa 5 từ khóa
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Tên công ty<span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Name, new { @class = "Name_cp txtName", @autofocus = "autofocus" })
+
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Tiêu đề công ty
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Tiêu đề công ty của bạn
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Địa chỉ <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Address, new { @class = "Name_cp txtName", @autofocus = "autofocus" })
+
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Số hotline công ty
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Đây là số hotline trong giờ hành chính công ty hoạt động
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Hotline <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.HotlineIN, new { @class = "Name_ad Price_ad", @autofocus = "autofocus" }) 
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Địa chỉ công ty
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Bạn nhập chính xác địa chỉ công ty của bạn
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Hotline ngoài giờ <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.HotlineOUT, new { @class = "Name_ad Price_ad", @autofocus = "autofocus" })
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Hotline ngoài giờ hành chính
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Hotline ngoài giờ hành chính vào buổi tối
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Điện thoại bàn <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.MobileIN, new { @class = "Name_ad ", @autofocus = "autofocus" })
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Điện thoại bàn trong giờ hành chính
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Điện thoại bàn trong giờ hành chính
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Điện thoại bàn ngoài giờ <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.MobileOUT, new { @class = "Name_ad ", @autofocus = "autofocus" })
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Điện thoại bàn ngoài giờ hành chính
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Đây là số điện thoại bàn hỗ trợ ngoài giờ hành chính
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Email <span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Email, new { @class = "Name_ad ", @autofocus = "autofocus" })
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Email của công ty
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Email chính của công ty
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Slogan<span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Slogan, new { @class = "Name_ad ", @autofocus = "autofocus" })
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Khẩu hiệu công ty
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Khẩu hiệu công ty chính của công ty
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Logo
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Logo, new { @class = "Name_ad" })&nbsp;<input id="SelectsLogo" type="button" value="Lựa chọn ảnh" class="Images_ad" />
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                         Favicon
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Favicon, new { @class = "Name_ad" })&nbsp;<input id="SelectsFavicon" type="button" value="Lựa chọn ảnh" class="Images_ad" />
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Nội dung tĩnh 
+                                    </td>
+                                    <td>
+                                        @Html.TextAreaFor(p => p.Content, new { @class = "Content_ad" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Tài khoản gửi mail<span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.UserEmail, new { @class = "Name_ad ", @autofocus = "autofocus" })
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Tài khoản gửi mail
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Là tài khoản gửi dành cho khách hàng gửi mail, đặt hàng
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Mật khẩu gửi mail<span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.PassEmail, new { @class = "Name_ad ", @autofocus = "autofocus",@type="password" })
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Mật khẩu gửi mai
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Mật khẩu gửi mail dành cho khách hàng gửi mail, đặt hàng
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Mã Google Analytics<span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Analytics, new { @class = "Name_ad Name_cp  ", @autofocus = "autofocus" })
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Mã analytics
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                   Mã analytics cho website
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Mã Google webmasters tool<span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.GoogleMaster, new { @class = "Name_ad Name_cp ", @autofocus = "autofocus" })
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Mã Google webmasters tool
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Mã Google webmasters tool
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Mã Facebook App<span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.AppFacebook, new { @class = "Name_ad Name_cp  ", @autofocus = "autofocus" })
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Mã AppFacebook
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Mã AppFacebook cho website
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <
+                                <tr>
+                                    <td class="key">
+                                        Bản quyền Authorship<span class="Required">*</span>
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Authorship, new { @class = "Name_ad ", @autofocus = "autofocus" })
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Bản quyền website
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Là tài khoản G+ liên kết với website
+                                                </p>
+                                            </span>
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Tài khoản DMCA
+                                    </td>
+                                    <td>
+                                        @Html.TextAreaFor(p => p.DMCA, new { @class = "Content_ad", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    DMCA website
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Là tài khoản chứng nhận bản quyền tác giả nội dung đăng ký trên website www.dmca.com
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Mã hộp chát
+                                    </td>
+                                    <td>
+                                        @Html.TextAreaFor(p => p.CodeChat, new { @class = "Content_ad", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Code chát website
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Đây là code được đăng ký trên SUBIZ hoặc các website khác
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Fanpage Facebook
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.FanpageFacebook, new { @class = "Name_ad ", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Fanpage facebook của website
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Là fanpage của website
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Fanpage Google+
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.FanpageGoogle, new { @class = "Name_ad ", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Fanpage Google + của website
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Là fanpage Google+ của website
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Fanpage Youtube
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.FanpageYoutube, new { @class = "Name_ad ", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Fanpage youtube của website
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Là fanpage youtube của website
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Mã thẻ GEO Meta
+                                    </td>
+                                    <td>
+                                        @Html.TextAreaFor(p => p.GeoMeta, new { @class = "Content_ad", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                   Thẻ Geo Meta
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                   Bạn vào website http://www.geo-tag.de/generator/en.html để lấy thẻ này !
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Host
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Host, new { @class = "Name_ad ", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Host gửi mail
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Host gửi mail, thông thường là smtp.gmail.com
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="key">
+                                        Port
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Port, new { @class = "Name_ad ", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    POrt gửi mail
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Host gửi mail, thông thường là 587
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Màu web
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Color, new { @class = "Name_ad ", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Màu website
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Màu website
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        TimeOut
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(p => p.Timeout, new { @class = "Name_ad ", @autofocus = "autofocus" })
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Timeout 
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Timeout gửi mail, thông thường là 2000
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="key">
+                                        Coppy
+                                    </td>
+                                    <td>
+                                      @{ bool Coppy = ((Model.Coppy == null) || (Model.Coppy == false)) ? false : true; }
+                                    @Html.CheckBoxFor(model => Coppy)
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Sao chép nội dung
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Bạn có cho người dùng coppy nội dung trên website của bạn không
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Mạng xã hội 
+                                    </td>
+                                    <td>
+                                        @{ bool Social = ((Model.Social == null) || (Model.Social == false)) ? false : true; }
+                                        @Html.CheckBoxFor(model => Social)
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Mạng xã hội
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Cho hiển thị các công cụ mạng xã hội trên website
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Popup 
+                                    </td>
+                                    <td>
+                                        @{ bool Popup = ((Model.Popup == null) || (Model.Popup == false)) ? false : true; }
+                                        @Html.CheckBoxFor(model => Popup)
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Quảng cáo  Popup  trang chủ
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Quảng cáo  Popup  trang chủ
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="key">
+                                        Quảng cáo bên trái
+                                    </td>
+                                    <td>
+                                        @{ bool PopupSupport = ((Model.PopupSupport == null) || (Model.PopupSupport == false)) ? false : true; }
+                                        @Html.CheckBoxFor(model => PopupSupport)
+
+                                        <span class="tooltip-help">
+                                            <span class="tooltipContent">
+                                                <p class="tooltiptitle">
+                                                    Quảng cáo  bên trái  trang chủ
+                                                </p>
+                                                <p class="tooltipmessage">
+                                                    Quảng cáo  bên trái  trang chủ
+                                                </p>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+ 
+

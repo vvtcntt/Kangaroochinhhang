@@ -1,0 +1,41 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+#news{width:100%; height:auto; float:left; margin:10px 0px; float:left}
+#newsContent{width:78%; height:auto; float:left; margin:0px}
+#news h1.name{font-size:19px; text-transform:uppercase; color:#3e3e3e; font-family:"Open Sans",sans-serif!important; margin:5px 0px 15px 0px}
+#newsList{width:100%; height:auto; float:left; margin:0px 0px}
+.tearNews{width:100%; height:auto; float:left; margin:0px 0px 14px 0px; border-bottom: 2px solid #F5F5F5; padding: 3px 0px 7px 0px}
+.tearNews a img{width:200px; height:auto; max-height:150px; float:left; margin:0px 20px 10px 0px}
+#news .tearNews .name{color:#333; margin:0px 5px; text-transform:uppercase; font-weight:bold;font-family:"Open Sans",sans-serif!important; font-size:17px; display:block}
+.tearNews span{font-size: 13px;    line-height: 14px;    margin: 10px 10px 15px 0;    color: #999; display:block; font-style:italic}
+.tearNews p{font-size:16px; line-height:22px; margin:5px 0px}
+.tearNews .detail{    display:block;
+     padding: 7px 2px;
+    font-family: 'Crete Round', serif;
+    font-style: italic;
+	color:#f94f01
+}
+#sidebarNews{width:20%; height:auto; float:right; margin:0px}
+.tearSideBar{width:100%; height:auto; float:left; margin:0px 0px 20px 0px}
+.tearSideBar .nvarSidebar{width:100%; float:left; margin:0px ; line-height:35px; background:#38ab35; padding:5px; color:#FFF; font-size:17px; text-transform:uppercase}
+.tearSideBar .contentTearSidebar{width:100%; height:auto; float:left; padding:10px 0px;    border: 1px solid #eee;}
+.tearSideBar .contentTearSidebar ul{width:100%; height:auto; float:left; margin:0px}
+.tearSideBar .contentTearSidebar ul li{float:left; width:100%; padding:0px 7px 0px 15px}
+.tearSideBar .contentTearSidebar ul li a{ color:#333; margin:5px 0px ; display:block; font-size:16px}
+#newsContent{width:78%; height:auto; float:left; margin:0px 0px}
+#newsContent #nvarDetailNews{ width:100%; height:auto; float:left; margin:0px}
+#newsContent #nvarDetailNews h1{font-size:19px; text-transform:uppercase; color:#3e3e3e; font-family:"Open Sans",sans-serif!important; margin:5px 0px 15px 0px; font-weight:bold}
+#newsContent #nvarDetailNews ul{ width:100%; float:left; margin:10px 0px}
+#newsContent #nvarDetailNews ul li { float:left; margin:0px}
+#newsContent #nvarDetailNews ul li  a{color:#9c9c9c; margin:0px 10px 0px 0px; display:block}
+#detailNews{ width:100%; height:auto; float:left; margin:5px 0px; line-height:25px; font-size:15px; text-align:justify}
+#detailNews #desciption{ font-weight:bold; text-indent:10px}
+#detailNews #contentDetail{ width:100%; height:auto; float:left; margin:10px 0px}
+#detailNews #contentDetail img{max-width:100%; height:auto !important; margin:5px 0px}
+#newIinvolve{ width:100%; height:auto; float:left; margin:10px 0px}
+#newIinvolve span.name{font-size:19px; text-transform:uppercase; color:#3e3e3e; font-family:"Open Sans",sans-serif!important; margin:5px 0px 15px 0px; display:block;    border-bottom: 1px solid #f0f0f0; padding-bottom:7px}
+#newIinvolve ul{ width:100%; height:auto; float:left; margin:5px 0px}
+#newIinvolve ul li{width:100%; height:auto; float:left; margin:0px 0px}
+#newIinvolve ul li a{color:#636363; margin:5px 0px 0px 0px; display:block; font-size:15px}
+#newIinvolve ul li span{color:#a2a2a2; margin: 0px; display:block; font-style:italic; font-size:13px}

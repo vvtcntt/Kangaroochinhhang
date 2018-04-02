@@ -1,0 +1,43 @@
+﻿@charset "utf-8";@media screen and (max-width:768px){#Orders{width:100%;overflow:hidden;margin:0px;padding:0px;border:none}
+.Col_Stt{width:40px;font-size:11px;font-weight:normal}
+.Col_Name{width:200px;font-size:11px;font-weight:normal}
+.Col_Price{width:80px;font-size:11px;font-weight:normal}
+.Col_Ord{width:50px;font-size:11px;font-weight:normal}
+.Col_SumPrice{width:80px;font-size:11px;font-weight:normal}
+.Col_Func{width:70px;font-weight:normal;font-size:10px;}
+.Row_Order_child .Col_Stt{width:40px;font-size:11px}
+.Row_Order_child .Col_Name{width:200px;font-size:11px}
+.Row_Order_child .Col_Price{width:80px;font-size:11px}
+.Row_Order_child .Col_Ord{width:50px;font-size:11px}
+.Row_Order_child .Col_SumPrice{width:80px;font-size:11px}
+.Row_Order_child .Col_Func{width:70px;font-size:10px}
+.rOrder .Right input.txtName{width:100%}
+.rOrder .Right input.txtAddress{width:100%}
+.rOrder .Right input.txtMobile{width:100%}
+.rOrder .Right input.txtDate{width:100%}
+.rOrder .Right input.txtEmail{width:100%}
+.rOrder .Right input.txtDescription{width:100%}
+#Orders .Func a{margin-left:100px}
+.Row_Order_child{height:auto !important}
+}
+@media screen and (max-width:488px){.Col_Stt{display:none}
+.Row_Order_child .Col_Stt{display:none}
+.Col_Name{width:150px;font-size:11px;font-weight:normal}
+.Row_Order_child .Col_Name{width:150px;font-size:11px;text-align:left !important}
+.Col_Price{width:50px;font-size:11px;font-weight:normal}
+.Col_Ord{width:30px !important;font-size:11px;font-weight:normal}
+.Col_SumPrice{width:50px;font-size:9px;font-weight:normal}
+.Col_Func{width:70px;font-weight:normal;font-size:10px;display:none}
+.Row_Order_child .Col_Stt{width:40px;font-size:11px}
+.Row_Order_child .Col_Name{width:150px;font-size:11px;text-align:left}
+.Row_Order_child .Col_Price{width:50px;font-size:11px}
+.Row_Order_child .Col_Ord{width:30px !important;font-size:11px}
+.Row_Order_child .Col_Ord input{width:30px !important;font-size:11px}
+.Row_Order_child .Col_SumPrice{width:50px;font-size:11px}
+.Row_Order_child .Col_Func{width:40px;font-size:10px}
+.rOrder .Left span{text-align:right;margin:10px 10px 0px 3px;font-size:11px}
+.rOrders .Ghichu{margin-left:5px}
+.rOrders .Ghichu1{margin-left:5px;font-size:11px}
+#Orders .Func button{margin:2px auto;display:block;float:none}
+#Orders .Func a{text-align:center;float:none;margin:2px auto}
+}

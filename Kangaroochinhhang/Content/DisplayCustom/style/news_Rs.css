@@ -1,0 +1,27 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+@media screen and (max-width: 480px) 
+{
+	#newsContent{width:100%}
+ 	.tearNews a img{float:none; margin:5px auto !important; display:block}
+	.tearNews p{display:none}
+	#sidebarNews{display:none}
+	.tearNews .detail{text-align:center}
+	.tearNews .name{text-transform:none; text-align:center}
+	.tearNews span{text-align:center}
+	#newsContent h1.name{ text-align:center; font-weight:bold; border-bottom:2px solid #F5F5F5; padding-bottom:10px}
+	.Times{margin-bottom:15px; height:auto !important}
+	#linkOut{display:none}
+.social ul li:first-child{ width:100%; margin-bottom:7px}
+#detailNews{line-height:22px; font-size:18px}
+    #news{padding:10px}
+    #newsContent {
+        width: 100% !important
+    }
+
+    #sidebarNews {
+        display: none !important
+    }
+
+}

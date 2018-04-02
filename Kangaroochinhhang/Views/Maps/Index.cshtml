@@ -1,0 +1,67 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<Kangaroochinhhang.Models.tblMap>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("Command", "Maps", FormMethod.Post))
+{
+    <div id="Content_Detail">
+        <div class="Nvar_Content_Detail">
+            <div class="Left_Nvar">
+                <img src="/Content/Admin/Icon/folder.png" alt="Danh mục sản phẩm" />Maps
+            </div>
+
+            <div class="Right_Nvar">
+                <div id="msg" class="msg">
+                    <div class="alert alert-info" id="update-message">
+                        <span>@Html.Raw(ViewBag.result)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="/Content_Content_Detail">
+            <div class="Nvar_1">
+
+
+                <div class="clo_2" style="width: 93%">Name</div>
+
+
+                <div class="clo_5">Edit</div>
+
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="Nvar_2">
+
+
+                    <div class="clo_2" style="width: 93%"><a href="/../../Maps/Edit?id=@item.id" title="@item.Name">@item.Name</a> </div>
+
+
+                    <div class="clo_5">
+                        <a href="/../../Maps/Edit?id=@item.id" title="" class="Edit"></a>
+                    </div>
+
+                </div>
+       
+            }
+            <div class="nVar_3">
+                <div class="clo_1">
+                    -
+                </div>
+
+                <div class="clo_7">
+                </div>
+
+
+            </div>
+
+        </div>
+
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page, sortOrder = ViewBag.CurrentSortOrder, sortName = ViewBag.CurrentSortName, sortLevel = ViewBag.CurrentSortLevel }), (PagedListRenderOptions)ViewBag.ship)
+
+    </div>
+}

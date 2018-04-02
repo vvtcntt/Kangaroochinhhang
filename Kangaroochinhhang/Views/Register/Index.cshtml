@@ -1,0 +1,151 @@
+﻿
+@{
+     Layout = "~/Views/Shared/_LayoutDefault.cshtml";
+}
+<script src="~/Scripts/jquery-2.1.4.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<div id="Contents">
+    <div class="Root">
+        <a href="/" title="Trang chủ" rel="nofollow"><span></span>Trang chủ</a> &raquo; Đăng ký thay lõi lọc nước định kỳ tại nhà
+    </div>
+    <div class="Clear"></div>
+
+    @using (Html.BeginForm("Command", "Register", FormMethod.Post))
+    {
+        <div id="Res">
+            <div id="Content_Res">
+                <div id="Left_Res">
+                    <div id="nVar_Res">
+                        <span>Đăng ký</span>
+                        <h3>Thay lõi lọc nước định kỳ</h3>
+                    </div>
+                    <div class="Info_Res">
+                        <span class="Gioithieu">
+                            “ Bạn thường xuyên bận rộn và không có thời gian để quan tâm tới chiếc
+                            máy lọc nước nhà mình ? Hãy để chúng tôi giúp bạn điều đó ! ”
+                        </span>
+
+                        <span class="Loiich">Lợi ích bạn được hưởng !</span>
+                        <span class="Line"></span>
+                        <div class="Thoigian">
+                            <div class="Left_Thoigian"></div>
+                            <div class="Right_Thoigian">
+                                <span class="sp1">Thay lõi đúng kỳ hạn</span>
+                                <span class="sp2">Chúng tôi sẽ gọi điện nhắc cho bạn khi đến lịch thay lõi</span>
+                            </div>
+                        </div>
+                        <div class="Clear"></div>
+
+                        <div class="Tietkiem">
+                            <div class="Left_Tietkiem"></div>
+                            <div class="Right_Tietkiem">
+                                <div class="Left1">
+                                    <span class="sp1">Tiết kiệm chi phí</span>
+                                    <span class="sp2">Bạn sẽ được giảm giá</span>
+                                </div>
+                                <div class="Right1">
+                                    <span class="sp3">15%</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="Clear"></div>
+
+                        <div class="Tuvan">
+                            <div class="Left_Tuvan"></div>
+                            <div class="Right_Tuvan">
+                                <span class="sp1">
+                                    Bạn được tư vấn và kiểm tra nước
+                                </span>
+                                <span class="sp2">Bạn sẽ được chúng tôi tư vấn và kiểm tra nước thường</span>
+                            </div>
+                        </div>
+                        <div class="Clear"></div>
+
+                        <span class="Line"></span>
+                        <div class="Clear"></div>
+                        <span class="dkn">Hãy đăng ký ngay để tận hưởng dịch vụ tuyệt vời này nào !</span>
+                    </div>
+                </div>
+                <div id="Right_Res">
+                    <div id="Content_Right_Res">
+                        <span class="Nameform">Form đăng ký</span>
+                        <span class="ghichu">Bạn cần điền đầy đủ và chính xác các thông tin dưới đây !</span>
+                        <span class="Lines"></span>
+                        <div class="rows">
+                            <div class="Left_Row">
+                                <span>Họ và tên : </span>
+                            </div>
+                            <div class="Right_Row">
+                                <input type="text" name="txtName" id="txtName" class="txtName" required="required" />
+                            </div>
+                        </div>
+                        <div class="rows">
+                            <div class="Left_Row">
+                                <span>Điện thoại :  </span>
+                            </div>
+                            <div class="Right_Row">
+                                <input type="number" name="txtMobile" id="txtMobile" class="txtMobile" required="required" />
+                            </div>
+                        </div>
+                        <div class="rows">
+                            <div class="Left_Row">
+                                <span>Email: </span>
+                            </div>
+                            <div class="Right_Row">
+                                <input type="email" name="txtEmail" id="txtEmail" class="txtEmail" required="required" />
+                            </div>
+                        </div>
+                        <div class="rows">
+                            <div class="Left_Row">
+                                <span>Địa chỉ : </span>
+                            </div>
+                            <div class="Right_Row">
+                                <textarea id="txtAddress" name="txtAddress" class="txtAddress" required="required"></textarea>
+
+                            </div>
+                        </div>
+                        <div class="Clear"></div>
+                        <div class="rows2">
+                            <div class="Left_Row2">
+                                <span>Thời gian mua máy</span>
+                                <input type="text" name="txtDatemua" id="txtDatemua" />
+                                <script>
+                                    $(function () {
+                                        $("#txtDatemua").datepicker();
+                                    });
+                                </script>
+                            </div>
+                            <div class="Right_Row2">
+                                <span>Thời gian thay lõi gần nhất</span>
+                                <input type="text" name="txtDatethay" id="txtDatethay" />
+                                <script>
+                                    $(function () {
+                                        $("#txtDatethay").datepicker();
+                                    });
+                                </script>
+                            </div>
+                            <div class="Clear"></div>
+
+                        </div>
+                        <div class="Clear"></div>
+                        <div class="rows3">
+                            <span class="inf">Lõi lọc nước bạn đã từng thay</span>
+                            @Html.Raw(ViewBag.loiloc)
+
+                            <div class="loi">
+                                <input type="checkbox" name="chk1" /> <span>: Chưa thay lần nào</span>
+                            </div>
+                        </div>
+                        <div class="Clear"></div>
+                        <button type="submit" name="btnRes" id="btnRes">Đăng ký</button>
+                        <div class="Clear"></div>
+                    </div>
+                </div>
+
+                <div class="Clear"></div>
+            </div>
+        </div>
+    }
+    <div class="Clear"></div>
+</div>
